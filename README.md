@@ -22,6 +22,6 @@ Section Four - Aaron Eppelbaum
 
 Style Choices
 
-Colours: Red and blue
+Colours: Red (#dc143c)  and Blue (#caf2fb) and Green (#98c12a)
 Fonts: Lobster and Sarabun
-Aspect Ratio:
+Aspect Ratio: Default
