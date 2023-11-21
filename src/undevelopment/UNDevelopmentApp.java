@@ -15,6 +15,8 @@ public class UNDevelopmentApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        CrosswordGUI crosswordGUI = new CrosswordGUI();
+        crosswordGUI.setVisible(true);
     }
     
 }
