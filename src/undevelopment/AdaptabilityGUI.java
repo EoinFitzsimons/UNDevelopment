@@ -8,12 +8,12 @@ package undevelopment;
  *
  * @author work
  */
-public class Awareness extends javax.swing.JPanel {
+public class AdaptabilityGUI extends javax.swing.JPanel {
 
     /**
-     * Creates new form Awareness
+     * Creates new form AdaptabilityGUI
      */
-    public Awareness() {
+    public AdaptabilityGUI() {
         initComponents();
     }
 

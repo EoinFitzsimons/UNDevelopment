@@ -8,12 +8,12 @@ package undevelopment;
  *
  * @author work
  */
-public class Impact extends javax.swing.JPanel {
+public class ImpactGUI extends javax.swing.JPanel {
 
     /**
-     * Creates new form Impact
+     * Creates new form ImpactGUI
      */
-    public Impact() {
+    public ImpactGUI() {
         initComponents();
     }
 
