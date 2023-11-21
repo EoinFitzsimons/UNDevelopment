@@ -30,13 +30,6 @@ public class MainMenuGUI extends javax.swing.JFrame {
         homePane = new javax.swing.JLayeredPane();
         backgroundPane = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        adaptabilityPane = new javax.swing.JLayeredPane();
-        adaptabilityBackground = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jLabel9 = new javax.swing.JLabel();
         awarenessPane = new javax.swing.JLayeredPane();
         awarenessBackground = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -44,6 +37,13 @@ public class MainMenuGUI extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
+        adaptabilityPane = new javax.swing.JLayeredPane();
+        adaptabilityBackground = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
         promoteMechPane = new javax.swing.JLayeredPane();
         PromotingMechBackground = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -78,7 +78,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
         backgroundPaneLayout.setHorizontalGroup(
             backgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundPaneLayout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
                 .addContainerGap())
         );
         backgroundPaneLayout.setVerticalGroup(
@@ -109,68 +109,6 @@ public class MainMenuGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Home", homePane);
 
-        jLabel7.setText("jLabel7");
-
-        jButton4.setText("Load Adaptability App");
-
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane5.setViewportView(jTextArea3);
-
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Adaptability Menu");
-
-        javax.swing.GroupLayout adaptabilityBackgroundLayout = new javax.swing.GroupLayout(adaptabilityBackground);
-        adaptabilityBackground.setLayout(adaptabilityBackgroundLayout);
-        adaptabilityBackgroundLayout.setHorizontalGroup(
-            adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE)
-                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        adaptabilityBackgroundLayout.setVerticalGroup(
-            adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
-                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                        .addComponent(jScrollPane5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        adaptabilityPane.setLayer(adaptabilityBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout adaptabilityPaneLayout = new javax.swing.GroupLayout(adaptabilityPane);
-        adaptabilityPane.setLayout(adaptabilityPaneLayout);
-        adaptabilityPaneLayout.setHorizontalGroup(
-            adaptabilityPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adaptabilityPaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adaptabilityBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        adaptabilityPaneLayout.setVerticalGroup(
-            adaptabilityPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityPaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(adaptabilityBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Adaptability", adaptabilityPane);
-
         jLabel6.setText("jLabel6");
 
         jButton3.setText("jButton3");
@@ -193,7 +131,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(awarenessBackgroundLayout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 321, Short.MAX_VALUE)
                         .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
@@ -236,6 +174,68 @@ public class MainMenuGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Awareness", awarenessPane);
 
+        jLabel7.setText("jLabel7");
+
+        jButton4.setText("Load Adaptability App");
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane5.setViewportView(jTextArea3);
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Adaptability Menu");
+
+        javax.swing.GroupLayout adaptabilityBackgroundLayout = new javax.swing.GroupLayout(adaptabilityBackground);
+        adaptabilityBackground.setLayout(adaptabilityBackgroundLayout);
+        adaptabilityBackgroundLayout.setHorizontalGroup(
+            adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
+                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        adaptabilityBackgroundLayout.setVerticalGroup(
+            adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
+                        .addComponent(jScrollPane5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        adaptabilityPane.setLayer(adaptabilityBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout adaptabilityPaneLayout = new javax.swing.GroupLayout(adaptabilityPane);
+        adaptabilityPane.setLayout(adaptabilityPaneLayout);
+        adaptabilityPaneLayout.setHorizontalGroup(
+            adaptabilityPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adaptabilityPaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adaptabilityBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        adaptabilityPaneLayout.setVerticalGroup(
+            adaptabilityPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityPaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(adaptabilityBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Adaptability", adaptabilityPane);
+
         jScrollPane3.setViewportView(jTextPane2);
 
         jButton2.setText("Promoting Mechanism App");
@@ -255,7 +255,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)))
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)))
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -321,7 +321,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(loadIntegration, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(loadInfoIntegration, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+                    .addComponent(loadInfoIntegration, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -375,10 +375,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
