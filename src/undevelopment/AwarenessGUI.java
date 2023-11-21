@@ -8,12 +8,12 @@ package undevelopment;
  *
  * @author work
  */
-public class Impact extends javax.swing.JPanel {
+public class AwarenessGUI extends javax.swing.JPanel {
 
     /**
-     * Creates new form Impact
+     * Creates new form AwarenessGUI
      */
-    public Impact() {
+    public AwarenessGUI() {
         initComponents();
     }
 
@@ -26,18 +26,15 @@ public class Impact extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setMaximumSize(new java.awt.Dimension(800, 600));
-        setMinimumSize(new java.awt.Dimension(800, 600));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
