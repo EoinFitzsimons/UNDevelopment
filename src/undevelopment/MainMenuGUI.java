@@ -40,7 +40,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
         adaptabilityPane = new javax.swing.JLayeredPane();
         adaptabilityBackground = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        AdaptabilityAppBTN = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
@@ -111,6 +111,11 @@ public class MainMenuGUI extends javax.swing.JFrame {
         jLabel6.setText("jLabel6");
 
         awarenessLoad.setText("load awareness");
+        awarenessLoad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                awarenessLoadMouseClicked(evt);
+            }
+        });
         awarenessLoad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 awarenessLoadActionPerformed(evt);
@@ -183,7 +188,12 @@ public class MainMenuGUI extends javax.swing.JFrame {
 
         jLabel7.setText("jLabel7");
 
-        jButton4.setText("Load Adaptability App");
+        AdaptabilityAppBTN.setText("Load Adaptability App");
+        AdaptabilityAppBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdaptabilityAppBTNActionPerformed(evt);
+            }
+        });
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
@@ -202,7 +212,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -217,7 +227,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                         .addComponent(jScrollPane5)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4))
+                        .addComponent(AdaptabilityAppBTN))
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -396,8 +406,24 @@ public class MainMenuGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         AwarenessGUI load = new AwarenessGUI();
         load.setVisible(true);
-        
     }//GEN-LAST:event_awarenessLoadActionPerformed
+
+    private void awarenessLoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_awarenessLoadMouseClicked
+        // TODO add your handling code here:
+        
+      
+        
+    }//GEN-LAST:event_awarenessLoadMouseClicked
+
+    private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
+        // TODO add your handling code here:
+       
+        //Crossword load = new Crossword();
+        //load.setVisible(true);
+        
+        Crossword load = new Crossword();
+        load.show();
+    }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -435,6 +461,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AdaptabilityAppBTN;
     private javax.swing.JPanel PromotingMechBackground;
     private javax.swing.JPanel adaptabilityBackground;
     private javax.swing.JLayeredPane adaptabilityPane;
@@ -446,7 +473,6 @@ public class MainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
