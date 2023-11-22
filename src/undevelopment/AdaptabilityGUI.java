@@ -8,12 +8,12 @@ package undevelopment;
  *
  * @author eoin0
  */
-public class Crossword extends javax.swing.JFrame {
+public class AdaptabilityGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form Tabs
      */
-    public Crossword() {
+    public AdaptabilityGUI() {
         initComponents();
     }
 
@@ -26,7 +26,7 @@ public class Crossword extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabAdaptability = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         letterTF61 = new javax.swing.JTextField();
         letterTF62 = new javax.swing.JTextField();
@@ -110,7 +110,6 @@ public class Crossword extends javax.swing.JFrame {
 
         letterTF62.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF62.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF62.setText("I");
 
         letterTF63.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF63.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -207,6 +206,12 @@ public class Crossword extends javax.swing.JFrame {
 
         letterTF18.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        letterTF18.setText("N");
+        letterTF18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                letterTF18ActionPerformed(evt);
+            }
+        });
 
         letterTF19.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -214,6 +219,7 @@ public class Crossword extends javax.swing.JFrame {
 
         letterTF20.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        letterTF20.setText("D");
 
         letterTF21.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -224,7 +230,7 @@ public class Crossword extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Down\n\n1: Something to wear in colder winters\n2: The energy of temperature\n4: People who make global warming worse.\n6: Australia\n\nAcross\n\n1: Our Planet\n3: Water on a surface\n5: Swimming Creatures\n6: They're a hoot.");
+        jTextArea1.setText("Down\n\n1: Something to wear in a blizzard.\n2: Form of energy released in a volcanic eruption.\n4: Reach high speeds in a hurricane\n5: Downpour that can lead to flooding.\n\n\nAcross\n\n1: Our Planet\n3: Times when the sun solar flares into us.\n4: Water on a surface\n6: They end up far within land when a tsunami comes.\n7: The amount of moons we have which control the tides.");
         jScrollPane1.setViewportView(jTextArea1);
 
         letterTF23.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
@@ -236,6 +242,7 @@ public class Crossword extends javax.swing.JFrame {
 
         letterTF25.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF25.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        letterTF25.setText("W");
 
         letterTF26.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF26.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -261,7 +268,7 @@ public class Crossword extends javax.swing.JFrame {
         letterTF32.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Crossword Climate");
+        jLabel1.setText("Crossword Natural Disaster");
 
         letterTF33.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF33.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -297,7 +304,6 @@ public class Crossword extends javax.swing.JFrame {
 
         letterTF42.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF42.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF42.setText("Z");
 
         letterTF43.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF43.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -314,6 +320,7 @@ public class Crossword extends javax.swing.JFrame {
 
         letterTF47.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF47.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        letterTF47.setText("N");
 
         letterTF48.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF48.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -324,26 +331,34 @@ public class Crossword extends javax.swing.JFrame {
 
         letterTF50.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF50.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        letterTF50.setText("A");
 
         letterTF51.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF51.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         letterTF52.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF52.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        letterTF52.setText("I");
 
         letterTF53.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF53.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF53.setText("W");
+        letterTF53.setText("N");
+        letterTF53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                letterTF53ActionPerformed(evt);
+            }
+        });
 
         letterTF54.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF54.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        letterTF54.setText("D");
 
         letterTF55.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF55.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         letterTF56.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF56.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF56.setText("L");
+        letterTF56.setText("E");
 
         letterTF57.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF57.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -362,7 +377,6 @@ public class Crossword extends javax.swing.JFrame {
 
         letterTF60.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF60.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF60.setText("V");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -645,17 +659,17 @@ public class Crossword extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab1", jPanel1);
+        tabAdaptability.addTab("tab1", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tabAdaptability)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tabAdaptability)
         );
 
         pack();
@@ -677,6 +691,14 @@ public class Crossword extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_letterTF59ActionPerformed
 
+    private void letterTF53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letterTF53ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_letterTF53ActionPerformed
+
+    private void letterTF18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letterTF18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_letterTF18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -694,21 +716,23 @@ public class Crossword extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Crossword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdaptabilityGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Crossword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdaptabilityGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Crossword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdaptabilityGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Crossword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdaptabilityGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Crossword().setVisible(true);
+                new AdaptabilityGUI().setVisible(true);
             }
         });
     }
@@ -719,7 +743,6 @@ public class Crossword extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField letterTF;
     private javax.swing.JTextField letterTF1;
@@ -785,5 +808,6 @@ public class Crossword extends javax.swing.JFrame {
     private javax.swing.JTextField letterTF7;
     private javax.swing.JTextField letterTF8;
     private javax.swing.JTextField letterTF9;
+    private javax.swing.JTabbedPane tabAdaptability;
     // End of variables declaration//GEN-END:variables
 }

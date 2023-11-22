@@ -285,7 +285,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" pref="220" max="-2" attributes="0"/>
-                          <EmptySpace pref="321" max="32767" attributes="0"/>
+                          <EmptySpace pref="309" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="AdaptabilityAppBTN" alignment="0" max="32767" attributes="0"/>
                               <Component id="jScrollPane5" alignment="0" pref="247" max="32767" attributes="0"/>
@@ -293,6 +293,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
+                          <Component id="introLBL" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -300,7 +305,9 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace pref="254" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="introLBL" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="139" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jScrollPane5" max="32767" attributes="0"/>
@@ -339,6 +346,7 @@
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
+                        <Property name="text" type="java.lang.String" value="What do I put here"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -350,6 +358,11 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Adaptability Menu"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="introLBL">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="This is a crossword that does a thing"/>
                   </Properties>
                 </Component>
               </SubComponents>

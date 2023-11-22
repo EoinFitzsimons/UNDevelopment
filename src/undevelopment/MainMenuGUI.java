@@ -85,6 +85,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
+        introLBL = new javax.swing.JLabel();
         promoteMechPane = new javax.swing.JLayeredPane();
         PromotingMechBackground = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -244,11 +245,14 @@ public class MainMenuGUI extends javax.swing.JFrame {
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
+        jTextArea3.setText("What do I put here");
         jScrollPane5.setViewportView(jTextArea3);
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Adaptability Menu");
+
+        introLBL.setText("This is a crossword that does a thing");
 
         javax.swing.GroupLayout adaptabilityBackgroundLayout = new javax.swing.GroupLayout(adaptabilityBackground);
         adaptabilityBackground.setLayout(adaptabilityBackgroundLayout);
@@ -257,19 +261,25 @@ public class MainMenuGUI extends javax.swing.JFrame {
             .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 321, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(introLBL)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         adaptabilityBackgroundLayout.setVerticalGroup(
             adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
+                .addComponent(introLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                         .addComponent(jScrollPane5)
@@ -546,6 +556,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JTextArea displayAwareness;
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
+    private javax.swing.JLabel introLBL;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
