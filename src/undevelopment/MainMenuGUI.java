@@ -34,9 +34,9 @@ public class MainMenuGUI extends javax.swing.JFrame {
         awarenessBackground = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         awarenessLoad = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        displayAwareness = new javax.swing.JTextArea();
         adaptabilityPane = new javax.swing.JLayeredPane();
         adaptabilityBackground = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -49,13 +49,13 @@ public class MainMenuGUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane2 = new javax.swing.JTextPane();
-        jButton2 = new javax.swing.JButton();
+        promoteAppBTN = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         integrationPane = new javax.swing.JLayeredPane();
         backgroundIntegration = new javax.swing.JPanel();
         loadInfoIntegration = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        loadIntegration = new javax.swing.JButton();
+        loadIntegrationApp = new javax.swing.JButton();
         loadBrief = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
@@ -122,13 +122,13 @@ public class MainMenuGUI extends javax.swing.JFrame {
             }
         });
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane4.setViewportView(jTextArea2);
-
         jLabel10.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Awareness Menu");
+
+        displayAwareness.setColumns(20);
+        displayAwareness.setRows(5);
+        jScrollPane1.setViewportView(displayAwareness);
 
         javax.swing.GroupLayout awarenessBackgroundLayout = new javax.swing.GroupLayout(awarenessBackground);
         awarenessBackground.setLayout(awarenessBackgroundLayout);
@@ -140,29 +140,31 @@ public class MainMenuGUI extends javax.swing.JFrame {
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(awarenessBackgroundLayout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
                         .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, awarenessBackgroundLayout.createSequentialGroup()
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(135, 135, 135))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, awarenessBackgroundLayout.createSequentialGroup()
+                            .addGroup(awarenessBackgroundLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                                 .addComponent(awarenessLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))))
+                                .addGap(117, 117, 117))
+                            .addGroup(awarenessBackgroundLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         awarenessBackgroundLayout.setVerticalGroup(
             awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, awarenessBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, awarenessBackgroundLayout.createSequentialGroup()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42)
-                        .addComponent(awarenessLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, awarenessBackgroundLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(awarenessBackgroundLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(awarenessBackgroundLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(awarenessLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         awarenessPane.setLayer(awarenessBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -255,7 +257,12 @@ public class MainMenuGUI extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(jTextPane2);
 
-        jButton2.setText("Promoting Mechanism App");
+        promoteAppBTN.setText("Promoting Mechanism App");
+        promoteAppBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                promoteAppBTNActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -272,7 +279,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)))
+                            .addComponent(promoteAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)))
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -287,7 +294,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                     .addGroup(PromotingMechBackgroundLayout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(promoteAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -318,7 +325,12 @@ public class MainMenuGUI extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Brief Information On Integration ");
 
-        loadIntegration.setText("Load Integration App");
+        loadIntegrationApp.setText("Load Integration App");
+        loadIntegrationApp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadIntegrationAppActionPerformed(evt);
+            }
+        });
 
         loadBrief.setText("Brief About Game");
 
@@ -337,7 +349,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loadIntegration, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loadIntegrationApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(loadInfoIntegration, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -360,7 +372,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                         .addComponent(loadInfoIntegration, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(loadIntegration, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(loadIntegrationApp, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane6))
                 .addContainerGap())
             .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,8 +416,10 @@ public class MainMenuGUI extends javax.swing.JFrame {
 
     private void awarenessLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_awarenessLoadActionPerformed
         // TODO add your handling code here:
-        AwarenessGUI load = new AwarenessGUI();
-        load.setVisible(true);
+        displayAwareness.append("Hello world!");
+        AwarenessGUI test = new AwarenessGUI();
+        test.setVisible(true);
+        
     }//GEN-LAST:event_awarenessLoadActionPerformed
 
     private void awarenessLoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_awarenessLoadMouseClicked
@@ -418,12 +432,26 @@ public class MainMenuGUI extends javax.swing.JFrame {
     private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
         // TODO add your handling code here:
        
-        //Crossword load = new Crossword();
-        //load.setVisible(true);
+        
         
         Crossword load = new Crossword();
-        load.show();
+        load.setVisible(true);
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
+
+    private void promoteAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promoteAppBTNActionPerformed
+        // TODO add your handling code here:
+        ImpactGUI load = new ImpactGUI();
+        load.setVisible(true);
+        
+    }//GEN-LAST:event_promoteAppBTNActionPerformed
+
+    private void loadIntegrationAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadIntegrationAppActionPerformed
+        // TODO add your handling code here:
+        
+        IntegrationsUI load = new IntegrationsUI();
+        load.setVisible(true);
+        
+    }//GEN-LAST:event_loadIntegrationAppActionPerformed
 
     /**
      * @param args the command line arguments
@@ -470,9 +498,9 @@ public class MainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLayeredPane awarenessPane;
     private javax.swing.JPanel backgroundIntegration;
     private javax.swing.JPanel backgroundPane;
+    private javax.swing.JTextArea displayAwareness;
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
@@ -482,18 +510,18 @@ public class MainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JButton loadBrief;
     private javax.swing.JButton loadInfoIntegration;
-    private javax.swing.JButton loadIntegration;
+    private javax.swing.JButton loadIntegrationApp;
+    private javax.swing.JButton promoteAppBTN;
     private javax.swing.JLayeredPane promoteMechPane;
     // End of variables declaration//GEN-END:variables
 }
