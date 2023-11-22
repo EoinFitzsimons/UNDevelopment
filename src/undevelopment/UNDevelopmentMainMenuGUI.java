@@ -8,55 +8,14 @@ package undevelopment;
  *
  * @author dmoc2
  */
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.imageio.ImageIO;
+public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
-public class MainMenuGUI extends javax.swing.JFrame {
-
-    // Existing code...
-
-    // Method to set a background image for the frame
-    private void setBackgroundImage() {
-        // Load the image as a resource from the undevelopment package
-        BufferedImage img = null;
-        try {
-            img = ImageIO.read(getClass().getResource("/undevelopment/OOP Background.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // Create a JLabel with the image
-        JLabel background = new JLabel(new ImageIcon(img));
-        background.setLayout(new BorderLayout());
-
-        // Set the image label as the content pane of the frame
-        setContentPane(background);
-        getContentPane().setLayout(new BorderLayout());
-
-        // Repaint to ensure the changes are visible
-        getContentPane().validate();
-        getContentPane().repaint();
+    /**
+     * Creates new form UNDevelopmentMainMenuGUI
+     */
+    public UNDevelopmentMainMenuGUI() {
+        initComponents();
     }
-
-    // Inside your constructor or initialization method
-    public MainMenuGUI() {
-        setBackgroundImage(); // Call this method to set the background image
-        setSize(800, 630); // Accounts for the title bar height
-    }
-
-    // Entry point of the application
-    public static void main(String[] args) {
-        // Create and display the GUI on the Event Dispatch Thread
-        SwingUtilities.invokeLater(() -> {
-            MainMenuGUI gui = new MainMenuGUI();
-            gui.setVisible(true);
-        });
-    }
-
-}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,7 +29,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         homePane = new javax.swing.JLayeredPane();
         backgroundPane = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        backgroundIMG = new javax.swing.JLabel();
         awarenessPane = new javax.swing.JLayeredPane();
         awarenessBackground = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -104,34 +63,26 @@ public class MainMenuGUI extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
-        setMinimumSize(new java.awt.Dimension(800, 600));
 
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(800, 600));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(800, 600));
 
         backgroundPane.setMinimumSize(new java.awt.Dimension(800, 600));
-        backgroundPane.setPreferredSize(new java.awt.Dimension(800, 600));
 
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Welcome To The Climate Change App");
-        jLabel8.setToolTipText("");
+        backgroundIMG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/OOP Background.png"))); // NOI18N
 
         javax.swing.GroupLayout backgroundPaneLayout = new javax.swing.GroupLayout(backgroundPane);
         backgroundPane.setLayout(backgroundPaneLayout);
         backgroundPaneLayout.setHorizontalGroup(
             backgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundPaneLayout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(backgroundIMG, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         backgroundPaneLayout.setVerticalGroup(
             backgroundPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundPaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(552, Short.MAX_VALUE))
+            .addComponent(backgroundIMG, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         homePane.setLayer(backgroundPane, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -141,15 +92,14 @@ public class MainMenuGUI extends javax.swing.JFrame {
         homePaneLayout.setHorizontalGroup(
             homePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(backgroundPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backgroundPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         homePaneLayout.setVerticalGroup(
             homePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePaneLayout.createSequentialGroup()
-                .addComponent(backgroundPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(homePaneLayout.createSequentialGroup()
+                .addComponent(backgroundPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Home", homePane);
@@ -188,7 +138,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(awarenessBackgroundLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                                 .addComponent(awarenessLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(117, 117, 117))
                             .addGroup(awarenessBackgroundLayout.createSequentialGroup()
@@ -203,7 +153,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(awarenessBackgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(awarenessBackgroundLayout.createSequentialGroup()
                         .addGap(140, 140, 140)
@@ -279,7 +229,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addComponent(introLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                         .addComponent(jScrollPane5)
@@ -334,7 +284,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3)
-                            .addComponent(promoteAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)))
+                            .addComponent(promoteAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)))
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -343,7 +293,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PromotingMechBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 256, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
                 .addGroup(PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PromotingMechBackgroundLayout.createSequentialGroup()
@@ -405,7 +355,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(loadIntegrationApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(loadInfoIntegration, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
+                    .addComponent(loadInfoIntegration, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -424,7 +374,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
                 .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundIntegrationLayout.createSequentialGroup()
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                         .addComponent(loadInfoIntegration, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(loadIntegrationApp, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -469,28 +419,24 @@ public class MainMenuGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void awarenessLoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_awarenessLoadMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_awarenessLoadMouseClicked
+
     private void awarenessLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_awarenessLoadActionPerformed
         // TODO add your handling code here:
-        displayAwareness.append("Hello world!");
-        AwarenessGUI test = new AwarenessGUI();
-        test.setVisible(true);
+        
+        AwarenessGUI load = new AwarenessGUI();
+        load.setVisible(true);
         
     }//GEN-LAST:event_awarenessLoadActionPerformed
 
-    private void awarenessLoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_awarenessLoadMouseClicked
-        // TODO add your handling code here:
-        
-      
-        
-    }//GEN-LAST:event_awarenessLoadMouseClicked
-
     private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
         // TODO add your handling code here:
-       
         
-        
-        Crossword load = new Crossword();
+        AdaptabilityGUI load = new AdaptabilityGUI();
         load.setVisible(true);
+        
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
 
     private void promoteAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promoteAppBTNActionPerformed
@@ -502,7 +448,6 @@ public class MainMenuGUI extends javax.swing.JFrame {
 
     private void loadIntegrationAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadIntegrationAppActionPerformed
         // TODO add your handling code here:
-        
         IntegrationsUI load = new IntegrationsUI();
         load.setVisible(true);
         
@@ -525,20 +470,20 @@ public class MainMenuGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UNDevelopmentMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UNDevelopmentMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UNDevelopmentMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UNDevelopmentMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuGUI().setVisible(true);
+                new UNDevelopmentMainMenuGUI().setVisible(true);
             }
         });
     }
@@ -551,6 +496,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JPanel awarenessBackground;
     private javax.swing.JButton awarenessLoad;
     private javax.swing.JLayeredPane awarenessPane;
+    private javax.swing.JLabel backgroundIMG;
     private javax.swing.JPanel backgroundIntegration;
     private javax.swing.JPanel backgroundPane;
     private javax.swing.JTextArea displayAwareness;
@@ -564,7 +510,6 @@ public class MainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
