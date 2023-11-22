@@ -26,23 +26,324 @@ public class AwarenessGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        tabAdaptability = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        titleLBL = new javax.swing.JLabel();
+        prgBar3 = new javax.swing.JProgressBar();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        wlcmTxt = new javax.swing.JTextArea();
+        bgnBtn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        qTxt = new javax.swing.JTextArea();
+        titleLBL1 = new javax.swing.JLabel();
+        prgBar4 = new javax.swing.JProgressBar();
+        aRad = new javax.swing.JRadioButton();
+        bRad = new javax.swing.JRadioButton();
+        cRad = new javax.swing.JRadioButton();
+        dRad = new javax.swing.JRadioButton();
+        sbmBtn = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        inputField = new javax.swing.JTextField();
+        srchField = new javax.swing.JTextField();
+        inputLBL = new javax.swing.JLabel();
+        srchLbl = new javax.swing.JLabel();
+        titleLBL2 = new javax.swing.JLabel();
+        prgBar5 = new javax.swing.JProgressBar();
+        dltBtn = new javax.swing.JButton();
+        dspBtn = new javax.swing.JButton();
+        addBtn = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(800, 600));
+        jPanel1.setMinimumSize(new java.awt.Dimension(800, 600));
+        jPanel1.setRequestFocusEnabled(false);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        titleLBL.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        titleLBL.setText("Awareness");
+
+        prgBar3.setBackground(new java.awt.Color(34, 133, 225));
+        prgBar3.setFont(new java.awt.Font("Academy Engraved LET", 0, 11)); // NOI18N
+        prgBar3.setForeground(new java.awt.Color(202, 242, 251));
+        prgBar3.setToolTipText("Crossword Completion");
+        prgBar3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        wlcmTxt.setColumns(20);
+        wlcmTxt.setRows(5);
+        wlcmTxt.setText("Welcome message.\n\n\n\n\n\n\n\nBackground information.\n\n\n\n\n\nImage\n");
+        jScrollPane3.setViewportView(wlcmTxt);
+
+        bgnBtn.setText("Begin");
+        bgnBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bgnBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(193, 193, 193)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(200, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(prgBar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(69, 69, 69)
+                                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(193, 193, 193)
+                                .addComponent(bgnBtn))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(298, 298, 298)
+                                .addComponent(titleLBL)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(titleLBL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prgBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(bgnBtn)))
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+
+        tabAdaptability.addTab("Intro", jPanel1);
+
+        qTxt.setColumns(20);
+        qTxt.setRows(5);
+        qTxt.setText("Question");
+        jScrollPane2.setViewportView(qTxt);
+
+        titleLBL1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        titleLBL1.setText("Awareness");
+
+        prgBar4.setBackground(new java.awt.Color(34, 133, 225));
+        prgBar4.setFont(new java.awt.Font("Academy Engraved LET", 0, 11)); // NOI18N
+        prgBar4.setForeground(new java.awt.Color(202, 242, 251));
+        prgBar4.setToolTipText("Crossword Completion");
+        prgBar4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        aRad.setText("A");
+        aRad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aRadActionPerformed(evt);
+            }
+        });
+
+        bRad.setText("B");
+
+        cRad.setText("C");
+
+        dRad.setText("D");
+
+        sbmBtn.setText("Submit");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(298, 298, 298)
+                        .addComponent(titleLBL1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(prgBar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dRad, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cRad, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bRad, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(aRad, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(577, 577, 577))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(364, 364, 364)
+                        .addComponent(sbmBtn)))
+                .addContainerGap(201, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(titleLBL1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prgBar4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(aRad)
+                .addGap(29, 29, 29)
+                .addComponent(bRad)
+                .addGap(18, 18, 18)
+                .addComponent(cRad)
+                .addGap(18, 18, 18)
+                .addComponent(dRad)
+                .addGap(71, 71, 71)
+                .addComponent(sbmBtn)
+                .addGap(63, 63, 63))
+        );
+
+        tabAdaptability.addTab("Game", jPanel2);
+
+        inputLBL.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        inputLBL.setText("User input");
+
+        srchLbl.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        srchLbl.setText("Search:");
+
+        titleLBL2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        titleLBL2.setText("Awareness");
+
+        prgBar5.setBackground(new java.awt.Color(34, 133, 225));
+        prgBar5.setFont(new java.awt.Font("Academy Engraved LET", 0, 11)); // NOI18N
+        prgBar5.setForeground(new java.awt.Color(202, 242, 251));
+        prgBar5.setToolTipText("Crossword Completion");
+        prgBar5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        dltBtn.setText("Delete");
+
+        dspBtn.setText("Display");
+
+        addBtn.setText("Add");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(prgBar5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(298, 298, 298)
+                        .addComponent(titleLBL2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(srchLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputLBL)
+                            .addComponent(addBtn)
+                            .addComponent(dspBtn)
+                            .addComponent(dltBtn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(srchField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(titleLBL2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(prgBar5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(inputField, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dspBtn))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(inputLBL)
+                        .addGap(18, 18, 18)
+                        .addComponent(addBtn)))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(srchLbl)
+                    .addComponent(srchField, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(dltBtn)
+                .addGap(80, 80, 80))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 811, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 606, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        tabAdaptability.addTab("Feedback", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addComponent(tabAdaptability)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(tabAdaptability)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void aRadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aRadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aRadActionPerformed
+
+    private void bgnBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bgnBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bgnBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +381,35 @@ public class AwarenessGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton aRad;
+    private javax.swing.JButton addBtn;
+    private javax.swing.JRadioButton bRad;
+    private javax.swing.JButton bgnBtn;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton cRad;
+    private javax.swing.JRadioButton dRad;
+    private javax.swing.JButton dltBtn;
+    private javax.swing.JButton dspBtn;
+    private javax.swing.JTextField inputField;
+    private javax.swing.JLabel inputLBL;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JProgressBar prgBar3;
+    private javax.swing.JProgressBar prgBar4;
+    private javax.swing.JProgressBar prgBar5;
+    private javax.swing.JTextArea qTxt;
+    private javax.swing.JButton sbmBtn;
+    private javax.swing.JTextField srchField;
+    private javax.swing.JLabel srchLbl;
+    private javax.swing.JTabbedPane tabAdaptability;
+    private javax.swing.JLabel titleLBL;
+    private javax.swing.JLabel titleLBL1;
+    private javax.swing.JLabel titleLBL2;
+    private javax.swing.JTextArea wlcmTxt;
     // End of variables declaration//GEN-END:variables
 }
