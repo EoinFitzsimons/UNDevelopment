@@ -39,12 +39,15 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         displayAwareness = new javax.swing.JTextArea();
         adaptabilityPane = new javax.swing.JLayeredPane();
         adaptabilityBackground = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        scoreLabel = new javax.swing.JLabel();
         AdaptabilityAppBTN = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
-        introLBL = new javax.swing.JLabel();
+        scoreLabel1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        scoreLabel2 = new javax.swing.JLabel();
+        scoreLabel3 = new javax.swing.JLabel();
         promoteMechPane = new javax.swing.JLayeredPane();
         PromotingMechBackground = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -184,7 +187,10 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Awareness", awarenessPane);
 
-        jLabel7.setText("jLabel7");
+        adaptabilityBackground.setBackground(new java.awt.Color(100, 150, 200));
+
+        scoreLabel.setForeground(new java.awt.Color(255, 255, 255));
+        scoreLabel.setText("Best Score:");
 
         AdaptabilityAppBTN.setText("Load Adaptability App");
         AdaptabilityAppBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -193,49 +199,83 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
             }
         });
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("What do I put here");
-        jScrollPane5.setViewportView(jTextArea3);
-
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Adaptability Menu");
 
-        introLBL.setText("This is a crossword that does a thing");
+        scoreLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        scoreLabel1.setText("Last Score:");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("This is a crossword whose hints are information regarding natural disasters.");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("You should take what you learn from this crossword and be able to apply it in future.");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("With this knowledege you will be more adaptable in the face of danger.");
+
+        scoreLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        scoreLabel2.setText("Last Time:");
+
+        scoreLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        scoreLabel3.setText("Best Time::");
 
         javax.swing.GroupLayout adaptabilityBackgroundLayout = new javax.swing.GroupLayout(adaptabilityBackground);
         adaptabilityBackground.setLayout(adaptabilityBackgroundLayout);
         adaptabilityBackgroundLayout.setHorizontalGroup(
             adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
-                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))
-                .addContainerGap())
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addComponent(introLBL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
+                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scoreLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(scoreLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scoreLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         adaptabilityBackgroundLayout.setVerticalGroup(
             adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(introLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
+                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                        .addComponent(jScrollPane5)
+                        .addComponent(scoreLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(AdaptabilityAppBTN))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(scoreLabel1))
+                    .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
+                        .addComponent(scoreLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(scoreLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -431,14 +471,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_awarenessLoadActionPerformed
 
-    private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
-        // TODO add your handling code here:
-        
-        AdaptabilityGUI load = new AdaptabilityGUI();
-        load.setVisible(true);
-        
-    }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
-
     private void promoteAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promoteAppBTNActionPerformed
         // TODO add your handling code here:
         ImpactGUI load = new ImpactGUI();
@@ -452,6 +484,14 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         load.setVisible(true);
         
     }//GEN-LAST:event_loadIntegrationAppActionPerformed
+
+    private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
+        // TODO add your handling code here:
+
+        AdaptabilityGUI load = new AdaptabilityGUI();
+        load.setVisible(true);
+
+    }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -502,9 +542,10 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JTextArea displayAwareness;
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
-    private javax.swing.JLabel introLBL;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -513,10 +554,8 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JButton loadBrief;
@@ -524,5 +563,9 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JButton loadIntegrationApp;
     private javax.swing.JButton promoteAppBTN;
     private javax.swing.JLayeredPane promoteMechPane;
+    private javax.swing.JLabel scoreLabel;
+    private javax.swing.JLabel scoreLabel1;
+    private javax.swing.JLabel scoreLabel2;
+    private javax.swing.JLabel scoreLabel3;
     // End of variables declaration//GEN-END:variables
 }
