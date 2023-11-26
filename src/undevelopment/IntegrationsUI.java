@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package undevelopment;
-
+import undevelopment.IntegrationsFolder.cardGame;
+import undevelopment.IntegrationsFolder.choiceCardHolder;
 /**
  *
  * @author dmoc2
@@ -51,6 +52,12 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scoreCounter = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        integrateTabbedPane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                integrateTabbedPaneMouseClicked(evt);
+            }
+        });
 
         scorePanel.setBackground(new java.awt.Color(204, 204, 0));
 
@@ -145,11 +152,11 @@ public class IntegrationsUI extends javax.swing.JFrame {
         livesCounter.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         livesCounter.setText("0");
 
-        choiceOneBTN.setText("jButton1");
-
-        choiceTwoBTN.setText("jButton2");
-
-        choiceThreeBTN.setText("jButton3");
+        choiceOneBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                choiceOneBTNActionPerformed(evt);
+            }
+        });
 
         scoreLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         scoreLabel.setText("Score:");
@@ -170,42 +177,45 @@ public class IntegrationsUI extends javax.swing.JFrame {
                         .addComponent(scoreCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(gamePaneLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(choiceThreeBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, gamePaneLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(choiceOneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(choiceTwoBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(choiceOneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gamePaneLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(cardHolderImg)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                        .addComponent(cardHolderImg))
+                    .addGroup(gamePaneLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(choiceTwoBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePaneLayout.createSequentialGroup()
                         .addComponent(livesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(livesCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(40, 40, 40))
+                        .addComponent(livesCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePaneLayout.createSequentialGroup()
+                        .addComponent(choiceThreeBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         gamePaneLayout.setVerticalGroup(
             gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gamePaneLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(cardHolderImg, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 151, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(livesCounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(livesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scoreCounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(gamePaneLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(cardHolderImg, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(382, 382, 382)
                 .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(choiceThreeBTN, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(choiceTwoBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(choiceOneBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(27, 27, 27))
+                    .addComponent(choiceThreeBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(choiceOneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(choiceTwoBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(70, 70, 70))
         );
 
         jLayeredPane1.setLayer(gamePane, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -222,9 +232,9 @@ public class IntegrationsUI extends javax.swing.JFrame {
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 571, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(gamePane, javax.swing.GroupLayout.PREFERRED_SIZE, 571, Short.MAX_VALUE))
+                .addComponent(gamePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         integrateTabbedPane.addTab("Card Game", jLayeredPane1);
@@ -247,6 +257,22 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void choiceOneBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceOneBTNActionPerformed
+        // TODO add your handling code here:
+        choiceCardHolder load = new choiceCardHolder();
+        load.choices1();
+        
+         cardGame test = new cardGame();    
+       
+         test.test();
+    }//GEN-LAST:event_choiceOneBTNActionPerformed
+
+    private void integrateTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_integrateTabbedPaneMouseClicked
+       cardGame test = new cardGame();    
+       
+         test.test();
+    }//GEN-LAST:event_integrateTabbedPaneMouseClicked
 
     /**
      * @param args the command line arguments
@@ -275,6 +301,11 @@ public class IntegrationsUI extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        cardGame test = new cardGame();    
+       
+         test.test();
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -285,10 +316,10 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
-    private javax.swing.JLabel cardHolderImg;
-    private javax.swing.JButton choiceOneBTN;
-    private javax.swing.JButton choiceThreeBTN;
-    private javax.swing.JButton choiceTwoBTN;
+    public static javax.swing.JLabel cardHolderImg;
+    public static javax.swing.JButton choiceOneBTN;
+    public static javax.swing.JButton choiceThreeBTN;
+    public static javax.swing.JButton choiceTwoBTN;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JButton displayBTN;
     private javax.swing.JTextArea displayScoreArea;
@@ -296,12 +327,12 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane integrateTabbedPane;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel livesCounter;
+    public static javax.swing.JLabel livesCounter;
     private javax.swing.JLabel livesLabel;
-    private javax.swing.JTextField nameField;
+    public static javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JButton refereshBTN;
-    private javax.swing.JLabel scoreCounter;
+    public static javax.swing.JLabel scoreCounter;
     private javax.swing.JLabel scoreLabel;
     private javax.swing.JPanel scorePanel;
     private javax.swing.JButton searchBTN;
