@@ -28,6 +28,14 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         adaptabilityTab = new javax.swing.JTabbedPane();
         crosswordPanel = new javax.swing.JPanel();
+        number5LBL = new javax.swing.JLabel();
+        number7LBL = new javax.swing.JLabel();
+        number8LBL = new javax.swing.JLabel();
+        number6LBL = new javax.swing.JLabel();
+        number3LBL = new javax.swing.JLabel();
+        number4LBL = new javax.swing.JLabel();
+        number2LBL = new javax.swing.JLabel();
+        number1LBL = new javax.swing.JLabel();
         letterTF61 = new javax.swing.JTextField();
         letterTF62 = new javax.swing.JTextField();
         letterTF63 = new javax.swing.JTextField();
@@ -98,6 +106,14 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         letterTF59 = new javax.swing.JTextField();
         letterTF60 = new javax.swing.JTextField();
         solutionPanel = new javax.swing.JPanel();
+        number5LBL1 = new javax.swing.JLabel();
+        number7LBL1 = new javax.swing.JLabel();
+        number8LBL1 = new javax.swing.JLabel();
+        number6LBL1 = new javax.swing.JLabel();
+        number3LBL1 = new javax.swing.JLabel();
+        number4LBL1 = new javax.swing.JLabel();
+        number2LBL1 = new javax.swing.JLabel();
+        number1LBL1 = new javax.swing.JLabel();
         letterTF64 = new javax.swing.JTextField();
         letterTF65 = new javax.swing.JTextField();
         letterTF66 = new javax.swing.JTextField();
@@ -178,26 +194,69 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         crosswordPanel.setMinimumSize(new java.awt.Dimension(800, 600));
         crosswordPanel.setPreferredSize(new java.awt.Dimension(800, 600));
         crosswordPanel.setRequestFocusEnabled(false);
+        crosswordPanel.setLayout(null);
+
+        number5LBL.setText("5");
+        crosswordPanel.add(number5LBL);
+        number5LBL.setBounds(8, 270, 10, 16);
+
+        number7LBL.setText("7");
+        crosswordPanel.add(number7LBL);
+        number7LBL.setBounds(10, 447, 10, 16);
+
+        number8LBL.setText("8");
+        crosswordPanel.add(number8LBL);
+        number8LBL.setBounds(300, 447, 10, 16);
+
+        number6LBL.setText("6");
+        crosswordPanel.add(number6LBL);
+        number6LBL.setBounds(357, 270, 10, 16);
+
+        number3LBL.setText("3");
+        crosswordPanel.add(number3LBL);
+        number3LBL.setBounds(240, 156, 10, 16);
+
+        number4LBL.setText("4");
+        crosswordPanel.add(number4LBL);
+        number4LBL.setBounds(124, 213, 10, 16);
+
+        number2LBL.setText("2");
+        crosswordPanel.add(number2LBL);
+        number2LBL.setBounds(240, 100, 10, 16);
+
+        number1LBL.setText("1");
+        crosswordPanel.add(number1LBL);
+        number1LBL.setBounds(10, 100, 10, 16);
 
         letterTF61.setBackground(new java.awt.Color(0, 0, 0));
         letterTF61.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF61.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF61);
+        letterTF61.setBounds(412, 98, 40, 40);
 
         letterTF62.setBackground(new java.awt.Color(0, 0, 0));
         letterTF62.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF62.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF62);
+        letterTF62.setBounds(412, 388, 40, 40);
 
         letterTF63.setBackground(new java.awt.Color(0, 0, 0));
         letterTF63.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF63.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF63);
+        letterTF63.setBounds(412, 156, 40, 40);
 
         jProgressBar1.setBackground(new java.awt.Color(100, 200, 100));
         jProgressBar1.setForeground(new java.awt.Color(100, 150, 200));
         jProgressBar1.setToolTipText("Crossword Completion");
         jProgressBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        crosswordPanel.add(jProgressBar1);
+        jProgressBar1.setBounds(6, 60, 788, 20);
 
         clueLabel.setForeground(new java.awt.Color(255, 255, 255));
         clueLabel.setText("Clues");
+        crosswordPanel.add(clueLabel);
+        clueLabel.setBounds(464, 98, 29, 16);
 
         letterTF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -207,29 +266,45 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTFActionPerformed(evt);
             }
         });
+        crosswordPanel.add(letterTF);
+        letterTF.setBounds(6, 98, 40, 40);
 
         letterTF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF1);
+        letterTF1.setBounds(6, 156, 40, 40);
 
         letterTF2.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF2);
+        letterTF2.setBounds(6, 214, 40, 40);
 
         letterTF3.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF3);
+        letterTF3.setBounds(6, 272, 40, 40);
 
         letterTF4.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF4);
+        letterTF4.setBounds(64, 98, 40, 40);
 
         letterTF5.setBackground(new java.awt.Color(0, 0, 0));
         letterTF5.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF5);
+        letterTF5.setBounds(64, 156, 40, 40);
 
         letterTF6.setBackground(new java.awt.Color(0, 0, 0));
         letterTF6.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF6);
+        letterTF6.setBounds(64, 214, 40, 40);
 
         letterTF7.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF7);
+        letterTF7.setBounds(64, 272, 40, 40);
 
         letterTF8.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -238,34 +313,52 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF8ActionPerformed(evt);
             }
         });
+        crosswordPanel.add(letterTF8);
+        letterTF8.setBounds(6, 330, 40, 40);
 
         letterTF9.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF9);
+        letterTF9.setBounds(6, 388, 40, 40);
 
         letterTF10.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF10);
+        letterTF10.setBounds(6, 446, 40, 40);
 
         letterTF11.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF11);
+        letterTF11.setBounds(6, 504, 40, 40);
 
         letterTF12.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF12);
+        letterTF12.setBounds(64, 446, 40, 40);
 
         letterTF13.setBackground(new java.awt.Color(0, 0, 0));
         letterTF13.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF13);
+        letterTF13.setBounds(64, 504, 40, 40);
 
         letterTF14.setBackground(new java.awt.Color(0, 0, 0));
         letterTF14.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF14);
+        letterTF14.setBounds(64, 330, 40, 40);
 
         letterTF15.setBackground(new java.awt.Color(0, 0, 0));
         letterTF15.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF15);
+        letterTF15.setBounds(64, 388, 40, 40);
 
         letterTF16.setBackground(new java.awt.Color(0, 0, 0));
         letterTF16.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF16);
+        letterTF16.setBounds(180, 214, 40, 40);
 
         letterTF17.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -274,6 +367,8 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF17ActionPerformed(evt);
             }
         });
+        crosswordPanel.add(letterTF17);
+        letterTF17.setBounds(180, 272, 40, 40);
 
         letterTF18.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -282,134 +377,209 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF18ActionPerformed(evt);
             }
         });
+        crosswordPanel.add(letterTF18);
+        letterTF18.setBounds(122, 330, 40, 40);
 
         letterTF19.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF19);
+        letterTF19.setBounds(122, 98, 40, 40);
 
         letterTF20.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF20);
+        letterTF20.setBounds(122, 388, 40, 40);
 
         letterTF21.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF21);
+        letterTF21.setBounds(122, 446, 40, 40);
 
         letterTF22.setBackground(new java.awt.Color(0, 0, 0));
         letterTF22.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF22);
+        letterTF22.setBounds(122, 156, 40, 40);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Down\n\n1: Something to wear in a blizzard.\n2: Form of energy released in a volcanic eruption.\n4: Reach high speeds in a hurricane\n5: Downpour that can lead to flooding.\n\n\nAcross\n\n1: Our Planet\n3: Times when the sun solar flares into us.\n4: Water on a surface\n6: They end up far within land when a tsunami comes.\n7: The amount of moons we have which control the tides.");
+        jTextArea1.setText("Down\n\n1: Something to wear in a blizzard.\n2: Form of energy released in a volcanic eruption.\n4: Reach high speeds in a hurricane\n6: Downpour that can lead to flooding.\n\n\nAcross\n\n1: Our Planet\n3: Times when the sun solar flares into us.\n5: Water on a surface\n7: They end up far within land when a tsunami comes.\n8: The amount of moons we have which control the tides.");
         jScrollPane1.setViewportView(jTextArea1);
+
+        crosswordPanel.add(jScrollPane1);
+        jScrollPane1.setBounds(464, 132, 330, 412);
 
         letterTF23.setBackground(new java.awt.Color(0, 0, 0));
         letterTF23.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF23.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF23);
+        letterTF23.setBounds(122, 504, 40, 40);
 
         letterTF24.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF24.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF24);
+        letterTF24.setBounds(180, 446, 40, 40);
 
         letterTF25.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF25.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF25);
+        letterTF25.setBounds(122, 214, 40, 40);
 
         letterTF26.setBackground(new java.awt.Color(0, 0, 0));
         letterTF26.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF26.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF26);
+        letterTF26.setBounds(180, 504, 40, 40);
 
         letterTF27.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF27.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF27);
+        letterTF27.setBounds(122, 272, 40, 40);
 
         letterTF28.setBackground(new java.awt.Color(0, 0, 0));
         letterTF28.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF28.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF28);
+        letterTF28.setBounds(180, 330, 40, 40);
 
         letterTF29.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF29.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF29);
+        letterTF29.setBounds(180, 98, 40, 40);
 
         letterTF30.setBackground(new java.awt.Color(0, 0, 0));
         letterTF30.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF30.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF30);
+        letterTF30.setBounds(180, 388, 40, 40);
 
         letterTF31.setBackground(new java.awt.Color(0, 0, 0));
         letterTF31.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF31.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF31);
+        letterTF31.setBounds(180, 156, 40, 40);
 
         letterTF32.setBackground(new java.awt.Color(0, 0, 0));
         letterTF32.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF32.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF32);
+        letterTF32.setBounds(296, 214, 40, 40);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Crossword Natural Disaster");
+        crosswordPanel.add(jLabel1);
+        jLabel1.setBounds(185, 6, 430, 48);
 
         letterTF33.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF33.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF33);
+        letterTF33.setBounds(296, 272, 40, 40);
 
         letterTF34.setBackground(new java.awt.Color(0, 0, 0));
         letterTF34.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF34.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF34);
+        letterTF34.setBounds(238, 330, 40, 40);
 
         letterTF35.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF35.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF35);
+        letterTF35.setBounds(238, 98, 40, 40);
 
         letterTF36.setBackground(new java.awt.Color(0, 0, 0));
         letterTF36.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF36.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF36);
+        letterTF36.setBounds(238, 388, 40, 40);
 
         letterTF37.setBackground(new java.awt.Color(0, 0, 0));
         letterTF37.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF37.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF37);
+        letterTF37.setBounds(238, 446, 40, 40);
 
         letterTF38.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF38.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF38);
+        letterTF38.setBounds(238, 156, 40, 40);
 
         letterTF39.setBackground(new java.awt.Color(0, 0, 0));
         letterTF39.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF39.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF39);
+        letterTF39.setBounds(238, 504, 40, 40);
 
         letterTF40.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF40.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF40);
+        letterTF40.setBounds(296, 446, 40, 40);
 
         letterTF41.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF41.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF41);
+        letterTF41.setBounds(238, 214, 40, 40);
 
         letterTF42.setBackground(new java.awt.Color(0, 0, 0));
         letterTF42.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF42.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF42);
+        letterTF42.setBounds(296, 504, 40, 40);
 
         letterTF43.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF43.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF43);
+        letterTF43.setBounds(238, 272, 40, 40);
 
         letterTF44.setBackground(new java.awt.Color(0, 0, 0));
         letterTF44.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF44.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF44);
+        letterTF44.setBounds(296, 330, 40, 40);
 
         letterTF45.setBackground(new java.awt.Color(0, 0, 0));
         letterTF45.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF45.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF45);
+        letterTF45.setBounds(296, 98, 40, 40);
 
         letterTF46.setBackground(new java.awt.Color(0, 0, 0));
         letterTF46.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF46.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF46);
+        letterTF46.setBounds(296, 388, 40, 40);
 
         letterTF47.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF47.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF47);
+        letterTF47.setBounds(296, 156, 40, 40);
 
         letterTF48.setBackground(new java.awt.Color(0, 0, 0));
         letterTF48.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF48.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF48);
+        letterTF48.setBounds(412, 214, 40, 40);
 
         letterTF49.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF49.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF49);
+        letterTF49.setBounds(412, 272, 40, 40);
 
         letterTF50.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF50.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF50);
+        letterTF50.setBounds(354, 330, 40, 40);
 
         letterTF51.setBackground(new java.awt.Color(0, 0, 0));
         letterTF51.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF51.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF51);
+        letterTF51.setBounds(354, 98, 40, 40);
 
         letterTF52.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF52.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF52);
+        letterTF52.setBounds(354, 388, 40, 40);
 
         letterTF53.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF53.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -418,24 +588,36 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF53ActionPerformed(evt);
             }
         });
+        crosswordPanel.add(letterTF53);
+        letterTF53.setBounds(354, 446, 40, 40);
 
         letterTF54.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF54.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF54);
+        letterTF54.setBounds(354, 156, 40, 40);
 
         letterTF55.setBackground(new java.awt.Color(0, 0, 0));
         letterTF55.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF55.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF55);
+        letterTF55.setBounds(354, 504, 40, 40);
 
         letterTF56.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF56.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF56);
+        letterTF56.setBounds(412, 446, 40, 40);
 
         letterTF57.setBackground(new java.awt.Color(0, 0, 0));
         letterTF57.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF57.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF57);
+        letterTF57.setBounds(354, 214, 40, 40);
 
         letterTF58.setBackground(new java.awt.Color(0, 0, 0));
         letterTF58.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF58.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        crosswordPanel.add(letterTF58);
+        letterTF58.setBounds(412, 504, 40, 40);
 
         letterTF59.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF59.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -444,291 +626,14 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF59ActionPerformed(evt);
             }
         });
+        crosswordPanel.add(letterTF59);
+        letterTF59.setBounds(354, 272, 40, 40);
 
         letterTF60.setBackground(new java.awt.Color(0, 0, 0));
         letterTF60.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF60.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        javax.swing.GroupLayout crosswordPanelLayout = new javax.swing.GroupLayout(crosswordPanel);
-        crosswordPanel.setLayout(crosswordPanelLayout);
-        crosswordPanelLayout.setHorizontalGroup(
-            crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel1)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(crosswordPanelLayout.createSequentialGroup()
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF20, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF23, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF30, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF28, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF24, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF27, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF29, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF36, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF34, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF37, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF39, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF46, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF44, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF40, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF42, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF38, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF35, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF41, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF43, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF47, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF45, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF32, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF33, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF52, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF50, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF53, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF55, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF62, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF60, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF56, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF58, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF54, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF51, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF57, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF59, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF63, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF61, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF48, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF49, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(clueLabel)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))))
-                .addContainerGap())
-        );
-        crosswordPanelLayout.setVerticalGroup(
-            crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(crosswordPanelLayout.createSequentialGroup()
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(crosswordPanelLayout.createSequentialGroup()
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF27, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF29, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF20, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF23, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF28, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF30, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF24, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(crosswordPanelLayout.createSequentialGroup()
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF35, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF38, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF41, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF43, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF45, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF47, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF32, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF33, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF34, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF36, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF37, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF39, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF44, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF46, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF40, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF42, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(crosswordPanelLayout.createSequentialGroup()
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF51, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF54, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF57, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF59, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF61, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF63, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF48, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF49, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(crosswordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF50, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF52, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF53, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF55, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(crosswordPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF60, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF62, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF56, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF58, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(crosswordPanelLayout.createSequentialGroup()
-                        .addComponent(clueLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        crosswordPanel.add(letterTF60);
+        letterTF60.setBounds(412, 330, 40, 40);
 
         adaptabilityTab.addTab("Game", crosswordPanel);
 
@@ -736,26 +641,69 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         solutionPanel.setMaximumSize(new java.awt.Dimension(800, 600));
         solutionPanel.setMinimumSize(new java.awt.Dimension(800, 600));
         solutionPanel.setRequestFocusEnabled(false);
+        solutionPanel.setLayout(null);
+
+        number5LBL1.setText("5");
+        solutionPanel.add(number5LBL1);
+        number5LBL1.setBounds(8, 270, 10, 16);
+
+        number7LBL1.setText("7");
+        solutionPanel.add(number7LBL1);
+        number7LBL1.setBounds(8, 445, 10, 16);
+
+        number8LBL1.setText("8");
+        solutionPanel.add(number8LBL1);
+        number8LBL1.setBounds(298, 445, 10, 16);
+
+        number6LBL1.setText("6");
+        solutionPanel.add(number6LBL1);
+        number6LBL1.setBounds(357, 270, 10, 16);
+
+        number3LBL1.setText("3");
+        solutionPanel.add(number3LBL1);
+        number3LBL1.setBounds(240, 155, 10, 16);
+
+        number4LBL1.setText("4");
+        solutionPanel.add(number4LBL1);
+        number4LBL1.setBounds(124, 212, 10, 16);
+
+        number2LBL1.setText("2");
+        solutionPanel.add(number2LBL1);
+        number2LBL1.setBounds(240, 98, 10, 16);
+
+        number1LBL1.setText("1");
+        solutionPanel.add(number1LBL1);
+        number1LBL1.setBounds(8, 98, 10, 16);
 
         letterTF64.setBackground(new java.awt.Color(0, 0, 0));
         letterTF64.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF64.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF64);
+        letterTF64.setBounds(412, 98, 40, 40);
 
         letterTF65.setBackground(new java.awt.Color(0, 0, 0));
         letterTF65.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF65.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF65);
+        letterTF65.setBounds(412, 388, 40, 40);
 
         letterTF66.setBackground(new java.awt.Color(0, 0, 0));
         letterTF66.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF66.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF66);
+        letterTF66.setBounds(412, 156, 40, 40);
 
         crosswordProgress.setBackground(new java.awt.Color(100, 200, 100));
         crosswordProgress.setForeground(new java.awt.Color(100, 150, 200));
         crosswordProgress.setToolTipText("Crossword Completion");
         crosswordProgress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        solutionPanel.add(crosswordProgress);
+        crosswordProgress.setBounds(6, 60, 788, 20);
 
         clueLabel1.setForeground(new java.awt.Color(255, 255, 255));
         clueLabel1.setText("Clues");
+        solutionPanel.add(clueLabel1);
+        clueLabel1.setBounds(464, 98, 29, 16);
 
         letterTF67.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF67.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -766,34 +714,50 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF67ActionPerformed(evt);
             }
         });
+        solutionPanel.add(letterTF67);
+        letterTF67.setBounds(6, 98, 40, 40);
 
         letterTF68.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF68.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF68.setText("A");
+        solutionPanel.add(letterTF68);
+        letterTF68.setBounds(6, 156, 40, 40);
 
         letterTF69.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF69.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF69.setText("R");
+        solutionPanel.add(letterTF69);
+        letterTF69.setBounds(6, 214, 40, 40);
 
         letterTF70.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF70.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF70.setText("M");
+        solutionPanel.add(letterTF70);
+        letterTF70.setBounds(6, 272, 40, 40);
 
         letterTF71.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF71.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF71.setText("A");
+        solutionPanel.add(letterTF71);
+        letterTF71.setBounds(64, 98, 40, 40);
 
         letterTF72.setBackground(new java.awt.Color(0, 0, 0));
         letterTF72.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF72.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF72);
+        letterTF72.setBounds(64, 156, 40, 40);
 
         letterTF73.setBackground(new java.awt.Color(0, 0, 0));
         letterTF73.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF73.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF73);
+        letterTF73.setBounds(64, 214, 40, 40);
 
         letterTF74.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF74.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF74.setText("O");
+        solutionPanel.add(letterTF74);
+        letterTF74.setBounds(64, 272, 40, 40);
 
         letterTF75.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF75.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -803,38 +767,56 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF75ActionPerformed(evt);
             }
         });
+        solutionPanel.add(letterTF75);
+        letterTF75.setBounds(6, 330, 40, 40);
 
         letterTF76.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF76.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF76.setText("F");
+        solutionPanel.add(letterTF76);
+        letterTF76.setBounds(6, 388, 40, 40);
 
         letterTF77.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF77.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF77.setText("F");
+        solutionPanel.add(letterTF77);
+        letterTF77.setBounds(6, 446, 40, 40);
 
         letterTF78.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF78.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF78.setText("S");
+        solutionPanel.add(letterTF78);
+        letterTF78.setBounds(6, 504, 40, 40);
 
         letterTF79.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF79.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF79.setText("I");
+        solutionPanel.add(letterTF79);
+        letterTF79.setBounds(64, 446, 40, 40);
 
         letterTF80.setBackground(new java.awt.Color(0, 0, 0));
         letterTF80.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF80.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF80);
+        letterTF80.setBounds(64, 504, 40, 40);
 
         letterTF81.setBackground(new java.awt.Color(0, 0, 0));
         letterTF81.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF81.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF81);
+        letterTF81.setBounds(64, 330, 40, 40);
 
         letterTF82.setBackground(new java.awt.Color(0, 0, 0));
         letterTF82.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF82.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF82);
+        letterTF82.setBounds(64, 388, 40, 40);
 
         letterTF83.setBackground(new java.awt.Color(0, 0, 0));
         letterTF83.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF83.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF83);
+        letterTF83.setBounds(180, 214, 40, 40);
 
         letterTF84.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF84.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -844,6 +826,8 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF84ActionPerformed(evt);
             }
         });
+        solutionPanel.add(letterTF84);
+        letterTF84.setBounds(180, 272, 40, 40);
 
         letterTF85.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF85.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -853,151 +837,226 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF85ActionPerformed(evt);
             }
         });
+        solutionPanel.add(letterTF85);
+        letterTF85.setBounds(122, 330, 40, 40);
 
         letterTF86.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF86.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF86.setText("R");
+        solutionPanel.add(letterTF86);
+        letterTF86.setBounds(122, 98, 40, 40);
 
         letterTF87.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF87.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF87.setText("D");
+        solutionPanel.add(letterTF87);
+        letterTF87.setBounds(122, 388, 40, 40);
 
         letterTF88.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF88.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF88.setText("S");
+        solutionPanel.add(letterTF88);
+        letterTF88.setBounds(122, 446, 40, 40);
 
         letterTF89.setBackground(new java.awt.Color(0, 0, 0));
         letterTF89.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF89.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF89);
+        letterTF89.setBounds(122, 156, 40, 40);
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jTextArea2.setText("Down\n\n1: Something to wear in a blizzard.\n2: Form of energy released in a volcanic eruption.\n4: Reach high speeds in a hurricane\n5: Downpour that can lead to flooding.\n\n\nAcross\n\n1: Our Planet\n3: Times when the sun solar flares into us.\n4: Water on a surface\n6: They end up far within land when a tsunami comes.\n7: The amount of moons we have which control the tides.");
         jScrollPane2.setViewportView(jTextArea2);
 
+        solutionPanel.add(jScrollPane2);
+        jScrollPane2.setBounds(464, 132, 330, 412);
+
         letterTF90.setBackground(new java.awt.Color(0, 0, 0));
         letterTF90.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF90.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF90);
+        letterTF90.setBounds(122, 504, 40, 40);
 
         letterTF91.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF91.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF91.setText("H");
+        solutionPanel.add(letterTF91);
+        letterTF91.setBounds(180, 446, 40, 40);
 
         letterTF92.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF92.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF92.setText("W");
+        solutionPanel.add(letterTF92);
+        letterTF92.setBounds(122, 214, 40, 40);
 
         letterTF93.setBackground(new java.awt.Color(0, 0, 0));
         letterTF93.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF93.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF93);
+        letterTF93.setBounds(180, 504, 40, 40);
 
         letterTF94.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF94.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF94.setText("I");
+        solutionPanel.add(letterTF94);
+        letterTF94.setBounds(122, 272, 40, 40);
 
         letterTF95.setBackground(new java.awt.Color(0, 0, 0));
         letterTF95.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF95.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF95);
+        letterTF95.setBounds(180, 330, 40, 40);
 
         letterTF96.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF96.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF96.setText("T");
+        solutionPanel.add(letterTF96);
+        letterTF96.setBounds(180, 98, 40, 40);
 
         letterTF97.setBackground(new java.awt.Color(0, 0, 0));
         letterTF97.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF97.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF97);
+        letterTF97.setBounds(180, 388, 40, 40);
 
         letterTF98.setBackground(new java.awt.Color(0, 0, 0));
         letterTF98.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF98.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF98);
+        letterTF98.setBounds(180, 156, 40, 40);
 
         letterTF99.setBackground(new java.awt.Color(0, 0, 0));
         letterTF99.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF99.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF99);
+        letterTF99.setBounds(296, 214, 40, 40);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Crossword Natural Disaster");
+        solutionPanel.add(jLabel2);
+        jLabel2.setBounds(185, 6, 430, 48);
 
         letterTF100.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF100.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF100.setText("U");
+        solutionPanel.add(letterTF100);
+        letterTF100.setBounds(296, 272, 40, 40);
 
         letterTF101.setBackground(new java.awt.Color(0, 0, 0));
         letterTF101.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF101.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF101);
+        letterTF101.setBounds(238, 330, 40, 40);
 
         letterTF102.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF102.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF102.setText("H");
+        solutionPanel.add(letterTF102);
+        letterTF102.setBounds(238, 98, 40, 40);
 
         letterTF103.setBackground(new java.awt.Color(0, 0, 0));
         letterTF103.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF103.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF103);
+        letterTF103.setBounds(238, 388, 40, 40);
 
         letterTF104.setBackground(new java.awt.Color(0, 0, 0));
         letterTF104.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF104.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF104);
+        letterTF104.setBounds(238, 446, 40, 40);
 
         letterTF105.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF105.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF105.setText("E");
+        solutionPanel.add(letterTF105);
+        letterTF105.setBounds(238, 156, 40, 40);
 
         letterTF106.setBackground(new java.awt.Color(0, 0, 0));
         letterTF106.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF106.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF106);
+        letterTF106.setBounds(238, 504, 40, 40);
 
         letterTF107.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF107.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF107.setText("O");
+        solutionPanel.add(letterTF107);
+        letterTF107.setBounds(296, 446, 40, 40);
 
         letterTF108.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF108.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF108.setText("A");
+        solutionPanel.add(letterTF108);
+        letterTF108.setBounds(238, 214, 40, 40);
 
         letterTF109.setBackground(new java.awt.Color(0, 0, 0));
         letterTF109.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF109.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF109);
+        letterTF109.setBounds(296, 504, 40, 40);
 
         letterTF110.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF110.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF110.setText("T");
+        solutionPanel.add(letterTF110);
+        letterTF110.setBounds(238, 272, 40, 40);
 
         letterTF111.setBackground(new java.awt.Color(0, 0, 0));
         letterTF111.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF111.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF111);
+        letterTF111.setBounds(296, 330, 40, 40);
 
         letterTF112.setBackground(new java.awt.Color(0, 0, 0));
         letterTF112.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF112.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF112);
+        letterTF112.setBounds(296, 98, 40, 40);
 
         letterTF113.setBackground(new java.awt.Color(0, 0, 0));
         letterTF113.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF113.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF113);
+        letterTF113.setBounds(296, 388, 40, 40);
 
         letterTF114.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF114.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF114.setText("N");
+        solutionPanel.add(letterTF114);
+        letterTF114.setBounds(296, 156, 40, 40);
 
         letterTF115.setBackground(new java.awt.Color(0, 0, 0));
         letterTF115.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF115.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF115);
+        letterTF115.setBounds(412, 214, 40, 40);
 
         letterTF116.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF116.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF116.setText("E");
+        solutionPanel.add(letterTF116);
+        letterTF116.setBounds(412, 272, 40, 40);
 
         letterTF117.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF117.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF117.setText("A");
+        solutionPanel.add(letterTF117);
+        letterTF117.setBounds(354, 330, 40, 40);
 
         letterTF118.setBackground(new java.awt.Color(0, 0, 0));
         letterTF118.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF118.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF118);
+        letterTF118.setBounds(354, 98, 40, 40);
 
         letterTF119.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF119.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF119.setText("I");
+        solutionPanel.add(letterTF119);
+        letterTF119.setBounds(354, 388, 40, 40);
 
         letterTF120.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF120.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -1007,26 +1066,38 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF120ActionPerformed(evt);
             }
         });
+        solutionPanel.add(letterTF120);
+        letterTF120.setBounds(354, 446, 40, 40);
 
         letterTF121.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF121.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF121.setText("D");
+        solutionPanel.add(letterTF121);
+        letterTF121.setBounds(354, 156, 40, 40);
 
         letterTF122.setBackground(new java.awt.Color(0, 0, 0));
         letterTF122.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF122.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF122);
+        letterTF122.setBounds(354, 504, 40, 40);
 
         letterTF123.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF123.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         letterTF123.setText("E");
+        solutionPanel.add(letterTF123);
+        letterTF123.setBounds(412, 446, 40, 40);
 
         letterTF124.setBackground(new java.awt.Color(0, 0, 0));
         letterTF124.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF124.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF124);
+        letterTF124.setBounds(354, 214, 40, 40);
 
         letterTF125.setBackground(new java.awt.Color(0, 0, 0));
         letterTF125.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF125.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(letterTF125);
+        letterTF125.setBounds(412, 504, 40, 40);
 
         letterTF126.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF126.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -1036,291 +1107,14 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 letterTF126ActionPerformed(evt);
             }
         });
+        solutionPanel.add(letterTF126);
+        letterTF126.setBounds(354, 272, 40, 40);
 
         letterTF127.setBackground(new java.awt.Color(0, 0, 0));
         letterTF127.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         letterTF127.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        javax.swing.GroupLayout solutionPanelLayout = new javax.swing.GroupLayout(solutionPanel);
-        solutionPanel.setLayout(solutionPanelLayout);
-        solutionPanelLayout.setHorizontalGroup(
-            solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(solutionPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel2)
-                    .addComponent(crosswordProgress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(solutionPanelLayout.createSequentialGroup()
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF76, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF75, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF77, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF78, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF82, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF81, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF79, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF80, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF68, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF67, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF69, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF70, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF72, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF71, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF73, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF74, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF87, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF85, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF88, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF90, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF97, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF95, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF91, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF93, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF89, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF86, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF92, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF94, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF98, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF96, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF83, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF84, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF103, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF101, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF104, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF106, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF113, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF111, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF107, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF109, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF105, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF102, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF108, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF110, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF114, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF112, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF99, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF100, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF119, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF117, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF120, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF122, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF65, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF127, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF123, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF125, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF121, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF118, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF124, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF126, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(letterTF66, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF64, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF115, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(letterTF116, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(clueLabel1)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))))
-                .addContainerGap())
-        );
-        solutionPanelLayout.setVerticalGroup(
-            solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(solutionPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(crosswordProgress, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(solutionPanelLayout.createSequentialGroup()
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF67, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF68, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF69, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF70, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF71, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF72, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF73, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF74, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF75, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF76, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF77, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF78, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF81, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF82, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF79, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF80, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(solutionPanelLayout.createSequentialGroup()
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF86, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF89, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF92, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF94, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF96, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF98, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF83, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF84, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF85, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF87, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF88, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF90, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF95, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF97, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF91, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF93, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(solutionPanelLayout.createSequentialGroup()
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF102, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF105, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF108, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF110, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF112, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF114, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF99, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF100, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF101, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF103, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF104, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF106, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF111, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF113, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF107, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF109, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(solutionPanelLayout.createSequentialGroup()
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF118, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF121, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF124, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF126, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF64, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF66, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF115, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF116, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(solutionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF117, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF119, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF120, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF122, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(solutionPanelLayout.createSequentialGroup()
-                                .addComponent(letterTF127, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF65, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF123, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(letterTF125, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(solutionPanelLayout.createSequentialGroup()
-                        .addComponent(clueLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        solutionPanel.add(letterTF127);
+        letterTF127.setBounds(412, 330, 40, 40);
 
         adaptabilityTab.addTab("Solution", solutionPanel);
 
@@ -1565,6 +1359,22 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
     private javax.swing.JTextField letterTF97;
     private javax.swing.JTextField letterTF98;
     private javax.swing.JTextField letterTF99;
+    private javax.swing.JLabel number1LBL;
+    private javax.swing.JLabel number1LBL1;
+    private javax.swing.JLabel number2LBL;
+    private javax.swing.JLabel number2LBL1;
+    private javax.swing.JLabel number3LBL;
+    private javax.swing.JLabel number3LBL1;
+    private javax.swing.JLabel number4LBL;
+    private javax.swing.JLabel number4LBL1;
+    private javax.swing.JLabel number5LBL;
+    private javax.swing.JLabel number5LBL1;
+    private javax.swing.JLabel number6LBL;
+    private javax.swing.JLabel number6LBL1;
+    private javax.swing.JLabel number7LBL;
+    private javax.swing.JLabel number7LBL1;
+    private javax.swing.JLabel number8LBL;
+    private javax.swing.JLabel number8LBL1;
     private javax.swing.JPanel solutionPanel;
     // End of variables declaration//GEN-END:variables
 }
