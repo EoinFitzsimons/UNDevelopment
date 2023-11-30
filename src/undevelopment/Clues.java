@@ -8,6 +8,23 @@ package undevelopment;
  *
  * @author eoin0
  */
-public class Clues {
-    
+public class Clues extends CrosswordWords{
+    private String clue;
+    private char hint;
+
+    public Clues(String clue, char hint, int id, int legnth, boolean isVertical) {
+        super(id, legnth, isVertical);
+        this.clue = clue;
+        this.hint = hint;
+    }
+
+
+
+    public String getClue() {
+        return clue;
+    }
+
+    public void setClue(String clue) {
+        this.clue = clue;
+    }
 }

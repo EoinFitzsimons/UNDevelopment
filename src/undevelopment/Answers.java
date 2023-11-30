@@ -8,6 +8,41 @@ package undevelopment;
  *
  * @author eoin0
  */
-public class Answers {
-    
+public class Answers extends CrosswordWords{
+    private String guess,answer;
+    private boolean isCorrect;
+
+    public Answers(String guess, String answer, boolean isCorrect, int id, int legnth, boolean isVertical) {
+        super(id, legnth, isVertical);
+        this.guess = guess;
+        this.answer = answer;
+        this.isCorrect = isCorrect;
+    }
+
+
+
+    public String getGuess() {
+        return guess;
+    }
+
+    public void setGuess(String guess) {
+        this.guess = guess;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public boolean isIsCorrect() {
+        return isCorrect;
+    }
+
+    public void setIsCorrect(boolean isCorrect) {
+        this.isCorrect = isCorrect;
+    }
+        
 }

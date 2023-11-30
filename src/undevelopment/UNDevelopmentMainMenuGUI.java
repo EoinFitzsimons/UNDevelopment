@@ -226,7 +226,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         scoreLabel2.setText("Last Time:");
 
         scoreLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        scoreLabel3.setText("Best Time::");
+        scoreLabel3.setText("Best Time:");
 
         javax.swing.GroupLayout adaptabilityBackgroundLayout = new javax.swing.GroupLayout(adaptabilityBackground);
         adaptabilityBackground.setLayout(adaptabilityBackgroundLayout);
