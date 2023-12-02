@@ -106,7 +106,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Specialissues">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Special Issues"/>
+        <Property name="text" type="java.lang.String" value="Population Trends"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SpecialissuesActionPerformed"/>

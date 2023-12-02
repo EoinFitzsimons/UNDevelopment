@@ -61,7 +61,7 @@ public class Quizgui extends javax.swing.JFrame {
             }
         });
 
-        Specialissues.setText("Special Issues");
+        Specialissues.setText("Population Trends");
         Specialissues.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SpecialissuesActionPerformed(evt);
@@ -227,7 +227,7 @@ public class Quizgui extends javax.swing.JFrame {
 
     private void SpecialissuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpecialissuesActionPerformed
         setVisible(false); 
-        specialIssues sp1 = new specialIssues();        // TODO add your handling code here:
+        PopulationTrends pt1 = new PopulationTrends();        // TODO add your handling code here:
     }//GEN-LAST:event_SpecialissuesActionPerformed
 
     private void SIDSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIDSActionPerformed
