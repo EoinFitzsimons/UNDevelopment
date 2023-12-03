@@ -4,6 +4,8 @@
  */
 package undevelopment;
 
+import undevelopment.IntegrationsFolder.cardGame;
+
 
 
 /**
@@ -484,6 +486,8 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         IntegrationsUI load = new IntegrationsUI();
         load.setVisible(true);
+        cardGame load1 = new cardGame();
+        load1.ScriptRunner();
         
     }//GEN-LAST:event_loadIntegrationAppActionPerformed
 

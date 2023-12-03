@@ -51,33 +51,17 @@ public class cardGame extends handleInputs {
     
     choiceCardHolder test = new choiceCardHolder();
    
-    public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
+   // public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
     public static Connection Myconn;
     
     public void ScriptRunner() 
     {
-   
-        new File("c:/myDB/").mkdir();
-        
-        
-        
-        
-        try
+          try{
+              DriverManager.registerDriver(new org.sqlite.JDBC());
+            Myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"); // .getConnection("link to db","username","password")
+        } catch(SQLException ex)
         {
-             DriverManager.registerDriver(new org.sqlite.JDBC());
-            Myconn = DriverManager.getConnection(url);
-          ScriptRunner runner = new ScriptRunner(Myconn,false,false);
-          Reader reader = new BufferedReader(new FileReader("src/integrationsFolder/score.sql"));
-          runner.runScript(reader);
-          JOptionPane.showMessageDialog(null, "database and tables added");
-        }
-        catch(SQLException e)
-        {
-            System.out.println(e);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(cardGame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(cardGame.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error connection to db"+ex.getMessage());
         }
     }
     
@@ -152,7 +136,7 @@ public class cardGame extends handleInputs {
                  
              } 
            
-           
+            displayDB();
              
              
              os.close();
@@ -173,7 +157,7 @@ public class cardGame extends handleInputs {
     
     public void displayDB()
     {
-         try(Connection conn = DriverManager.getConnection(url))
+         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"))
           {
                Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM integrationsScore");
@@ -184,12 +168,12 @@ public class cardGame extends handleInputs {
                     String name = rs.getString("userName");
                     String score = rs.getString("score");
                     
-                    undevelopment.IntegrationsUI.displayScoreArea.append(id+"/t"+name+"/t"+score);
+                    undevelopment.IntegrationsUI.displayScoreArea.append(id+"\t"+name+"\t"+score+"\n");
                 }
                 
           }
-          catch(Exception e){
-              System.out.println("this is an error"+e);
+          catch(SQLException ex){
+              System.out.println("this is an error"+ex);
           
           }
     }
