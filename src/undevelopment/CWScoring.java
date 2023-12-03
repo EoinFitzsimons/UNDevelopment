@@ -4,21 +4,36 @@
  */
 package undevelopment;
 
+import java.io.Serializable;
+
 /**
  *
  * @author eoin0
  */
-public class CWScoring {
-    private int score;
-    private double time;
+public class CWScoring implements Serializable{
+    protected int score;
+    protected double time;
+    protected String user;
 
-    public CWScoring(int score, double time) {
+    public CWScoring(int score, double time, String user) {
         this.score = score;
         this.time = time;
+        this.user = user;
+    }
+
+    public CWScoring() {
     }
 
     public int getScore() {
         return score;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public void setScore(int score) {
@@ -33,5 +48,9 @@ public class CWScoring {
         this.time = time;
     }
     
+    @Override
+    public String toString() {
+        return "Hello " + user + ", your score is " + score + ", you took " + time + "seconds.";
+    }
     
 }

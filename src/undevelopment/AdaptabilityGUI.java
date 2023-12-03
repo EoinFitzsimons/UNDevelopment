@@ -4,7 +4,19 @@
  */
 package undevelopment;
 
-import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
@@ -12,27 +24,30 @@ import javax.swing.JTextField;
  */
 public class AdaptabilityGUI extends javax.swing.JFrame {
 
-    private String identifiers[];
+    ArrayList<CWScoring> cwlist;
+    private Timer timer;
+    private long startTime;
+    int progress = 0;
+    long elapsedSeconds;
 
     /**
      * Creates new form Tabs
      */
     public AdaptabilityGUI() {
         initComponents();
-        generateIdentifiers();
+        cwlist = new ArrayList<>();
+        // Initialize the text field and hide it
+        timeTF.setVisible(false);
 
-        JTextField[][] textFields = new JTextField[8][8]; // 8x8 grid of text fields
-
-        for (char row = 'a'; row <= 'h'; row++) {
-            for (int col = 1; col <= 8; col++) {
-                int rowIndex = row - 'a'; // 0 to 7
-                int colIndex = col - 1;   // 0 to 7
-
-                String identifier = row + String.valueOf(col) + "TF";
-                textFields[rowIndex][colIndex] = (JTextField) getContentPane().getComponentByName(identifier);
+        // Initialize the timer
+        timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                long now = System.currentTimeMillis();
+                long elapsedSeconds = (now - startTime) / 1000;
+                timeTF.setText("Time Elapsed: " + elapsedSeconds);
             }
-        }
-
+        });
         String[] crosswordSquares = {
             "a1TF,", "a2TF", "a3TF", "a4TF", "a5TF", "a6TF", "a7TF", "a8TF",
             "b1TF,", "b2TF", "b3TF", "b4TF", "b5TF", "b6TF", "b7TF", "b8TF",
@@ -55,51 +70,6 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         String[] acrossWords = {"EARTH", "END", "MOISTURE", "FISH", "ONE"};
         String[] downWords = {"EARMUFFS", "HEAT", "WINDS", "RAIN"};
-
-        // Inside your AdaptabilityGUI class, after generating identifiers and crosswordSolution
-        // Loop through the crosswordSolution and set values to text fields
-        for (int i = 0; i < crosswordSolution.length; i++) {
-            String solution = crosswordSolution[i];
-            String identifier = identifiers[i];
-
-            // Find the text field corresponding to the identifier
-            JTextField textField = findTextField(identifier);
-
-            // If textField is not null and the solution is not null, set the text
-            if (textField != null && solution != null) {
-                textField.setText(solution);
-            }
-        }
-    }
-    // Method to find JTextField by its identifier
-
-    private JTextField findTextField(String identifier) {
-        for (java.awt.Component comp : getContentPane().getComponents()) {
-            if (comp instanceof JTextField && comp.getName() != null && comp.getName().equals(identifier)) {
-                return (JTextField) comp;
-            }
-        }
-        return null; // Return null if not found
-    }
-// Method to generate identifiers
-
-    private void generateIdentifiers() {
-        // Create an array to hold the generated identifiers
-        identifiers = new String[64]; // 8 rows * 8 columns
-
-        // Loop through rows (letters a to h)
-        for (char row = 'a'; row <= 'h'; row++) {
-            // Loop through columns (numbers 1 to 8)
-            for (int col = 1; col <= 8; col++) {
-                // Create the identifier using the row and column
-                String identifier = row + String.valueOf(col) + "TF";
-                // Add the identifier to the array
-                identifiers[(row - 'a') * 8 + (col - 1)] = identifier;
-            }
-        }
-        // Now you have your identifiers generated in the 'identifiers' array
-        // You can use this array as needed within your class
-
     }
 
     /**
@@ -124,7 +94,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         a8TF = new javax.swing.JTextField();
         f8TF = new javax.swing.JTextField();
         b8TF = new javax.swing.JTextField();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        cwProgress = new javax.swing.JProgressBar();
         clueLabel = new javax.swing.JLabel();
         a1TF = new javax.swing.JTextField();
         b1TF = new javax.swing.JTextField();
@@ -190,11 +160,11 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         h8TF = new javax.swing.JTextField();
         d7TF = new javax.swing.JTextField();
         e8TF = new javax.swing.JTextField();
-        timeLBL = new javax.swing.JLabel();
-        hintBTN = new javax.swing.JButton();
-        sltnBTN = new javax.swing.JButton();
+        startBTN = new javax.swing.JButton();
+        guessBTN = new javax.swing.JButton();
+        timeTF = new javax.swing.JTextField();
+        stopBTN = new javax.swing.JButton();
         solutionPanel = new javax.swing.JPanel();
-        crosswordProgress = new javax.swing.JProgressBar();
         clueLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
@@ -319,33 +289,37 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         a8TF.setBackground(new java.awt.Color(0, 0, 0));
         a8TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a8TF.setForeground(new java.awt.Color(255, 0, 51));
         a8TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(a8TF);
         a8TF.setBounds(412, 98, 40, 40);
 
         f8TF.setBackground(new java.awt.Color(0, 0, 0));
         f8TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f8TF.setForeground(new java.awt.Color(255, 0, 51));
         f8TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(f8TF);
         f8TF.setBounds(412, 388, 40, 40);
 
         b8TF.setBackground(new java.awt.Color(0, 0, 0));
         b8TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b8TF.setForeground(new java.awt.Color(255, 0, 51));
         b8TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(b8TF);
         b8TF.setBounds(412, 156, 40, 40);
 
-        jProgressBar1.setBackground(new java.awt.Color(100, 200, 100));
-        jProgressBar1.setForeground(new java.awt.Color(100, 150, 200));
-        jProgressBar1.setToolTipText("Crossword Completion");
-        jProgressBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        crosswordPanel.add(jProgressBar1);
-        jProgressBar1.setBounds(6, 60, 788, 20);
+        cwProgress.setBackground(new java.awt.Color(100, 200, 100));
+        cwProgress.setForeground(new java.awt.Color(100, 150, 200));
+        cwProgress.setMaximum(64);
+        cwProgress.setToolTipText("Crossword Completion");
+        cwProgress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        crosswordPanel.add(cwProgress);
+        cwProgress.setBounds(6, 60, 788, 20);
 
         clueLabel.setForeground(new java.awt.Color(255, 255, 255));
         clueLabel.setText("Clues");
         crosswordPanel.add(clueLabel);
-        clueLabel.setBounds(464, 98, 40, 16);
+        clueLabel.setBounds(470, 160, 40, 16);
 
         a1TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
         a1TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -375,12 +349,14 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         b2TF.setBackground(new java.awt.Color(0, 0, 0));
         b2TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b2TF.setForeground(new java.awt.Color(255, 0, 51));
         b2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(b2TF);
         b2TF.setBounds(64, 156, 40, 40);
 
         c2TF.setBackground(new java.awt.Color(0, 0, 0));
         c2TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c2TF.setForeground(new java.awt.Color(255, 0, 51));
         c2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(c2TF);
         c2TF.setBounds(64, 214, 40, 40);
@@ -417,24 +393,28 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         h2TF.setBackground(new java.awt.Color(0, 0, 0));
         h2TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h2TF.setForeground(new java.awt.Color(255, 0, 51));
         h2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(h2TF);
         h2TF.setBounds(64, 504, 40, 40);
 
         e2TF.setBackground(new java.awt.Color(0, 0, 0));
         e2TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e2TF.setForeground(new java.awt.Color(255, 0, 51));
         e2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(e2TF);
         e2TF.setBounds(64, 330, 40, 40);
 
         f2TF.setBackground(new java.awt.Color(0, 0, 0));
         f2TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f2TF.setForeground(new java.awt.Color(255, 0, 51));
         f2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(f2TF);
         f2TF.setBounds(64, 388, 40, 40);
 
         c4TF.setBackground(new java.awt.Color(0, 0, 0));
         c4TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c4TF.setForeground(new java.awt.Color(255, 0, 51));
         c4TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(c4TF);
         c4TF.setBounds(180, 214, 40, 40);
@@ -466,6 +446,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         b3TF.setBackground(new java.awt.Color(0, 0, 0));
         b3TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b3TF.setForeground(new java.awt.Color(255, 0, 51));
         b3TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(b3TF);
         b3TF.setBounds(122, 156, 40, 40);
@@ -476,10 +457,11 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         crosswordPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(464, 132, 330, 412);
+        jScrollPane1.setBounds(464, 174, 330, 370);
 
         h3TF.setBackground(new java.awt.Color(0, 0, 0));
         h3TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h3TF.setForeground(new java.awt.Color(255, 0, 51));
         h3TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(h3TF);
         h3TF.setBounds(122, 504, 40, 40);
@@ -496,6 +478,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         h4TF.setBackground(new java.awt.Color(0, 0, 0));
         h4TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h4TF.setForeground(new java.awt.Color(255, 0, 51));
         h4TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(h4TF);
         h4TF.setBounds(180, 504, 40, 40);
@@ -507,6 +490,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         e4TF.setBackground(new java.awt.Color(0, 0, 0));
         e4TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e4TF.setForeground(new java.awt.Color(255, 0, 51));
         e4TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(e4TF);
         e4TF.setBounds(180, 330, 40, 40);
@@ -518,18 +502,21 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         f4TF.setBackground(new java.awt.Color(0, 0, 0));
         f4TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f4TF.setForeground(new java.awt.Color(255, 0, 51));
         f4TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(f4TF);
         f4TF.setBounds(180, 388, 40, 40);
 
         b4TF.setBackground(new java.awt.Color(0, 0, 0));
         b4TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b4TF.setForeground(new java.awt.Color(255, 0, 51));
         b4TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(b4TF);
         b4TF.setBounds(180, 156, 40, 40);
 
         c6TF.setBackground(new java.awt.Color(0, 0, 0));
         c6TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c6TF.setForeground(new java.awt.Color(255, 0, 51));
         c6TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(c6TF);
         c6TF.setBounds(296, 214, 40, 40);
@@ -547,6 +534,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         e5TF.setBackground(new java.awt.Color(0, 0, 0));
         e5TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e5TF.setForeground(new java.awt.Color(255, 0, 51));
         e5TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(e5TF);
         e5TF.setBounds(238, 330, 40, 40);
@@ -558,12 +546,14 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         f5TF.setBackground(new java.awt.Color(0, 0, 0));
         f5TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f5TF.setForeground(new java.awt.Color(255, 0, 51));
         f5TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(f5TF);
         f5TF.setBounds(238, 388, 40, 40);
 
         g5TF.setBackground(new java.awt.Color(0, 0, 0));
         g5TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g5TF.setForeground(new java.awt.Color(255, 0, 51));
         g5TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(g5TF);
         g5TF.setBounds(238, 446, 40, 40);
@@ -575,6 +565,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         h5TF.setBackground(new java.awt.Color(0, 0, 0));
         h5TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h5TF.setForeground(new java.awt.Color(255, 0, 51));
         h5TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(h5TF);
         h5TF.setBounds(238, 504, 40, 40);
@@ -591,6 +582,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         h6TF.setBackground(new java.awt.Color(0, 0, 0));
         h6TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h6TF.setForeground(new java.awt.Color(255, 0, 51));
         h6TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(h6TF);
         h6TF.setBounds(296, 504, 40, 40);
@@ -602,18 +594,21 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         e6TF.setBackground(new java.awt.Color(0, 0, 0));
         e6TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e6TF.setForeground(new java.awt.Color(255, 0, 51));
         e6TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(e6TF);
         e6TF.setBounds(296, 330, 40, 40);
 
         a6TF.setBackground(new java.awt.Color(0, 0, 0));
         a6TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a6TF.setForeground(new java.awt.Color(255, 0, 51));
         a6TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(a6TF);
         a6TF.setBounds(296, 98, 40, 40);
 
         f6TF.setBackground(new java.awt.Color(0, 0, 0));
         f6TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f6TF.setForeground(new java.awt.Color(255, 0, 51));
         f6TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(f6TF);
         f6TF.setBounds(296, 388, 40, 40);
@@ -625,6 +620,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         c8TF.setBackground(new java.awt.Color(0, 0, 0));
         c8TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c8TF.setForeground(new java.awt.Color(255, 0, 51));
         c8TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(c8TF);
         c8TF.setBounds(412, 214, 40, 40);
@@ -641,6 +637,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         a7TF.setBackground(new java.awt.Color(0, 0, 0));
         a7TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a7TF.setForeground(new java.awt.Color(255, 0, 51));
         a7TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(a7TF);
         a7TF.setBounds(354, 98, 40, 40);
@@ -662,6 +659,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         h7TF.setBackground(new java.awt.Color(0, 0, 0));
         h7TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h7TF.setForeground(new java.awt.Color(255, 0, 51));
         h7TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(h7TF);
         h7TF.setBounds(354, 504, 40, 40);
@@ -673,12 +671,14 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         c7TF.setBackground(new java.awt.Color(0, 0, 0));
         c7TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c7TF.setForeground(new java.awt.Color(255, 0, 51));
         c7TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(c7TF);
         c7TF.setBounds(354, 214, 40, 40);
 
         h8TF.setBackground(new java.awt.Color(0, 0, 0));
         h8TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h8TF.setForeground(new java.awt.Color(255, 0, 51));
         h8TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(h8TF);
         h8TF.setBounds(412, 504, 40, 40);
@@ -690,32 +690,42 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         e8TF.setBackground(new java.awt.Color(0, 0, 0));
         e8TF.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e8TF.setForeground(new java.awt.Color(255, 0, 51));
         e8TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         crosswordPanel.add(e8TF);
         e8TF.setBounds(412, 330, 40, 40);
 
-        timeLBL.setForeground(new java.awt.Color(255, 255, 255));
-        timeLBL.setText("Time Remaining: XX");
-        crosswordPanel.add(timeLBL);
-        timeLBL.setBounds(670, 100, 120, 16);
-
-        hintBTN.setText("Hint");
-        hintBTN.addActionListener(new java.awt.event.ActionListener() {
+        startBTN.setText("Start");
+        startBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hintBTNActionPerformed(evt);
+                startBTNActionPerformed(evt);
             }
         });
-        crosswordPanel.add(hintBTN);
-        hintBTN.setBounds(600, 100, 60, 23);
+        crosswordPanel.add(startBTN);
+        startBTN.setBounds(470, 100, 60, 23);
 
-        sltnBTN.setText("Solution");
-        sltnBTN.addActionListener(new java.awt.event.ActionListener() {
+        guessBTN.setText("Guess");
+        guessBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sltnBTNActionPerformed(evt);
+                guessBTNActionPerformed(evt);
             }
         });
-        crosswordPanel.add(sltnBTN);
-        sltnBTN.setBounds(510, 100, 80, 23);
+        crosswordPanel.add(guessBTN);
+        guessBTN.setBounds(470, 130, 80, 23);
+
+        timeTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        timeTF.setText("Time Elapsed: 0");
+        crosswordPanel.add(timeTF);
+        timeTF.setBounds(670, 100, 120, 22);
+
+        stopBTN.setText("Stop");
+        stopBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stopBTNActionPerformed(evt);
+            }
+        });
+        crosswordPanel.add(stopBTN);
+        stopBTN.setBounds(540, 100, 60, 23);
 
         adaptabilityTab.addTab("Game", crosswordPanel);
 
@@ -724,13 +734,6 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         solutionPanel.setMinimumSize(new java.awt.Dimension(800, 600));
         solutionPanel.setRequestFocusEnabled(false);
         solutionPanel.setLayout(null);
-
-        crosswordProgress.setBackground(new java.awt.Color(100, 200, 100));
-        crosswordProgress.setForeground(new java.awt.Color(100, 150, 200));
-        crosswordProgress.setToolTipText("Crossword Completion");
-        crosswordProgress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        solutionPanel.add(crosswordProgress);
-        crosswordProgress.setBounds(6, 60, 788, 20);
 
         clueLabel1.setForeground(new java.awt.Color(255, 255, 255));
         clueLabel1.setText("Clues");
@@ -752,6 +755,11 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         titleLBL2.setBounds(185, 6, 430, 48);
 
         backBTN.setText("Back");
+        backBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBTNActionPerformed(evt);
+            }
+        });
         solutionPanel.add(backBTN);
         backBTN.setBounds(700, 100, 80, 23);
 
@@ -1188,13 +1196,271 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void hintBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hintBTNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hintBTNActionPerformed
 
-    private void sltnBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sltnBTNActionPerformed
+    private void startBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBTNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_sltnBTNActionPerformed
+
+        // Start the timer
+        if (!timer.isRunning()) {
+            startTime = System.currentTimeMillis();
+            timer.start();
+        }
+
+        // Show the text field
+        timeTF.setVisible(true);
+    }//GEN-LAST:event_startBTNActionPerformed
+
+    private void guessBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guessBTNActionPerformed
+        // TODO add your handling code here:
+
+        //Takes the text from both crossword grids, if you were to change the solution then it would dynamically update what a correct guess would be
+        String guessa1TF = (a1TF.getText());
+        String guessa2TF = (a2TF.getText());
+        String guessa3TF = (a3TF.getText());
+        String guessa4TF = (a4TF.getText());
+        String guessa5TF = (a5TF.getText());
+        String guessa6TF = (a6TF.getText());
+        String guessa7TF = (a7TF.getText());
+        String guessa8TF = (a8TF.getText());
+
+        String guessb1TF = (b1TF.getText());
+        String guessb2TF = (b2TF.getText());
+        String guessb3TF = (b3TF.getText());
+        String guessb4TF = (b4TF.getText());
+        String guessb5TF = (b5TF.getText());
+        String guessb6TF = (b6TF.getText());
+        String guessb7TF = (b7TF.getText());
+        String guessb8TF = (b8TF.getText());
+
+        String guessc1TF = (c1TF.getText());
+        String guessc2TF = (c2TF.getText());
+        String guessc3TF = (c3TF.getText());
+        String guessc4TF = (c4TF.getText());
+        String guessc5TF = (c5TF.getText());
+        String guessc6TF = (c6TF.getText());
+        String guessc7TF = (c7TF.getText());
+        String guessc8TF = (c8TF.getText());
+
+        String guessd1TF = (d1TF.getText());
+        String guessd2TF = (d2TF.getText());
+        String guessd3TF = (d3TF.getText());
+        String guessd4TF = (d4TF.getText());
+        String guessd5TF = (d5TF.getText());
+        String guessd6TF = (d6TF.getText());
+        String guessd7TF = (d7TF.getText());
+        String guessd8TF = (d8TF.getText());
+
+        String guesse1TF = (e1TF.getText());
+        String guesse2TF = (e2TF.getText());
+        String guesse3TF = (e3TF.getText());
+        String guesse4TF = (e4TF.getText());
+        String guesse5TF = (e5TF.getText());
+        String guesse6TF = (e6TF.getText());
+        String guesse7TF = (e7TF.getText());
+        String guesse8TF = (e8TF.getText());
+
+        String guessf1TF = (f1TF.getText());
+        String guessf2TF = (f2TF.getText());
+        String guessf3TF = (f3TF.getText());
+        String guessf4TF = (f4TF.getText());
+        String guessf5TF = (f5TF.getText());
+        String guessf6TF = (f6TF.getText());
+        String guessf7TF = (f7TF.getText());
+        String guessf8TF = (f8TF.getText());
+
+        String guessg1TF = (g1TF.getText());
+        String guessg2TF = (g2TF.getText());
+        String guessg3TF = (g3TF.getText());
+        String guessg4TF = (g4TF.getText());
+        String guessg5TF = (g5TF.getText());
+        String guessg6TF = (g6TF.getText());
+        String guessg7TF = (g7TF.getText());
+        String guessg8TF = (g8TF.getText());
+
+        String guessh1TF = (h1TF.getText());
+        String guessh2TF = (h2TF.getText());
+        String guessh3TF = (h3TF.getText());
+        String guessh4TF = (h4TF.getText());
+        String guessh5TF = (h5TF.getText());
+        String guessh6TF = (h6TF.getText());
+        String guessh7TF = (h7TF.getText());
+        String guessh8TF = (h8TF.getText());
+
+        String[] guessArray = {
+            guessa1TF, guessa2TF, guessa3TF, guessa4TF, guessa5TF, guessa6TF, guessa7TF, guessa8TF,
+            guessb1TF, guessb2TF, guessb3TF, guessb4TF, guessb5TF, guessb6TF, guessb7TF, guessb8TF,
+            guessc1TF, guessc2TF, guessc3TF, guessc4TF, guessc5TF, guessc6TF, guessc7TF, guessc8TF,
+            guessd1TF, guessd2TF, guessd3TF, guessd4TF, guessd5TF, guessd6TF, guessd7TF, guessd8TF,
+            guesse1TF, guesse2TF, guesse3TF, guesse4TF, guesse5TF, guesse6TF, guesse7TF, guesse8TF,
+            guessf1TF, guessf2TF, guessf3TF, guessf4TF, guessf5TF, guessf6TF, guessf7TF, guessf8TF,
+            guessg1TF, guessg2TF, guessg3TF, guessg4TF, guessg5TF, guessg6TF, guessg7TF, guessg8TF,
+            guessh1TF, guessh2TF, guessh3TF, guessh4TF, guessh5TF, guessh6TF, guessh7TF, guessh8TF
+        };
+
+        String ansa1TF = (a1TF1.getText());
+        String ansa2TF = (a2TF1.getText());
+        String ansa3TF = (a3TF1.getText());
+        String ansa4TF = (a4TF1.getText());
+        String ansa5TF = (a5TF1.getText());
+        String ansa6TF = (a6TF1.getText());
+        String ansa7TF = (a7TF1.getText());
+        String ansa8TF = (a8TF1.getText());
+
+        String ansb1TF = (b1TF1.getText());
+        String ansb2TF = (b2TF1.getText());
+        String ansb3TF = (b3TF1.getText());
+        String ansb4TF = (b4TF1.getText());
+        String ansb5TF = (b5TF1.getText());
+        String ansb6TF = (b6TF1.getText());
+        String ansb7TF = (b7TF1.getText());
+        String ansb8TF = (b8TF1.getText());
+
+        String ansc1TF = (c1TF1.getText());
+        String ansc2TF = (c2TF1.getText());
+        String ansc3TF = (c3TF1.getText());
+        String ansc4TF = (c4TF1.getText());
+        String ansc5TF = (c5TF1.getText());
+        String ansc6TF = (c6TF1.getText());
+        String ansc7TF = (c7TF1.getText());
+        String ansc8TF = (c8TF1.getText());
+
+        String ansd1TF = (d1TF1.getText());
+        String ansd2TF = (d2TF1.getText());
+        String ansd3TF = (d3TF1.getText());
+        String ansd4TF = (d4TF1.getText());
+        String ansd5TF = (d5TF1.getText());
+        String ansd6TF = (d6TF1.getText());
+        String ansd7TF = (d7TF1.getText());
+        String ansd8TF = (d8TF1.getText());
+
+        String anse1TF = (e1TF1.getText());
+        String anse2TF = (e2TF1.getText());
+        String anse3TF = (e3TF1.getText());
+        String anse4TF = (e4TF1.getText());
+        String anse5TF = (e5TF1.getText());
+        String anse6TF = (e6TF1.getText());
+        String anse7TF = (e7TF1.getText());
+        String anse8TF = (e8TF1.getText());
+
+        String ansf1TF = (f1TF1.getText());
+        String ansf2TF = (f2TF1.getText());
+        String ansf3TF = (f3TF1.getText());
+        String ansf4TF = (f4TF1.getText());
+        String ansf5TF = (f5TF1.getText());
+        String ansf6TF = (f6TF1.getText());
+        String ansf7TF = (f7TF1.getText());
+        String ansf8TF = (f8TF1.getText());
+
+        String ansg1TF = (g1TF1.getText());
+        String ansg2TF = (g2TF1.getText());
+        String ansg3TF = (g3TF1.getText());
+        String ansg4TF = (g4TF1.getText());
+        String ansg5TF = (g5TF1.getText());
+        String ansg6TF = (g6TF1.getText());
+        String ansg7TF = (g7TF1.getText());
+        String ansg8TF = (g8TF1.getText());
+
+        String ansh1TF = (h1TF1.getText());
+        String ansh2TF = (h2TF1.getText());
+        String ansh3TF = (h3TF1.getText());
+        String ansh4TF = (h4TF1.getText());
+        String ansh5TF = (h5TF1.getText());
+        String ansh6TF = (h6TF1.getText());
+        String ansh7TF = (h7TF1.getText());
+        String ansh8TF = (h8TF1.getText());
+
+        String[] ansArray = {
+            ansa1TF, ansa2TF, ansa3TF, ansa4TF, ansa5TF, ansa6TF, ansa7TF, ansa8TF,
+            ansb1TF, ansb2TF, ansb3TF, ansb4TF, ansb5TF, ansb6TF, ansb7TF, ansb8TF,
+            ansc1TF, ansc2TF, ansc3TF, ansc4TF, ansc5TF, ansc6TF, ansc7TF, ansc8TF,
+            ansd1TF, ansd2TF, ansd3TF, ansd4TF, ansd5TF, ansd6TF, ansd7TF, ansd8TF,
+            anse1TF, anse2TF, anse3TF, anse4TF, anse5TF, anse6TF, anse7TF, anse8TF,
+            ansf1TF, ansf2TF, ansf3TF, ansf4TF, ansf5TF, ansf6TF, ansf7TF, ansf8TF,
+            ansg1TF, ansg2TF, ansg3TF, ansg4TF, ansg5TF, ansg6TF, ansg7TF, ansg8TF,
+            ansh1TF, ansh2TF, ansh3TF, ansh4TF, ansh5TF, ansh6TF, ansh7TF, ansh8TF
+        };
+
+        // Compare the arrays and update the progress bar
+         progress = 0;
+        for (int i = 0; i < ansArray.length; i++) {
+            if (ansArray[i].equalsIgnoreCase(guessArray[i])) {
+                progress++;
+            }
+        }
+        cwProgress.setValue(progress);
+
+
+    }//GEN-LAST:event_guessBTNActionPerformed
+
+    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
+        // TODO add your handling code here:
+        UNDevelopmentMainMenuGUI load = new UNDevelopmentMainMenuGUI();
+        load.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backBTNActionPerformed
+
+    private void stopBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopBTNActionPerformed
+        // TODO add your handling code here:
+        // Stop the timer
+        if (timer.isRunning()) {
+            timer.stop();
+
+            // Calculate the elapsed time
+            long now = System.currentTimeMillis();
+            elapsedSeconds = (now - startTime) / 1000;
+
+            // You might want to do something with 'elapsedSeconds' here
+            // For instance, you can display it, save it, or use it in your CWScoring class
+            // Hide the text field or do any other necessary UI updates
+            timeTF.setVisible(false);
+        }
+        
+        File f; //file
+        FileInputStream fis;
+        ObjectInputStream ois;
+        
+        try {
+            f = new File("cws.dat");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+
+            try {
+                cwlist = (ArrayList<CWScoring>) ois.readObject();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(AdaptabilityGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            ois.close();
+
+            //close
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e);
+        }
+        
+        CWScoring tempCWS = new CWScoring();
+        String user = JOptionPane.showInputDialog(this, "Enter your name:");
+        tempCWS.setUser(user);
+        tempCWS.setScore(progress);
+        tempCWS.setTime(elapsedSeconds);
+        cwlist.add(tempCWS);
+
+        
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+        //try catch
+        try {
+            f = new File("cws.dat");
+            fos = new FileOutputStream(f);
+            oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(cwlist);
+            oos.close();
+
+            //close
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e);
+        }
+
+    }//GEN-LAST:event_stopBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1210,16 +1476,24 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdaptabilityGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdaptabilityGUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdaptabilityGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdaptabilityGUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdaptabilityGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdaptabilityGUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdaptabilityGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdaptabilityGUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -1288,7 +1562,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
     private javax.swing.JLabel clueLabel;
     private javax.swing.JLabel clueLabel1;
     private javax.swing.JPanel crosswordPanel;
-    private javax.swing.JProgressBar crosswordProgress;
+    private javax.swing.JProgressBar cwProgress;
     private javax.swing.JTextField d1TF;
     private javax.swing.JTextField d1TF1;
     private javax.swing.JTextField d2TF;
@@ -1353,6 +1627,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
     private javax.swing.JTextField g7TF1;
     private javax.swing.JTextField g8TF;
     private javax.swing.JTextField g8TF1;
+    private javax.swing.JButton guessBTN;
     private javax.swing.JTextField h1TF;
     private javax.swing.JTextField h1TF1;
     private javax.swing.JTextField h2TF;
@@ -1369,8 +1644,6 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
     private javax.swing.JTextField h7TF1;
     private javax.swing.JTextField h8TF;
     private javax.swing.JTextField h8TF1;
-    private javax.swing.JButton hintBTN;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
@@ -1391,9 +1664,10 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
     private javax.swing.JLabel number7LBL2;
     private javax.swing.JLabel number8LBL;
     private javax.swing.JLabel number8LBL2;
-    private javax.swing.JButton sltnBTN;
     private javax.swing.JPanel solutionPanel;
-    private javax.swing.JLabel timeLBL;
+    private javax.swing.JButton startBTN;
+    private javax.swing.JButton stopBTN;
+    private javax.swing.JTextField timeTF;
     private javax.swing.JLabel titleLBL;
     private javax.swing.JLabel titleLBL2;
     // End of variables declaration//GEN-END:variables
