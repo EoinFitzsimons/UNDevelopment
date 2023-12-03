@@ -85,6 +85,11 @@ public class IntegrationsUI extends javax.swing.JFrame {
         refereshBTN.setText("Referesh");
 
         displayBTN.setText("Display");
+        displayBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout scorePanelLayout = new javax.swing.GroupLayout(scorePanel);
         scorePanel.setLayout(scorePanelLayout);
@@ -284,9 +289,18 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
-        cardGame test = new cardGame();
-        test.addUser();
+       
+       cardGame test = new cardGame();
+       test.addUser();
+        
+        
     }//GEN-LAST:event_addBTNActionPerformed
+
+    private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
+        // TODO add your handling code here:
+        cardGame test = new cardGame();
+        test.display();
+    }//GEN-LAST:event_displayBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -336,7 +350,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
     public static javax.swing.JButton choiceTwoBTN;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JButton displayBTN;
-    private javax.swing.JTextArea displayScoreArea;
+    public static javax.swing.JTextArea displayScoreArea;
     private javax.swing.JPanel gamePane;
     private javax.swing.JTabbedPane integrateTabbedPane;
     private javax.swing.JLayeredPane jLayeredPane1;

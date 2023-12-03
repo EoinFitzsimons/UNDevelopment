@@ -15,15 +15,13 @@ public class handleInputs {
     protected double lives;
     protected String userName;
 
-    public handleInputs() {
-    }
-
     public handleInputs(int id, String userName) {
         this.id = id;
         this.userName = userName;
     }
 
-    
+    public handleInputs() {
+    }
 
     public int getId() {
         return id;
@@ -32,10 +30,10 @@ public class handleInputs {
     public void setId(int id) {
         this.id = id;
     }
+    
 
     
-    
-    
+
     public double getChoice() {
         return choice;
     }
@@ -59,7 +57,10 @@ public class handleInputs {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    
+
+    public String details(){
+        return "ID: "+id+" UserName: "+userName;
+    }
     
     
 }

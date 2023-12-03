@@ -4,35 +4,66 @@
  */
 package undevelopment.IntegrationsFolder;
 
+import java.io.Serializable;
+
 /**
  *
  * @author dmoc2
  */
-public class user extends handleInputs {
+public class user extends handleInputs implements Serializable {
 
-    public user(int id, String userName) {
+    
+    private String score;
+
+    public user(String score, int id, String userName) {
         super(id, userName);
+        this.score = score;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 
     public user() {
     }
-     @Override
-    public int getId() {
-        return id;
-    }
-     @Override
-    public void setId(int id) {
-        this.id = id;
-    }
-    
+
     @Override
     public String getUserName() {
         return userName;
     }
+
     @Override
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+    @Override
+    public String details() {
+        return super.details() + " Score: "+score;
+    }
+    
+    
+    
+    
+
+    
+
+    
+    
     
     
     

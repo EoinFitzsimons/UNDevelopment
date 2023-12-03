@@ -25,14 +25,14 @@ public class cardGame extends handleInputs {
     public cardGame() {
     }
     
-    ArrayList <handleInputs> user = new ArrayList<>();
+    ArrayList <user> userList = new ArrayList<>();
     
     private double cardNum;
     private double counter;
-    private int score=0;
+   
     private String userName1;
-    
-    
+    private String score = "0";
+    user newUser = new user();
     
     
     choiceCardHolder test = new choiceCardHolder();
@@ -41,14 +41,19 @@ public class cardGame extends handleInputs {
     
     public void addUser()
     {
-       user test = new user();
+      
         
         int randomID = (int)(Math.random()*1000+1);
         
-        test.setId(randomID);
-        test.setUserName(undevelopment.IntegrationsUI.nameField.getText());
+       
+       
+        newUser.setId(randomID);
+        newUser.setUserName(undevelopment.IntegrationsUI.nameField.getText());
+        newUser.setScore(score);
         
-        user.add(test);
+        userList.add(newUser);
+        
+       
        
         // TODO add your handling code here:
         //file
@@ -62,14 +67,15 @@ public class cardGame extends handleInputs {
         
         try
         {
-            f = new File("user.dat");
+            f = new File("user2.dat");
             fs = new FileOutputStream(f);
             os = new ObjectOutputStream(fs);
             
-            os.writeObject(user);
+            os.writeObject(userList);
             
+            System.out.println("user is added");
             os.close();
-            JOptionPane.showMessageDialog(null, "User has been added to the Array!");
+            
             
             
         }//end try
@@ -81,7 +87,45 @@ public class cardGame extends handleInputs {
         
     }
     
-    
+    public void display()
+    {
+        
+         File f;
+        FileInputStream fs;
+        ObjectInputStream os;
+          try
+         {
+             f = new File("user2.dat");
+            fs = new FileInputStream(f);
+            os = new ObjectInputStream(fs);
+             userList = (ArrayList<user>)os.readObject();
+             
+             
+            for(int i =0; i<userList.size(); i++)
+             {
+                 user load = userList.get(i);
+                undevelopment.IntegrationsUI.displayScoreArea.append(load.details()+"\n");
+                 
+             } 
+           
+           
+             
+             
+             os.close();
+             
+            
+             
+         }
+         catch(ClassNotFoundException c)
+      {
+          System.out.println("Error cannot find class"+c);
+       }
+         
+         catch(IOException e)
+        {
+            System.out.println("some error"+e);
+        }
+    }
     
     
      
@@ -98,18 +142,18 @@ public class cardGame extends handleInputs {
           if(undevelopment.IntegrationsUI.choiceOneBTN.isSelected())
           {//open if
               JOptionPane.showMessageDialog(null, "You got it right!");
-              score ++;
+             // score ++;
               undevelopment.IntegrationsUI.scoreCounter.setText("1");
           } else if (undevelopment.IntegrationsUI.choiceTwoBTN.isSelected())
           {//open else
               JOptionPane.showMessageDialog(null, "You got it wrong!");
-              score --;
+             // score --;
               undevelopment.IntegrationsUI.scoreCounter.setText("0");
           }//close else
           else if (undevelopment.IntegrationsUI.choiceTwoBTN.isSelected())
           {
               JOptionPane.showMessageDialog(null, "You got it wrong!");
-              score --;
+           //   score --;
               undevelopment.IntegrationsUI.scoreCounter.setText("0");
           }
           
