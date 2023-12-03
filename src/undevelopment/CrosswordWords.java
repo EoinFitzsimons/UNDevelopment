@@ -9,20 +9,18 @@ package undevelopment;
  * @author eoin0
  */
 public class CrosswordWords {
-    protected int id, length;
-    protected boolean isVertical;
+    protected String id;
 
-    public CrosswordWords(int id, int length, boolean isVertical) {
+
+    public CrosswordWords(String id) {
         this.id = id;
-        this.length = length;
-        this.isVertical = isVertical;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

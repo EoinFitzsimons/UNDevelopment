@@ -12,14 +12,12 @@ public class Answers extends CrosswordWords{
     private String guess,answer;
     private boolean isCorrect;
 
-    public Answers(String guess, String answer, boolean isCorrect, int id, int legnth, boolean isVertical) {
-        super(id, legnth, isVertical);
+    public Answers(String guess, String answer, boolean isCorrect, String id) {
+        super(id);
         this.guess = guess;
         this.answer = answer;
         this.isCorrect = isCorrect;
     }
-
-
 
     public String getGuess() {
         return guess;
@@ -44,5 +42,6 @@ public class Answers extends CrosswordWords{
     public void setIsCorrect(boolean isCorrect) {
         this.isCorrect = isCorrect;
     }
-        
+    
+    
 }

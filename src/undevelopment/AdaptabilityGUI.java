@@ -4,17 +4,34 @@
  */
 package undevelopment;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author eoin0
  */
 public class AdaptabilityGUI extends javax.swing.JFrame {
 
+    private String identifiers[];
+
     /**
      * Creates new form Tabs
      */
     public AdaptabilityGUI() {
         initComponents();
+        generateIdentifiers();
+
+        JTextField[][] textFields = new JTextField[8][8]; // 8x8 grid of text fields
+
+        for (char row = 'a'; row <= 'h'; row++) {
+            for (int col = 1; col <= 8; col++) {
+                int rowIndex = row - 'a'; // 0 to 7
+                int colIndex = col - 1;   // 0 to 7
+
+                String identifier = row + String.valueOf(col) + "TF";
+                textFields[rowIndex][colIndex] = (JTextField) getContentPane().getComponentByName(identifier);
+            }
+        }
 
         String[] crosswordSquares = {
             "a1TF,", "a2TF", "a3TF", "a4TF", "a5TF", "a6TF", "a7TF", "a8TF",
@@ -38,8 +55,50 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         String[] acrossWords = {"EARTH", "END", "MOISTURE", "FISH", "ONE"};
         String[] downWords = {"EARMUFFS", "HEAT", "WINDS", "RAIN"};
-        
-        startGame();
+
+        // Inside your AdaptabilityGUI class, after generating identifiers and crosswordSolution
+        // Loop through the crosswordSolution and set values to text fields
+        for (int i = 0; i < crosswordSolution.length; i++) {
+            String solution = crosswordSolution[i];
+            String identifier = identifiers[i];
+
+            // Find the text field corresponding to the identifier
+            JTextField textField = findTextField(identifier);
+
+            // If textField is not null and the solution is not null, set the text
+            if (textField != null && solution != null) {
+                textField.setText(solution);
+            }
+        }
+    }
+    // Method to find JTextField by its identifier
+
+    private JTextField findTextField(String identifier) {
+        for (java.awt.Component comp : getContentPane().getComponents()) {
+            if (comp instanceof JTextField && comp.getName() != null && comp.getName().equals(identifier)) {
+                return (JTextField) comp;
+            }
+        }
+        return null; // Return null if not found
+    }
+// Method to generate identifiers
+
+    private void generateIdentifiers() {
+        // Create an array to hold the generated identifiers
+        identifiers = new String[64]; // 8 rows * 8 columns
+
+        // Loop through rows (letters a to h)
+        for (char row = 'a'; row <= 'h'; row++) {
+            // Loop through columns (numbers 1 to 8)
+            for (int col = 1; col <= 8; col++) {
+                // Create the identifier using the row and column
+                String identifier = row + String.valueOf(col) + "TF";
+                // Add the identifier to the array
+                identifiers[(row - 'a') * 8 + (col - 1)] = identifier;
+            }
+        }
+        // Now you have your identifiers generated in the 'identifiers' array
+        // You can use this array as needed within your class
 
     }
 
@@ -135,84 +194,84 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         hintBTN = new javax.swing.JButton();
         sltnBTN = new javax.swing.JButton();
         solutionPanel = new javax.swing.JPanel();
-        number5LBL1 = new javax.swing.JLabel();
-        number7LBL1 = new javax.swing.JLabel();
-        number8LBL1 = new javax.swing.JLabel();
-        number6LBL1 = new javax.swing.JLabel();
-        number3LBL1 = new javax.swing.JLabel();
-        number4LBL1 = new javax.swing.JLabel();
-        number2LBL1 = new javax.swing.JLabel();
-        number1LBL1 = new javax.swing.JLabel();
-        letterTF64 = new javax.swing.JTextField();
-        letterTF65 = new javax.swing.JTextField();
-        letterTF66 = new javax.swing.JTextField();
         crosswordProgress = new javax.swing.JProgressBar();
         clueLabel1 = new javax.swing.JLabel();
-        letterTF67 = new javax.swing.JTextField();
-        letterTF68 = new javax.swing.JTextField();
-        letterTF69 = new javax.swing.JTextField();
-        letterTF70 = new javax.swing.JTextField();
-        letterTF71 = new javax.swing.JTextField();
-        letterTF72 = new javax.swing.JTextField();
-        letterTF73 = new javax.swing.JTextField();
-        letterTF74 = new javax.swing.JTextField();
-        letterTF75 = new javax.swing.JTextField();
-        letterTF76 = new javax.swing.JTextField();
-        letterTF77 = new javax.swing.JTextField();
-        letterTF78 = new javax.swing.JTextField();
-        letterTF79 = new javax.swing.JTextField();
-        letterTF80 = new javax.swing.JTextField();
-        letterTF81 = new javax.swing.JTextField();
-        letterTF82 = new javax.swing.JTextField();
-        letterTF83 = new javax.swing.JTextField();
-        letterTF84 = new javax.swing.JTextField();
-        letterTF85 = new javax.swing.JTextField();
-        letterTF86 = new javax.swing.JTextField();
-        letterTF87 = new javax.swing.JTextField();
-        letterTF88 = new javax.swing.JTextField();
-        letterTF89 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        letterTF90 = new javax.swing.JTextField();
-        letterTF91 = new javax.swing.JTextField();
-        letterTF92 = new javax.swing.JTextField();
-        letterTF93 = new javax.swing.JTextField();
-        letterTF94 = new javax.swing.JTextField();
-        letterTF95 = new javax.swing.JTextField();
-        letterTF96 = new javax.swing.JTextField();
-        letterTF97 = new javax.swing.JTextField();
-        letterTF98 = new javax.swing.JTextField();
-        letterTF99 = new javax.swing.JTextField();
         titleLBL2 = new javax.swing.JLabel();
-        letterTF100 = new javax.swing.JTextField();
-        letterTF101 = new javax.swing.JTextField();
-        letterTF102 = new javax.swing.JTextField();
-        letterTF103 = new javax.swing.JTextField();
-        letterTF104 = new javax.swing.JTextField();
-        letterTF105 = new javax.swing.JTextField();
-        letterTF106 = new javax.swing.JTextField();
-        letterTF107 = new javax.swing.JTextField();
-        letterTF108 = new javax.swing.JTextField();
-        letterTF109 = new javax.swing.JTextField();
-        letterTF110 = new javax.swing.JTextField();
-        letterTF111 = new javax.swing.JTextField();
-        letterTF112 = new javax.swing.JTextField();
-        letterTF113 = new javax.swing.JTextField();
-        letterTF114 = new javax.swing.JTextField();
-        letterTF115 = new javax.swing.JTextField();
-        letterTF116 = new javax.swing.JTextField();
-        letterTF117 = new javax.swing.JTextField();
-        letterTF118 = new javax.swing.JTextField();
-        letterTF119 = new javax.swing.JTextField();
-        letterTF120 = new javax.swing.JTextField();
-        letterTF121 = new javax.swing.JTextField();
-        letterTF122 = new javax.swing.JTextField();
-        letterTF123 = new javax.swing.JTextField();
-        letterTF124 = new javax.swing.JTextField();
-        letterTF125 = new javax.swing.JTextField();
-        letterTF126 = new javax.swing.JTextField();
-        letterTF127 = new javax.swing.JTextField();
         backBTN = new javax.swing.JButton();
+        number5LBL2 = new javax.swing.JLabel();
+        number7LBL2 = new javax.swing.JLabel();
+        number8LBL2 = new javax.swing.JLabel();
+        number6LBL2 = new javax.swing.JLabel();
+        number3LBL2 = new javax.swing.JLabel();
+        number4LBL2 = new javax.swing.JLabel();
+        number2LBL2 = new javax.swing.JLabel();
+        number1LBL2 = new javax.swing.JLabel();
+        a8TF1 = new javax.swing.JTextField();
+        f8TF1 = new javax.swing.JTextField();
+        b8TF1 = new javax.swing.JTextField();
+        a1TF1 = new javax.swing.JTextField();
+        b1TF1 = new javax.swing.JTextField();
+        c1TF1 = new javax.swing.JTextField();
+        d1TF1 = new javax.swing.JTextField();
+        a2TF1 = new javax.swing.JTextField();
+        b2TF1 = new javax.swing.JTextField();
+        c2TF1 = new javax.swing.JTextField();
+        d2TF1 = new javax.swing.JTextField();
+        e1TF1 = new javax.swing.JTextField();
+        f1TF1 = new javax.swing.JTextField();
+        g1TF1 = new javax.swing.JTextField();
+        h1TF1 = new javax.swing.JTextField();
+        g2TF1 = new javax.swing.JTextField();
+        h2TF1 = new javax.swing.JTextField();
+        e2TF1 = new javax.swing.JTextField();
+        f2TF1 = new javax.swing.JTextField();
+        c4TF1 = new javax.swing.JTextField();
+        d4TF1 = new javax.swing.JTextField();
+        e3TF1 = new javax.swing.JTextField();
+        a3TF1 = new javax.swing.JTextField();
+        f3TF1 = new javax.swing.JTextField();
+        g3TF1 = new javax.swing.JTextField();
+        b3TF1 = new javax.swing.JTextField();
+        h3TF1 = new javax.swing.JTextField();
+        g4TF1 = new javax.swing.JTextField();
+        c3TF1 = new javax.swing.JTextField();
+        h4TF1 = new javax.swing.JTextField();
+        d3TF1 = new javax.swing.JTextField();
+        e4TF1 = new javax.swing.JTextField();
+        a4TF1 = new javax.swing.JTextField();
+        f4TF1 = new javax.swing.JTextField();
+        b4TF1 = new javax.swing.JTextField();
+        c6TF1 = new javax.swing.JTextField();
+        d6TF1 = new javax.swing.JTextField();
+        e5TF1 = new javax.swing.JTextField();
+        a5TF1 = new javax.swing.JTextField();
+        f5TF1 = new javax.swing.JTextField();
+        g5TF1 = new javax.swing.JTextField();
+        b5TF1 = new javax.swing.JTextField();
+        h5TF1 = new javax.swing.JTextField();
+        g6TF1 = new javax.swing.JTextField();
+        c5TF1 = new javax.swing.JTextField();
+        h6TF1 = new javax.swing.JTextField();
+        d5TF1 = new javax.swing.JTextField();
+        e6TF1 = new javax.swing.JTextField();
+        a6TF1 = new javax.swing.JTextField();
+        f6TF1 = new javax.swing.JTextField();
+        b6TF1 = new javax.swing.JTextField();
+        c8TF1 = new javax.swing.JTextField();
+        d8TF1 = new javax.swing.JTextField();
+        e7TF1 = new javax.swing.JTextField();
+        a7TF1 = new javax.swing.JTextField();
+        f7TF1 = new javax.swing.JTextField();
+        g7TF1 = new javax.swing.JTextField();
+        b7TF1 = new javax.swing.JTextField();
+        h7TF1 = new javax.swing.JTextField();
+        g8TF1 = new javax.swing.JTextField();
+        c7TF1 = new javax.swing.JTextField();
+        h8TF1 = new javax.swing.JTextField();
+        d7TF1 = new javax.swing.JTextField();
+        e8TF1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -413,7 +472,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Down\n\n1: Something to wear in a blizzard.\n2: Form of energy released in a volcanic eruption.\n4: Reach high speeds in a hurricane\n6: Downpour that can lead to flooding.\n\n\nAcross\n\n1: Our Planet\n3: Times when the sun solar flares into us.\n5: Water on a surface\n7: They end up far within land when a tsunami comes.\n8: The amount of moons we have which control the tides.");
+        jTextArea1.setText("Down\n\n1: Something to wear in a blizzard.\n2: Form of energy released in a volcanic eruption.\n4: Reach high speeds in a hurricane\n6: Downpour that can lead to flooding.\n\n\nAcross\n\n1: Our Planet\n3: Times when the sun solar flares into us.\n5: Water on a surface\n7: They end up far within land when a tsunami comes.\n8: The amount of moons we have which control the tides\n\n\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         crosswordPanel.add(jScrollPane1);
@@ -641,10 +700,20 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         timeLBL.setBounds(670, 100, 120, 16);
 
         hintBTN.setText("Hint");
+        hintBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hintBTNActionPerformed(evt);
+            }
+        });
         crosswordPanel.add(hintBTN);
         hintBTN.setBounds(600, 100, 60, 23);
 
         sltnBTN.setText("Solution");
+        sltnBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sltnBTNActionPerformed(evt);
+            }
+        });
         crosswordPanel.add(sltnBTN);
         sltnBTN.setBounds(510, 100, 80, 23);
 
@@ -655,56 +724,6 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         solutionPanel.setMinimumSize(new java.awt.Dimension(800, 600));
         solutionPanel.setRequestFocusEnabled(false);
         solutionPanel.setLayout(null);
-
-        number5LBL1.setText("5");
-        solutionPanel.add(number5LBL1);
-        number5LBL1.setBounds(8, 270, 10, 16);
-
-        number7LBL1.setText("7");
-        solutionPanel.add(number7LBL1);
-        number7LBL1.setBounds(8, 445, 10, 16);
-
-        number8LBL1.setText("8");
-        solutionPanel.add(number8LBL1);
-        number8LBL1.setBounds(298, 445, 10, 16);
-
-        number6LBL1.setText("6");
-        solutionPanel.add(number6LBL1);
-        number6LBL1.setBounds(357, 270, 10, 16);
-
-        number3LBL1.setText("3");
-        solutionPanel.add(number3LBL1);
-        number3LBL1.setBounds(240, 155, 10, 16);
-
-        number4LBL1.setText("4");
-        solutionPanel.add(number4LBL1);
-        number4LBL1.setBounds(124, 212, 10, 16);
-
-        number2LBL1.setText("2");
-        solutionPanel.add(number2LBL1);
-        number2LBL1.setBounds(240, 98, 10, 16);
-
-        number1LBL1.setText("1");
-        solutionPanel.add(number1LBL1);
-        number1LBL1.setBounds(8, 98, 10, 16);
-
-        letterTF64.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF64.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF64.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF64);
-        letterTF64.setBounds(412, 98, 40, 40);
-
-        letterTF65.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF65.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF65.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF65);
-        letterTF65.setBounds(412, 388, 40, 40);
-
-        letterTF66.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF66.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF66.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF66);
-        letterTF66.setBounds(412, 156, 40, 40);
 
         crosswordProgress.setBackground(new java.awt.Color(100, 200, 100));
         crosswordProgress.setForeground(new java.awt.Color(100, 150, 200));
@@ -718,145 +737,6 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         solutionPanel.add(clueLabel1);
         clueLabel1.setBounds(464, 98, 40, 16);
 
-        letterTF67.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF67.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF67.setText("E");
-        letterTF67.setToolTipText("");
-        solutionPanel.add(letterTF67);
-        letterTF67.setBounds(6, 98, 40, 40);
-
-        letterTF68.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF68.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF68.setText("A");
-        solutionPanel.add(letterTF68);
-        letterTF68.setBounds(6, 156, 40, 40);
-
-        letterTF69.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF69.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF69.setText("R");
-        solutionPanel.add(letterTF69);
-        letterTF69.setBounds(6, 214, 40, 40);
-
-        letterTF70.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF70.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF70.setText("M");
-        solutionPanel.add(letterTF70);
-        letterTF70.setBounds(6, 272, 40, 40);
-
-        letterTF71.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF71.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF71.setText("A");
-        solutionPanel.add(letterTF71);
-        letterTF71.setBounds(64, 98, 40, 40);
-
-        letterTF72.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF72.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF72.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF72);
-        letterTF72.setBounds(64, 156, 40, 40);
-
-        letterTF73.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF73.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF73.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF73);
-        letterTF73.setBounds(64, 214, 40, 40);
-
-        letterTF74.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF74.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF74.setText("O");
-        solutionPanel.add(letterTF74);
-        letterTF74.setBounds(64, 272, 40, 40);
-
-        letterTF75.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF75.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF75.setText("U");
-        solutionPanel.add(letterTF75);
-        letterTF75.setBounds(6, 330, 40, 40);
-
-        letterTF76.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF76.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF76.setText("F");
-        solutionPanel.add(letterTF76);
-        letterTF76.setBounds(6, 388, 40, 40);
-
-        letterTF77.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF77.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF77.setText("F");
-        solutionPanel.add(letterTF77);
-        letterTF77.setBounds(6, 446, 40, 40);
-
-        letterTF78.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF78.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF78.setText("S");
-        solutionPanel.add(letterTF78);
-        letterTF78.setBounds(6, 504, 40, 40);
-
-        letterTF79.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF79.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF79.setText("I");
-        solutionPanel.add(letterTF79);
-        letterTF79.setBounds(64, 446, 40, 40);
-
-        letterTF80.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF80.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF80.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF80);
-        letterTF80.setBounds(64, 504, 40, 40);
-
-        letterTF81.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF81.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF81.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF81);
-        letterTF81.setBounds(64, 330, 40, 40);
-
-        letterTF82.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF82.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF82.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF82);
-        letterTF82.setBounds(64, 388, 40, 40);
-
-        letterTF83.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF83.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF83.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF83);
-        letterTF83.setBounds(180, 214, 40, 40);
-
-        letterTF84.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF84.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF84.setText("S");
-        solutionPanel.add(letterTF84);
-        letterTF84.setBounds(180, 272, 40, 40);
-
-        letterTF85.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF85.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF85.setText("N");
-        solutionPanel.add(letterTF85);
-        letterTF85.setBounds(122, 330, 40, 40);
-
-        letterTF86.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF86.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF86.setText("R");
-        solutionPanel.add(letterTF86);
-        letterTF86.setBounds(122, 98, 40, 40);
-
-        letterTF87.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF87.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF87.setText("D");
-        solutionPanel.add(letterTF87);
-        letterTF87.setBounds(122, 388, 40, 40);
-
-        letterTF88.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF88.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF88.setText("S");
-        solutionPanel.add(letterTF88);
-        letterTF88.setBounds(122, 446, 40, 40);
-
-        letterTF89.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF89.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF89.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF89);
-        letterTF89.setBounds(122, 156, 40, 40);
-
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jTextArea2.setText("Down\n\n1: Something to wear in a blizzard.\n2: Form of energy released in a volcanic eruption.\n4: Reach high speeds in a hurricane\n5: Downpour that can lead to flooding.\n\n\nAcross\n\n1: Our Planet\n3: Times when the sun solar flares into us.\n4: Water on a surface\n6: They end up far within land when a tsunami comes.\n7: The amount of moons we have which control the tides.");
@@ -865,243 +745,432 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         solutionPanel.add(jScrollPane2);
         jScrollPane2.setBounds(464, 132, 330, 412);
 
-        letterTF90.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF90.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF90.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF90);
-        letterTF90.setBounds(122, 504, 40, 40);
-
-        letterTF91.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF91.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF91.setText("H");
-        solutionPanel.add(letterTF91);
-        letterTF91.setBounds(180, 446, 40, 40);
-
-        letterTF92.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF92.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF92.setText("W");
-        solutionPanel.add(letterTF92);
-        letterTF92.setBounds(122, 214, 40, 40);
-
-        letterTF93.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF93.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF93.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF93);
-        letterTF93.setBounds(180, 504, 40, 40);
-
-        letterTF94.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF94.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF94.setText("I");
-        solutionPanel.add(letterTF94);
-        letterTF94.setBounds(122, 272, 40, 40);
-
-        letterTF95.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF95.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF95.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF95);
-        letterTF95.setBounds(180, 330, 40, 40);
-
-        letterTF96.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF96.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF96.setText("T");
-        solutionPanel.add(letterTF96);
-        letterTF96.setBounds(180, 98, 40, 40);
-
-        letterTF97.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF97.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF97.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF97);
-        letterTF97.setBounds(180, 388, 40, 40);
-
-        letterTF98.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF98.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF98.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF98);
-        letterTF98.setBounds(180, 156, 40, 40);
-
-        letterTF99.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF99.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF99.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF99);
-        letterTF99.setBounds(296, 214, 40, 40);
-
         titleLBL2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         titleLBL2.setForeground(new java.awt.Color(255, 255, 255));
         titleLBL2.setText("Crossword Natural Disaster");
         solutionPanel.add(titleLBL2);
         titleLBL2.setBounds(185, 6, 430, 48);
 
-        letterTF100.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF100.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF100.setText("U");
-        solutionPanel.add(letterTF100);
-        letterTF100.setBounds(296, 272, 40, 40);
-
-        letterTF101.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF101.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF101.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF101);
-        letterTF101.setBounds(238, 330, 40, 40);
-
-        letterTF102.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF102.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF102.setText("H");
-        solutionPanel.add(letterTF102);
-        letterTF102.setBounds(238, 98, 40, 40);
-
-        letterTF103.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF103.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF103.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF103);
-        letterTF103.setBounds(238, 388, 40, 40);
-
-        letterTF104.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF104.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF104.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF104);
-        letterTF104.setBounds(238, 446, 40, 40);
-
-        letterTF105.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF105.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF105.setText("E");
-        solutionPanel.add(letterTF105);
-        letterTF105.setBounds(238, 156, 40, 40);
-
-        letterTF106.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF106.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF106.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF106);
-        letterTF106.setBounds(238, 504, 40, 40);
-
-        letterTF107.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF107.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF107.setText("O");
-        solutionPanel.add(letterTF107);
-        letterTF107.setBounds(296, 446, 40, 40);
-
-        letterTF108.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF108.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF108.setText("A");
-        solutionPanel.add(letterTF108);
-        letterTF108.setBounds(238, 214, 40, 40);
-
-        letterTF109.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF109.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF109.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF109);
-        letterTF109.setBounds(296, 504, 40, 40);
-
-        letterTF110.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF110.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF110.setText("T");
-        solutionPanel.add(letterTF110);
-        letterTF110.setBounds(238, 272, 40, 40);
-
-        letterTF111.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF111.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF111.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF111);
-        letterTF111.setBounds(296, 330, 40, 40);
-
-        letterTF112.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF112.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF112.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF112);
-        letterTF112.setBounds(296, 98, 40, 40);
-
-        letterTF113.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF113.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF113.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF113);
-        letterTF113.setBounds(296, 388, 40, 40);
-
-        letterTF114.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF114.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF114.setText("N");
-        solutionPanel.add(letterTF114);
-        letterTF114.setBounds(296, 156, 40, 40);
-
-        letterTF115.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF115.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF115.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF115);
-        letterTF115.setBounds(412, 214, 40, 40);
-
-        letterTF116.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF116.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF116.setText("E");
-        solutionPanel.add(letterTF116);
-        letterTF116.setBounds(412, 272, 40, 40);
-
-        letterTF117.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF117.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF117.setText("A");
-        solutionPanel.add(letterTF117);
-        letterTF117.setBounds(354, 330, 40, 40);
-
-        letterTF118.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF118.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF118.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF118);
-        letterTF118.setBounds(354, 98, 40, 40);
-
-        letterTF119.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF119.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF119.setText("I");
-        solutionPanel.add(letterTF119);
-        letterTF119.setBounds(354, 388, 40, 40);
-
-        letterTF120.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF120.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF120.setText("N");
-        solutionPanel.add(letterTF120);
-        letterTF120.setBounds(354, 446, 40, 40);
-
-        letterTF121.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF121.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF121.setText("D");
-        solutionPanel.add(letterTF121);
-        letterTF121.setBounds(354, 156, 40, 40);
-
-        letterTF122.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF122.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF122.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF122);
-        letterTF122.setBounds(354, 504, 40, 40);
-
-        letterTF123.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF123.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF123.setText("E");
-        solutionPanel.add(letterTF123);
-        letterTF123.setBounds(412, 446, 40, 40);
-
-        letterTF124.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF124.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF124.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF124);
-        letterTF124.setBounds(354, 214, 40, 40);
-
-        letterTF125.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF125.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF125.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF125);
-        letterTF125.setBounds(412, 504, 40, 40);
-
-        letterTF126.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF126.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        letterTF126.setText("R");
-        solutionPanel.add(letterTF126);
-        letterTF126.setBounds(354, 272, 40, 40);
-
-        letterTF127.setBackground(new java.awt.Color(0, 0, 0));
-        letterTF127.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
-        letterTF127.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        solutionPanel.add(letterTF127);
-        letterTF127.setBounds(412, 330, 40, 40);
-
         backBTN.setText("Back");
         solutionPanel.add(backBTN);
         backBTN.setBounds(700, 100, 80, 23);
+
+        number5LBL2.setText("5");
+        solutionPanel.add(number5LBL2);
+        number5LBL2.setBounds(8, 270, 10, 16);
+
+        number7LBL2.setText("7");
+        solutionPanel.add(number7LBL2);
+        number7LBL2.setBounds(10, 447, 10, 16);
+
+        number8LBL2.setText("8");
+        solutionPanel.add(number8LBL2);
+        number8LBL2.setBounds(300, 447, 10, 16);
+
+        number6LBL2.setText("6");
+        solutionPanel.add(number6LBL2);
+        number6LBL2.setBounds(357, 270, 10, 16);
+
+        number3LBL2.setText("3");
+        solutionPanel.add(number3LBL2);
+        number3LBL2.setBounds(240, 156, 10, 16);
+
+        number4LBL2.setText("4");
+        solutionPanel.add(number4LBL2);
+        number4LBL2.setBounds(124, 213, 10, 16);
+
+        number2LBL2.setText("2");
+        solutionPanel.add(number2LBL2);
+        number2LBL2.setBounds(240, 100, 10, 16);
+
+        number1LBL2.setText("1");
+        solutionPanel.add(number1LBL2);
+        number1LBL2.setBounds(10, 100, 10, 16);
+
+        a8TF1.setBackground(new java.awt.Color(0, 0, 0));
+        a8TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a8TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(a8TF1);
+        a8TF1.setBounds(412, 98, 40, 40);
+
+        f8TF1.setBackground(new java.awt.Color(0, 0, 0));
+        f8TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f8TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(f8TF1);
+        f8TF1.setBounds(412, 388, 40, 40);
+
+        b8TF1.setBackground(new java.awt.Color(0, 0, 0));
+        b8TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b8TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(b8TF1);
+        b8TF1.setBounds(412, 156, 40, 40);
+
+        a1TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a1TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        a1TF1.setText("E");
+        a1TF1.setToolTipText("");
+        solutionPanel.add(a1TF1);
+        a1TF1.setBounds(6, 98, 40, 40);
+
+        b1TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b1TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        b1TF1.setText("A");
+        solutionPanel.add(b1TF1);
+        b1TF1.setBounds(6, 156, 40, 40);
+
+        c1TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c1TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        c1TF1.setText("R");
+        solutionPanel.add(c1TF1);
+        c1TF1.setBounds(6, 214, 40, 40);
+
+        d1TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        d1TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        d1TF1.setText("M");
+        solutionPanel.add(d1TF1);
+        d1TF1.setBounds(6, 272, 40, 40);
+
+        a2TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a2TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        a2TF1.setText("A");
+        solutionPanel.add(a2TF1);
+        a2TF1.setBounds(64, 98, 40, 40);
+
+        b2TF1.setBackground(new java.awt.Color(0, 0, 0));
+        b2TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b2TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(b2TF1);
+        b2TF1.setBounds(64, 156, 40, 40);
+
+        c2TF1.setBackground(new java.awt.Color(0, 0, 0));
+        c2TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c2TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(c2TF1);
+        c2TF1.setBounds(64, 214, 40, 40);
+
+        d2TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        d2TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        d2TF1.setText("O");
+        solutionPanel.add(d2TF1);
+        d2TF1.setBounds(64, 272, 40, 40);
+
+        e1TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e1TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        e1TF1.setText("U");
+        solutionPanel.add(e1TF1);
+        e1TF1.setBounds(6, 330, 40, 40);
+
+        f1TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f1TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        f1TF1.setText("F");
+        solutionPanel.add(f1TF1);
+        f1TF1.setBounds(6, 388, 40, 40);
+
+        g1TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g1TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        g1TF1.setText("F");
+        solutionPanel.add(g1TF1);
+        g1TF1.setBounds(6, 446, 40, 40);
+
+        h1TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h1TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        h1TF1.setText("S");
+        solutionPanel.add(h1TF1);
+        h1TF1.setBounds(6, 504, 40, 40);
+
+        g2TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g2TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        g2TF1.setText("I");
+        solutionPanel.add(g2TF1);
+        g2TF1.setBounds(64, 446, 40, 40);
+
+        h2TF1.setBackground(new java.awt.Color(0, 0, 0));
+        h2TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h2TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(h2TF1);
+        h2TF1.setBounds(64, 504, 40, 40);
+
+        e2TF1.setBackground(new java.awt.Color(0, 0, 0));
+        e2TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e2TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(e2TF1);
+        e2TF1.setBounds(64, 330, 40, 40);
+
+        f2TF1.setBackground(new java.awt.Color(0, 0, 0));
+        f2TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f2TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(f2TF1);
+        f2TF1.setBounds(64, 388, 40, 40);
+
+        c4TF1.setBackground(new java.awt.Color(0, 0, 0));
+        c4TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c4TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(c4TF1);
+        c4TF1.setBounds(180, 214, 40, 40);
+
+        d4TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        d4TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        d4TF1.setText("S");
+        solutionPanel.add(d4TF1);
+        d4TF1.setBounds(180, 272, 40, 40);
+
+        e3TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e3TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        e3TF1.setText("N");
+        solutionPanel.add(e3TF1);
+        e3TF1.setBounds(122, 330, 40, 40);
+
+        a3TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a3TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        a3TF1.setText("R");
+        solutionPanel.add(a3TF1);
+        a3TF1.setBounds(122, 98, 40, 40);
+
+        f3TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f3TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        f3TF1.setText("D");
+        solutionPanel.add(f3TF1);
+        f3TF1.setBounds(122, 388, 40, 40);
+
+        g3TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g3TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        g3TF1.setText("S");
+        solutionPanel.add(g3TF1);
+        g3TF1.setBounds(122, 446, 40, 40);
+
+        b3TF1.setBackground(new java.awt.Color(0, 0, 0));
+        b3TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b3TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(b3TF1);
+        b3TF1.setBounds(122, 156, 40, 40);
+
+        h3TF1.setBackground(new java.awt.Color(0, 0, 0));
+        h3TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h3TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(h3TF1);
+        h3TF1.setBounds(122, 504, 40, 40);
+
+        g4TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g4TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        g4TF1.setText("H");
+        solutionPanel.add(g4TF1);
+        g4TF1.setBounds(180, 446, 40, 40);
+
+        c3TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c3TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        c3TF1.setText("W");
+        solutionPanel.add(c3TF1);
+        c3TF1.setBounds(122, 214, 40, 40);
+
+        h4TF1.setBackground(new java.awt.Color(0, 0, 0));
+        h4TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h4TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(h4TF1);
+        h4TF1.setBounds(180, 504, 40, 40);
+
+        d3TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        d3TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        d3TF1.setText("I");
+        solutionPanel.add(d3TF1);
+        d3TF1.setBounds(122, 272, 40, 40);
+
+        e4TF1.setBackground(new java.awt.Color(0, 0, 0));
+        e4TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e4TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(e4TF1);
+        e4TF1.setBounds(180, 330, 40, 40);
+
+        a4TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a4TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        a4TF1.setText("T");
+        solutionPanel.add(a4TF1);
+        a4TF1.setBounds(180, 98, 40, 40);
+
+        f4TF1.setBackground(new java.awt.Color(0, 0, 0));
+        f4TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f4TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(f4TF1);
+        f4TF1.setBounds(180, 388, 40, 40);
+
+        b4TF1.setBackground(new java.awt.Color(0, 0, 0));
+        b4TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b4TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(b4TF1);
+        b4TF1.setBounds(180, 156, 40, 40);
+
+        c6TF1.setBackground(new java.awt.Color(0, 0, 0));
+        c6TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c6TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(c6TF1);
+        c6TF1.setBounds(296, 214, 40, 40);
+
+        d6TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        d6TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        d6TF1.setText("U");
+        solutionPanel.add(d6TF1);
+        d6TF1.setBounds(296, 272, 40, 40);
+
+        e5TF1.setBackground(new java.awt.Color(0, 0, 0));
+        e5TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e5TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(e5TF1);
+        e5TF1.setBounds(238, 330, 40, 40);
+
+        a5TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a5TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        a5TF1.setText("H");
+        solutionPanel.add(a5TF1);
+        a5TF1.setBounds(238, 98, 40, 40);
+
+        f5TF1.setBackground(new java.awt.Color(0, 0, 0));
+        f5TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f5TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(f5TF1);
+        f5TF1.setBounds(238, 388, 40, 40);
+
+        g5TF1.setBackground(new java.awt.Color(0, 0, 0));
+        g5TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g5TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(g5TF1);
+        g5TF1.setBounds(238, 446, 40, 40);
+
+        b5TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b5TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        b5TF1.setText("E");
+        solutionPanel.add(b5TF1);
+        b5TF1.setBounds(238, 156, 40, 40);
+
+        h5TF1.setBackground(new java.awt.Color(0, 0, 0));
+        h5TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h5TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(h5TF1);
+        h5TF1.setBounds(238, 504, 40, 40);
+
+        g6TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g6TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        g6TF1.setText("O");
+        solutionPanel.add(g6TF1);
+        g6TF1.setBounds(296, 446, 40, 40);
+
+        c5TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c5TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        c5TF1.setText("A");
+        solutionPanel.add(c5TF1);
+        c5TF1.setBounds(238, 214, 40, 40);
+
+        h6TF1.setBackground(new java.awt.Color(0, 0, 0));
+        h6TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h6TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(h6TF1);
+        h6TF1.setBounds(296, 504, 40, 40);
+
+        d5TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        d5TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        d5TF1.setText("T");
+        solutionPanel.add(d5TF1);
+        d5TF1.setBounds(238, 272, 40, 40);
+
+        e6TF1.setBackground(new java.awt.Color(0, 0, 0));
+        e6TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e6TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(e6TF1);
+        e6TF1.setBounds(296, 330, 40, 40);
+
+        a6TF1.setBackground(new java.awt.Color(0, 0, 0));
+        a6TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a6TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(a6TF1);
+        a6TF1.setBounds(296, 98, 40, 40);
+
+        f6TF1.setBackground(new java.awt.Color(0, 0, 0));
+        f6TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f6TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(f6TF1);
+        f6TF1.setBounds(296, 388, 40, 40);
+
+        b6TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b6TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        b6TF1.setText("N");
+        solutionPanel.add(b6TF1);
+        b6TF1.setBounds(296, 156, 40, 40);
+
+        c8TF1.setBackground(new java.awt.Color(0, 0, 0));
+        c8TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c8TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(c8TF1);
+        c8TF1.setBounds(412, 214, 40, 40);
+
+        d8TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        d8TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        d8TF1.setText("E");
+        solutionPanel.add(d8TF1);
+        d8TF1.setBounds(412, 272, 40, 40);
+
+        e7TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e7TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        e7TF1.setText("A");
+        solutionPanel.add(e7TF1);
+        e7TF1.setBounds(354, 330, 40, 40);
+
+        a7TF1.setBackground(new java.awt.Color(0, 0, 0));
+        a7TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        a7TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(a7TF1);
+        a7TF1.setBounds(354, 98, 40, 40);
+
+        f7TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        f7TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        f7TF1.setText("I");
+        solutionPanel.add(f7TF1);
+        f7TF1.setBounds(354, 388, 40, 40);
+
+        g7TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g7TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        g7TF1.setText("N");
+        solutionPanel.add(g7TF1);
+        g7TF1.setBounds(354, 446, 40, 40);
+
+        b7TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        b7TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        b7TF1.setText("D");
+        solutionPanel.add(b7TF1);
+        b7TF1.setBounds(354, 156, 40, 40);
+
+        h7TF1.setBackground(new java.awt.Color(0, 0, 0));
+        h7TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h7TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(h7TF1);
+        h7TF1.setBounds(354, 504, 40, 40);
+
+        g8TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        g8TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        g8TF1.setText("E");
+        solutionPanel.add(g8TF1);
+        g8TF1.setBounds(412, 446, 40, 40);
+
+        c7TF1.setBackground(new java.awt.Color(0, 0, 0));
+        c7TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        c7TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(c7TF1);
+        c7TF1.setBounds(354, 214, 40, 40);
+
+        h8TF1.setBackground(new java.awt.Color(0, 0, 0));
+        h8TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        h8TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(h8TF1);
+        h8TF1.setBounds(412, 504, 40, 40);
+
+        d7TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        d7TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        d7TF1.setText("R");
+        solutionPanel.add(d7TF1);
+        d7TF1.setBounds(354, 272, 40, 40);
+
+        e8TF1.setBackground(new java.awt.Color(0, 0, 0));
+        e8TF1.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 24)); // NOI18N
+        e8TF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        solutionPanel.add(e8TF1);
+        e8TF1.setBounds(412, 330, 40, 40);
 
         adaptabilityTab.addTab("Solution", solutionPanel);
 
@@ -1118,6 +1187,14 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void hintBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hintBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hintBTNActionPerformed
+
+    private void sltnBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sltnBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sltnBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1159,161 +1236,161 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField a1TF;
+    private javax.swing.JTextField a1TF1;
     private javax.swing.JTextField a2TF;
+    private javax.swing.JTextField a2TF1;
     private javax.swing.JTextField a3TF;
+    private javax.swing.JTextField a3TF1;
     private javax.swing.JTextField a4TF;
+    private javax.swing.JTextField a4TF1;
     private javax.swing.JTextField a5TF;
+    private javax.swing.JTextField a5TF1;
     private javax.swing.JTextField a6TF;
+    private javax.swing.JTextField a6TF1;
     private javax.swing.JTextField a7TF;
+    private javax.swing.JTextField a7TF1;
     private javax.swing.JTextField a8TF;
+    private javax.swing.JTextField a8TF1;
     private javax.swing.JTabbedPane adaptabilityTab;
     private javax.swing.JTextField b1TF;
+    private javax.swing.JTextField b1TF1;
     private javax.swing.JTextField b2TF;
+    private javax.swing.JTextField b2TF1;
     private javax.swing.JTextField b3TF;
+    private javax.swing.JTextField b3TF1;
     private javax.swing.JTextField b4TF;
+    private javax.swing.JTextField b4TF1;
     private javax.swing.JTextField b5TF;
+    private javax.swing.JTextField b5TF1;
     private javax.swing.JTextField b6TF;
+    private javax.swing.JTextField b6TF1;
     private javax.swing.JTextField b7TF;
+    private javax.swing.JTextField b7TF1;
     private javax.swing.JTextField b8TF;
+    private javax.swing.JTextField b8TF1;
     private javax.swing.JButton backBTN;
     private javax.swing.JTextField c1TF;
+    private javax.swing.JTextField c1TF1;
     private javax.swing.JTextField c2TF;
+    private javax.swing.JTextField c2TF1;
     private javax.swing.JTextField c3TF;
+    private javax.swing.JTextField c3TF1;
     private javax.swing.JTextField c4TF;
+    private javax.swing.JTextField c4TF1;
     private javax.swing.JTextField c5TF;
+    private javax.swing.JTextField c5TF1;
     private javax.swing.JTextField c6TF;
+    private javax.swing.JTextField c6TF1;
     private javax.swing.JTextField c7TF;
+    private javax.swing.JTextField c7TF1;
     private javax.swing.JTextField c8TF;
+    private javax.swing.JTextField c8TF1;
     private javax.swing.JLabel clueLabel;
     private javax.swing.JLabel clueLabel1;
     private javax.swing.JPanel crosswordPanel;
     private javax.swing.JProgressBar crosswordProgress;
     private javax.swing.JTextField d1TF;
+    private javax.swing.JTextField d1TF1;
     private javax.swing.JTextField d2TF;
+    private javax.swing.JTextField d2TF1;
     private javax.swing.JTextField d3TF;
+    private javax.swing.JTextField d3TF1;
     private javax.swing.JTextField d4TF;
+    private javax.swing.JTextField d4TF1;
     private javax.swing.JTextField d5TF;
+    private javax.swing.JTextField d5TF1;
     private javax.swing.JTextField d6TF;
+    private javax.swing.JTextField d6TF1;
     private javax.swing.JTextField d7TF;
+    private javax.swing.JTextField d7TF1;
     private javax.swing.JTextField d8TF;
+    private javax.swing.JTextField d8TF1;
     private javax.swing.JTextField e1TF;
+    private javax.swing.JTextField e1TF1;
     private javax.swing.JTextField e2TF;
+    private javax.swing.JTextField e2TF1;
     private javax.swing.JTextField e3TF;
+    private javax.swing.JTextField e3TF1;
     private javax.swing.JTextField e4TF;
+    private javax.swing.JTextField e4TF1;
     private javax.swing.JTextField e5TF;
+    private javax.swing.JTextField e5TF1;
     private javax.swing.JTextField e6TF;
+    private javax.swing.JTextField e6TF1;
     private javax.swing.JTextField e7TF;
+    private javax.swing.JTextField e7TF1;
     private javax.swing.JTextField e8TF;
+    private javax.swing.JTextField e8TF1;
     private javax.swing.JTextField f1TF;
+    private javax.swing.JTextField f1TF1;
     private javax.swing.JTextField f2TF;
+    private javax.swing.JTextField f2TF1;
     private javax.swing.JTextField f3TF;
+    private javax.swing.JTextField f3TF1;
     private javax.swing.JTextField f4TF;
+    private javax.swing.JTextField f4TF1;
     private javax.swing.JTextField f5TF;
+    private javax.swing.JTextField f5TF1;
     private javax.swing.JTextField f6TF;
+    private javax.swing.JTextField f6TF1;
     private javax.swing.JTextField f7TF;
+    private javax.swing.JTextField f7TF1;
     private javax.swing.JTextField f8TF;
+    private javax.swing.JTextField f8TF1;
     private javax.swing.JTextField g1TF;
+    private javax.swing.JTextField g1TF1;
     private javax.swing.JTextField g2TF;
+    private javax.swing.JTextField g2TF1;
     private javax.swing.JTextField g3TF;
+    private javax.swing.JTextField g3TF1;
     private javax.swing.JTextField g4TF;
+    private javax.swing.JTextField g4TF1;
     private javax.swing.JTextField g5TF;
+    private javax.swing.JTextField g5TF1;
     private javax.swing.JTextField g6TF;
+    private javax.swing.JTextField g6TF1;
     private javax.swing.JTextField g7TF;
+    private javax.swing.JTextField g7TF1;
     private javax.swing.JTextField g8TF;
+    private javax.swing.JTextField g8TF1;
     private javax.swing.JTextField h1TF;
+    private javax.swing.JTextField h1TF1;
     private javax.swing.JTextField h2TF;
+    private javax.swing.JTextField h2TF1;
     private javax.swing.JTextField h3TF;
+    private javax.swing.JTextField h3TF1;
     private javax.swing.JTextField h4TF;
+    private javax.swing.JTextField h4TF1;
     private javax.swing.JTextField h5TF;
+    private javax.swing.JTextField h5TF1;
     private javax.swing.JTextField h6TF;
+    private javax.swing.JTextField h6TF1;
     private javax.swing.JTextField h7TF;
+    private javax.swing.JTextField h7TF1;
     private javax.swing.JTextField h8TF;
+    private javax.swing.JTextField h8TF1;
     private javax.swing.JButton hintBTN;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField letterTF100;
-    private javax.swing.JTextField letterTF101;
-    private javax.swing.JTextField letterTF102;
-    private javax.swing.JTextField letterTF103;
-    private javax.swing.JTextField letterTF104;
-    private javax.swing.JTextField letterTF105;
-    private javax.swing.JTextField letterTF106;
-    private javax.swing.JTextField letterTF107;
-    private javax.swing.JTextField letterTF108;
-    private javax.swing.JTextField letterTF109;
-    private javax.swing.JTextField letterTF110;
-    private javax.swing.JTextField letterTF111;
-    private javax.swing.JTextField letterTF112;
-    private javax.swing.JTextField letterTF113;
-    private javax.swing.JTextField letterTF114;
-    private javax.swing.JTextField letterTF115;
-    private javax.swing.JTextField letterTF116;
-    private javax.swing.JTextField letterTF117;
-    private javax.swing.JTextField letterTF118;
-    private javax.swing.JTextField letterTF119;
-    private javax.swing.JTextField letterTF120;
-    private javax.swing.JTextField letterTF121;
-    private javax.swing.JTextField letterTF122;
-    private javax.swing.JTextField letterTF123;
-    private javax.swing.JTextField letterTF124;
-    private javax.swing.JTextField letterTF125;
-    private javax.swing.JTextField letterTF126;
-    private javax.swing.JTextField letterTF127;
-    private javax.swing.JTextField letterTF64;
-    private javax.swing.JTextField letterTF65;
-    private javax.swing.JTextField letterTF66;
-    private javax.swing.JTextField letterTF67;
-    private javax.swing.JTextField letterTF68;
-    private javax.swing.JTextField letterTF69;
-    private javax.swing.JTextField letterTF70;
-    private javax.swing.JTextField letterTF71;
-    private javax.swing.JTextField letterTF72;
-    private javax.swing.JTextField letterTF73;
-    private javax.swing.JTextField letterTF74;
-    private javax.swing.JTextField letterTF75;
-    private javax.swing.JTextField letterTF76;
-    private javax.swing.JTextField letterTF77;
-    private javax.swing.JTextField letterTF78;
-    private javax.swing.JTextField letterTF79;
-    private javax.swing.JTextField letterTF80;
-    private javax.swing.JTextField letterTF81;
-    private javax.swing.JTextField letterTF82;
-    private javax.swing.JTextField letterTF83;
-    private javax.swing.JTextField letterTF84;
-    private javax.swing.JTextField letterTF85;
-    private javax.swing.JTextField letterTF86;
-    private javax.swing.JTextField letterTF87;
-    private javax.swing.JTextField letterTF88;
-    private javax.swing.JTextField letterTF89;
-    private javax.swing.JTextField letterTF90;
-    private javax.swing.JTextField letterTF91;
-    private javax.swing.JTextField letterTF92;
-    private javax.swing.JTextField letterTF93;
-    private javax.swing.JTextField letterTF94;
-    private javax.swing.JTextField letterTF95;
-    private javax.swing.JTextField letterTF96;
-    private javax.swing.JTextField letterTF97;
-    private javax.swing.JTextField letterTF98;
-    private javax.swing.JTextField letterTF99;
     private javax.swing.JLabel number1LBL;
-    private javax.swing.JLabel number1LBL1;
+    private javax.swing.JLabel number1LBL2;
     private javax.swing.JLabel number2LBL;
-    private javax.swing.JLabel number2LBL1;
+    private javax.swing.JLabel number2LBL2;
     private javax.swing.JLabel number3LBL;
-    private javax.swing.JLabel number3LBL1;
+    private javax.swing.JLabel number3LBL2;
     private javax.swing.JLabel number4LBL;
-    private javax.swing.JLabel number4LBL1;
+    private javax.swing.JLabel number4LBL2;
     private javax.swing.JLabel number5LBL;
-    private javax.swing.JLabel number5LBL1;
+    private javax.swing.JLabel number5LBL2;
     private javax.swing.JLabel number6LBL;
-    private javax.swing.JLabel number6LBL1;
+    private javax.swing.JLabel number6LBL2;
     private javax.swing.JLabel number7LBL;
-    private javax.swing.JLabel number7LBL1;
+    private javax.swing.JLabel number7LBL2;
     private javax.swing.JLabel number8LBL;
-    private javax.swing.JLabel number8LBL1;
+    private javax.swing.JLabel number8LBL2;
     private javax.swing.JButton sltnBTN;
     private javax.swing.JPanel solutionPanel;
     private javax.swing.JLabel timeLBL;
