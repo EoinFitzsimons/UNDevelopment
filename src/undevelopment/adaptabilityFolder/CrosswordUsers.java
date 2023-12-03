@@ -16,7 +16,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import undevelopment.CWScoring;
 import static undevelopment.UNDevelopmentMainMenuGUI.cwsTA;
-public class wordCross_UserFunction {
+public class CrosswordUsers {
     
     private ArrayList<CWScoring> cwlist = new ArrayList<>();
     

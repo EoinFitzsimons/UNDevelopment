@@ -6,7 +6,7 @@ package undevelopment;
 
 
 
-import undevelopment.adaptabilityFolder.wordCross_UserFunction;
+import undevelopment.adaptabilityFolder.CrosswordUsers;
 
 
 
@@ -254,18 +254,19 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                             .addComponent(jScrollPane2))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
+                        .addGap(282, 282, 282)
                         .addComponent(updateBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteBTN)))
+                        .addComponent(deleteBTN)
+                        .addGap(282, 282, 282)))
                 .addContainerGap())
         );
         adaptabilityBackgroundLayout.setVerticalGroup(
@@ -507,13 +508,13 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
 
     private void updateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBTNActionPerformed
-     wordCross_UserFunction update = new wordCross_UserFunction();
+     CrosswordUsers update = new CrosswordUsers();
      update.update();
     }//GEN-LAST:event_updateBTNActionPerformed
    
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
-        wordCross_UserFunction delete = new wordCross_UserFunction();
+        CrosswordUsers delete = new CrosswordUsers();
         delete.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
 
