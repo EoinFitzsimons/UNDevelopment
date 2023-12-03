@@ -57,6 +57,15 @@ public class cardGame extends handleInputs {
    // public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
     public static Connection Myconn;
     
+     private void scriptRunner(){
+        //establish connection with the database
+        try{
+            Myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"); // .getConnection("link to db","username","password")
+        } catch(SQLException ex)
+        {
+            System.out.println("Error connection to db"+ex.getMessage());
+        }
+    }
     
     
     
@@ -162,11 +171,11 @@ public class cardGame extends handleInputs {
                     String name = rs.getString("userName");
                     String score1 = rs.getString("score");
                     
-<<<<<<< HEAD
-                    undevelopment.IntegrationsUI.displayScoreArea.append(id1+"/t"+name+"/t"+score1);
-=======
-                    undevelopment.IntegrationsUI.displayScoreArea.append(id+"\t"+name+"\t"+score+"\n");
->>>>>>> daveBranch2
+
+                    undevelopment.IntegrationsUI.displayScoreArea.append(id1+"\t"+name+"\t"+score1+"\n");
+
+                   // undevelopment.IntegrationsUI.displayScoreArea.append(id+"\t"+name+"\t"+score+"\n");
+
                 }
                 
           }
