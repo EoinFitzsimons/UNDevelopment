@@ -64,14 +64,22 @@ public class IntegrationsUI extends javax.swing.JFrame {
         nameLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         nameLabel.setText("Name:");
 
+        nameField.setToolTipText("Please enter a name ");
+
         displayScoreArea.setColumns(20);
+        displayScoreArea.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         displayScoreArea.setRows(5);
+        displayScoreArea.setText("ID: \t Name: \t Score:\n");
+        displayScoreArea.setToolTipText("I display users and their scores ");
         jScrollPane1.setViewportView(displayScoreArea);
 
         searchLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         searchLabel.setText("Search:");
 
+        searchField.setToolTipText("Enter ID to search");
+
         addBTN.setText("ADD");
+        addBTN.setToolTipText("Must Enter name to add user");
         addBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBTNActionPerformed(evt);
@@ -79,12 +87,16 @@ public class IntegrationsUI extends javax.swing.JFrame {
         });
 
         deleteBTN.setText("Delete");
+        deleteBTN.setToolTipText("ID must be entered in the search to delete user");
 
         searchBTN.setText("Search");
+        searchBTN.setToolTipText("Enter ID to search for user!");
 
         refereshBTN.setText("Referesh");
+        refereshBTN.setToolTipText("Press me to see your results");
 
         displayBTN.setText("Display");
+        displayBTN.setToolTipText("Press me to show all users");
         displayBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayBTNActionPerformed(evt);
@@ -190,9 +202,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
                         .addComponent(choiceOneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(6, 6, 6)
                 .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(gamePaneLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(choiceTwoBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(choiceTwoBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cardHolderImg))
                 .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gamePaneLayout.createSequentialGroup()
@@ -211,8 +221,6 @@ public class IntegrationsUI extends javax.swing.JFrame {
             .addGroup(gamePaneLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(cardHolderImg, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(choiceTwoBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePaneLayout.createSequentialGroup()
                 .addContainerGap()
@@ -227,7 +235,9 @@ public class IntegrationsUI extends javax.swing.JFrame {
                         .addComponent(choiceOneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(gamePaneLayout.createSequentialGroup()
                         .addGap(378, 378, 378)
-                        .addComponent(choiceThreeBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(choiceTwoBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(choiceThreeBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(70, 70, 70))
         );
 
@@ -263,9 +273,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(integrateTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(integrateTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

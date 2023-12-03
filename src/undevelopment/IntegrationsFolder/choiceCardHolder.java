@@ -10,12 +10,7 @@ package undevelopment.IntegrationsFolder;
  */
 public class choiceCardHolder {
     
-    public void card1()
-    {
-        undevelopment.IntegrationsUI.cardHolderImg.setText("Please pick from button 1, 2 or 3 as a test please");
-        
-        
-    }
+    
     
     public void choices1()
     {

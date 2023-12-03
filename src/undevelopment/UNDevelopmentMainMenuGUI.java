@@ -5,7 +5,10 @@
 package undevelopment;
 
 
-import undevelopment.adaptabilityFolder.wordCross_UserFunction;
+
+//import undevelopment.adaptabilityFolder.wordCross_UserFunction;
+
+
 
 /**
  *
@@ -493,24 +496,25 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_loadIntegrationAppActionPerformed
 
+    
     private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
         // TODO add your handling code here:
 
         AdaptabilityGUI load = new AdaptabilityGUI();
         load.setVisible(true);
-        this.setVisible(false);
+
 
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
 
     private void updateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBTNActionPerformed
-     wordCross_UserFunction update = new wordCross_UserFunction();
-     update.update();
+    // wordCross_UserFunction update = new wordCross_UserFunction();
+     //update.update();
     }//GEN-LAST:event_updateBTNActionPerformed
    
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
-        wordCross_UserFunction delete = new wordCross_UserFunction();
-        delete.delete();
+       // wordCross_UserFunction delete = new wordCross_UserFunction();
+       // delete.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
 
     /**

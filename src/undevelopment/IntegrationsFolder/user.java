@@ -53,7 +53,7 @@ public class user extends handleInputs implements Serializable {
 
     @Override
     public String details() {
-        return super.details() + " Score: "+score;
+        return super.details() + "\t  "+score;
     }
     
     
