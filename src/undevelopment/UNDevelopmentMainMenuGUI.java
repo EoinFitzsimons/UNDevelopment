@@ -4,12 +4,8 @@
  */
 package undevelopment;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
+
+import undevelopment.adaptabilityFolder.wordCross_UserFunction;
 
 /**
  *
@@ -17,14 +13,14 @@ import java.util.ArrayList;
  */
 public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
-    ArrayList<CWScoring> cwlist;
+   // ArrayList<CWScoring> cwlist;
 
     /**
      * Creates new form UNDevelopmentMainMenuGUI
      */
     public UNDevelopmentMainMenuGUI() {
         initComponents();
-        cwlist = new ArrayList<>();
+       // cwlist = new ArrayList<>();
 
     }
 
@@ -266,8 +262,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(updateBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteBTN)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(deleteBTN)))
                 .addContainerGap())
         );
         adaptabilityBackgroundLayout.setVerticalGroup(
@@ -508,50 +503,14 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
 
     private void updateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBTNActionPerformed
-        // TODO add your handling code here:
-        File f; // Declarations
-        FileInputStream fs;
-        ObjectInputStream os;
-
-        try {
-            f = new File("cws.dat");
-            if (f.exists() && f.length() > 0) { // Check if file exists and is not empty
-                fs = new FileInputStream(f);
-                os = new ObjectInputStream(fs);
-                cwlist = (ArrayList<CWScoring>) os.readObject();
-                os.close();
-
-                for (int i = 0; i < cwlist.size(); i++) {
-                    CWScoring e = cwlist.get(i);
-                    cwsTA.append(e.toString() + "\n");
-                }
-            } else {
-                System.out.println("File is empty or does not exist."); // It was not working before this, glad that's fixed it, must have been reading the last entry before it was cleared but I have more tests. Woooohoooo it workssss
-                
-            }
-        } catch (IOException e) {
-            System.out.println("Error reading from file " + e);
-        } catch (ClassNotFoundException c) {
-            System.out.println("Class not found error " + c);
-        }
+     wordCross_UserFunction update = new wordCross_UserFunction();
+     update.update();
     }//GEN-LAST:event_updateBTNActionPerformed
-    private void deleteFileContents(String fileName) {
-        FileWriter f; //declarations
-
-        try {
-            f = new FileWriter(fileName, false); // a secret append option is now set to false
-            f.write(""); // Overwrite the file with an empty string
-            f.close();
-        } catch (IOException e) {
-            // Handle the exception if the file cannot be cleared
-            e.printStackTrace();
-        }
-    }
+   
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
-        cwsTA.setText("");
-        String fileName = "cws.dat"; // Replace with your file name
-        deleteFileContents(fileName);
+        wordCross_UserFunction delete = new wordCross_UserFunction();
+        delete.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
 
     /**
@@ -600,7 +559,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel backgroundIMG;
     private javax.swing.JPanel backgroundIntegration;
     private javax.swing.JPanel backgroundPane;
-    private javax.swing.JTextArea cwsTA;
+    public static javax.swing.JTextArea cwsTA;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
     private javax.swing.JLayeredPane homePane;
