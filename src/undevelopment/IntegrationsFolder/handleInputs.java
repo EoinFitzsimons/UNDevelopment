@@ -4,11 +4,13 @@
  */
 package undevelopment.IntegrationsFolder;
 
+import java.io.Serializable;
+
 /**
  *
  * @author dmoc2
  */
-public class handleInputs {
+public class handleInputs implements Serializable {
     
     protected int id;
     protected double choice;

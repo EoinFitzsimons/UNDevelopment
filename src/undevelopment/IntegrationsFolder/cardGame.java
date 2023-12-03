@@ -46,11 +46,12 @@ public class cardGame extends handleInputs {
         int randomID = (int)(Math.random()*1000+1);
         
        
-       
+       String name = undevelopment.IntegrationsUI.nameField.getText();
+        
         newUser.setId(randomID);
         newUser.setUserName(undevelopment.IntegrationsUI.nameField.getText());
         newUser.setScore(score);
-        
+        System.out.println(name);
         userList.add(newUser);
         
        
