@@ -17,11 +17,13 @@ public class Quizgui extends javax.swing.JFrame {
     
     SIDS[] allSids = new SIDS[10];
     FactsAboutSids[] allFacts = new FactsAboutSids[40];
+    quizQuestion[] allQuestions = new quizQuestion[12];
     
     public Quizgui() {
         initComponents();
         createSIDS();
         createFacts();
+        createquizQuestions();
         setVisible(true);
     }
 
@@ -203,7 +205,21 @@ public class Quizgui extends javax.swing.JFrame {
 
     }
     
-    
+    public void createquizQuestions()
+    {
+        allQuestions[0] = new quizQuestion(allSids[2].getName(),"The people of Vunidogoloa in Fiji had to abandon homes and move to higher ground areas in 2014 due to increased frequency of flooding where they lived",true);
+        allQuestions[1] = new quizQuestion(allSids[2].getName(),"The coral of Fiji is not being damaged by climate change",false);
+        allQuestions[2] = new quizQuestion(allSids[2].getName(),"Eighty low-lying communities are set to relocate to higher ground",true);
+        allQuestions[3] = new quizQuestion(allSids[2].getName(),"In recent years, cyclones hitting Fiji have been more frequent and more severe",true);
+        allQuestions[4] = new quizQuestion(allSids[8].getName(),"Much of the land is covered by forests",true);
+        allQuestions[5] = new quizQuestion(allSids[8].getName(),"The Solomon Islands are especially prone to cyclones",true);
+        allQuestions[6] = new quizQuestion(allSids[8].getName(),"Most residents of the Solomon Islands live atleast 2km from the coastline",false);
+        allQuestions[7] = new quizQuestion(allSids[8].getName(),"Fishing is the backbone of the economy in the Solomon Islands",false);
+        allQuestions[8] = new quizQuestion(allSids[1].getName(),"Fisherman have noted a drop in the capture of tuna and black mackerel",true);
+        allQuestions[9] = new quizQuestion(allSids[1].getName(),"The region around Cape Verde had been a biodiversity hotspot and the loss of biodiversity there is of worldwide concern",true);
+        allQuestions[10] = new quizQuestion(allSids[1].getName(),"Twenty percent of the energy usage in Cape Verde is from renewable sources",true);
+        allQuestions[11] = new quizQuestion(allSids[1].getName(),"Fishing is not an important industry to Cape Verde so the climate driven drecreases in quantity and variety of fish do not threaten the economy there",false);
+    }
     
     
     private void UsernameTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTActionPerformed
@@ -216,13 +232,12 @@ public class Quizgui extends javax.swing.JFrame {
         String sidSelected = (String)SIDS.getSelectedItem();
 
         Facts fact1 = new Facts(sidSelected,allFacts);
-        
-        System.out.println(sidSelected);
     }//GEN-LAST:event_FactsActionPerformed
 
     private void QuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuizActionPerformed
         setVisible(false);    
-        quiz q1 = new quiz();
+        String sidSelected = (String)SIDS.getSelectedItem();
+        quiz q1 = new quiz(sidSelected,allQuestions);
     }//GEN-LAST:event_QuizActionPerformed
 
     private void SpecialissuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpecialissuesActionPerformed

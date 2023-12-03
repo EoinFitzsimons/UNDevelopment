@@ -23,43 +23,6 @@ public class Facts extends JFrame{
     JButton mainMenu = new JButton("Main Menu");
     
     
-    public Facts() {
-               
-        setTitle("SIDs Facts");
-        setSize(200,200);
-        
-        setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
-        
-       
-        
-        for(int i=0; i<10; i++)
-        {
-            JTextField textField = new JTextField();
-            JLabel label = new JLabel("Fact Number: "+(i+1));
-            add(label);
-            add(textField);
-
-        }
-        
-        
-        
-        add(mainMenu);
-        mainMenu.addActionListener(new ActionListener() 
-        {
-            public void actionPerformed(ActionEvent e)
-            {
-                setVisible(false);
-                System.out.println("BUTTON IS PRESSED");
-                Quizgui qg = new Quizgui();               
-            }
-        });
-               
-        setVisible(true);
-        
-    }
-    
-    
-    
     
     
     
@@ -69,30 +32,38 @@ public class Facts extends JFrame{
         this.SIDS_Name = SIDS_Name;
         this.allFacts = allFacts;
         
-        setTitle("SIDs Facts");
+        JTextField [] allTextFields = new JTextField [10];
+        
+        setTitle(SIDS_Name+" SIDs Facts");
         setSize(200,200);
         
         setLayout(new BoxLayout(getContentPane(),BoxLayout.Y_AXIS));
         
-       
-        int counter = 0;
         
         for(int i=0; i<10; i++)
         {
             JTextField textField = new JTextField();
             JLabel label = new JLabel("Fact Number: "+(i+1));
             add(label);
-            add(textField);
+            add(textField);  
             
-            if(SIDS_Name == allFacts[i].getSidscountry())
-            {
-                  factDetail = allFacts[counter].getSidsfact();
-                  textField.setText(factDetail);
-                  counter = counter + 1;
-            }
+            allTextFields[i] = textField;
         }
         
         
+        int counter = 0;
+           
+        for(int a=0; a<allFacts.length; a++)
+        {           
+            if(SIDS_Name == allFacts[a].getSidscountry())
+            {
+                factDetail = allFacts[a].getSidsfact();
+                allTextFields[counter].setText(factDetail);
+                counter = counter + 1;                    
+            }
+        }
+        
+
         
         add(mainMenu);
         mainMenu.addActionListener(new ActionListener() 
