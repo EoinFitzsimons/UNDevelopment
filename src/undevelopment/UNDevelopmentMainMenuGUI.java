@@ -4,6 +4,11 @@
  */
 package undevelopment;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import undevelopment.IntegrationsFolder.cardGame;
+
 /**
  *
  * @author dmoc2
@@ -485,11 +490,18 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_loadIntegrationAppActionPerformed
 
+    
     private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
         // TODO add your handling code here:
 
         AdaptabilityGUI load = new AdaptabilityGUI();
         load.setVisible(true);
+        cardGame loadDB = new cardGame();
+        try {
+            loadDB.ScriptRunner();
+        } catch (IOException ex) {
+            Logger.getLogger(UNDevelopmentMainMenuGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
 
