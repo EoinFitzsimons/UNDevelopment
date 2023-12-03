@@ -4,17 +4,28 @@
  */
 package undevelopment;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+
 /**
  *
  * @author dmoc2
  */
 public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
+    ArrayList<CWScoring> cwlist;
+
     /**
      * Creates new form UNDevelopmentMainMenuGUI
      */
     public UNDevelopmentMainMenuGUI() {
         initComponents();
+        cwlist = new ArrayList<>();
+
     }
 
     /**
@@ -39,15 +50,15 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         displayAwareness = new javax.swing.JTextArea();
         adaptabilityPane = new javax.swing.JLayeredPane();
         adaptabilityBackground = new javax.swing.JPanel();
-        scoreLabel = new javax.swing.JLabel();
         AdaptabilityAppBTN = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        scoreLabel1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        scoreLabel2 = new javax.swing.JLabel();
-        scoreLabel3 = new javax.swing.JLabel();
+        updateBTN = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        cwsTA = new javax.swing.JTextArea();
+        deleteBTN = new javax.swing.JButton();
         promoteMechPane = new javax.swing.JLayeredPane();
         PromotingMechBackground = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -189,9 +200,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         adaptabilityBackground.setBackground(new java.awt.Color(100, 150, 200));
 
-        scoreLabel.setForeground(new java.awt.Color(255, 255, 255));
-        scoreLabel.setText("Best Score:");
-
         AdaptabilityAppBTN.setText("Load Adaptability App");
         AdaptabilityAppBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,9 +211,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Adaptability Menu");
-
-        scoreLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        scoreLabel1.setText("Last Score:");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,11 +227,23 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("With this knowledege you will be more adaptable in the face of danger.");
 
-        scoreLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        scoreLabel2.setText("Last Time:");
+        updateBTN.setText("Update Scores");
+        updateBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBTNActionPerformed(evt);
+            }
+        });
 
-        scoreLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        scoreLabel3.setText("Best Time::");
+        cwsTA.setColumns(20);
+        cwsTA.setRows(5);
+        jScrollPane2.setViewportView(cwsTA);
+
+        deleteBTN.setText("Delete Scores");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout adaptabilityBackgroundLayout = new javax.swing.GroupLayout(adaptabilityBackground);
         adaptabilityBackground.setLayout(adaptabilityBackgroundLayout);
@@ -236,21 +253,21 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
             .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(scoreLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(scoreLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(scoreLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(updateBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deleteBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         adaptabilityBackgroundLayout.setVerticalGroup(
@@ -264,17 +281,13 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
-                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                        .addComponent(scoreLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(scoreLabel1))
-                    .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                        .addComponent(scoreLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(scoreLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateBTN)
+                    .addComponent(deleteBTN))
+                .addGap(80, 80, 80)
                 .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -465,24 +478,24 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
     private void awarenessLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_awarenessLoadActionPerformed
         // TODO add your handling code here:
-        
+
         AwarenessGUI load = new AwarenessGUI();
         load.setVisible(true);
-        
+
     }//GEN-LAST:event_awarenessLoadActionPerformed
 
     private void promoteAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promoteAppBTNActionPerformed
         // TODO add your handling code here:
         ImpactGUI load = new ImpactGUI();
         load.setVisible(true);
-        
+
     }//GEN-LAST:event_promoteAppBTNActionPerformed
 
     private void loadIntegrationAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadIntegrationAppActionPerformed
         // TODO add your handling code here:
         IntegrationsUI load = new IntegrationsUI();
         load.setVisible(true);
-        
+
     }//GEN-LAST:event_loadIntegrationAppActionPerformed
 
     private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
@@ -490,8 +503,56 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         AdaptabilityGUI load = new AdaptabilityGUI();
         load.setVisible(true);
+        this.setVisible(false);
 
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
+
+    private void updateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBTNActionPerformed
+        // TODO add your handling code here:
+        File f; // Declarations
+        FileInputStream fs;
+        ObjectInputStream os;
+
+        try {
+            f = new File("cws.dat");
+            if (f.exists() && f.length() > 0) { // Check if file exists and is not empty
+                fs = new FileInputStream(f);
+                os = new ObjectInputStream(fs);
+                cwlist = (ArrayList<CWScoring>) os.readObject();
+                os.close();
+
+                for (int i = 0; i < cwlist.size(); i++) {
+                    CWScoring e = cwlist.get(i);
+                    cwsTA.append(e.toString() + "\n");
+                }
+            } else {
+                System.out.println("File is empty or does not exist."); // It was not working before this, glad that's fixed it, must have been reading the last entry before it was cleared but I have more tests. Woooohoooo it workssss
+                
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading from file " + e);
+        } catch (ClassNotFoundException c) {
+            System.out.println("Class not found error " + c);
+        }
+    }//GEN-LAST:event_updateBTNActionPerformed
+    private void deleteFileContents(String fileName) {
+        FileWriter f; //declarations
+
+        try {
+            f = new FileWriter(fileName, false); // a secret append option is now set to false
+            f.write(""); // Overwrite the file with an empty string
+            f.close();
+        } catch (IOException e) {
+            // Handle the exception if the file cannot be cleared
+            e.printStackTrace();
+        }
+    }
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        // TODO add your handling code here:
+        cwsTA.setText("");
+        String fileName = "cws.dat"; // Replace with your file name
+        deleteFileContents(fileName);
+    }//GEN-LAST:event_deleteBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -539,6 +600,8 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel backgroundIMG;
     private javax.swing.JPanel backgroundIntegration;
     private javax.swing.JPanel backgroundPane;
+    private javax.swing.JTextArea cwsTA;
+    private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
@@ -553,6 +616,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -563,9 +627,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JButton loadIntegrationApp;
     private javax.swing.JButton promoteAppBTN;
     private javax.swing.JLayeredPane promoteMechPane;
-    private javax.swing.JLabel scoreLabel;
-    private javax.swing.JLabel scoreLabel1;
-    private javax.swing.JLabel scoreLabel2;
-    private javax.swing.JLabel scoreLabel3;
+    private javax.swing.JButton updateBTN;
     // End of variables declaration//GEN-END:variables
 }
