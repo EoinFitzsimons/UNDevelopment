@@ -61,7 +61,7 @@ public class handleInputs implements Serializable {
     }
 
     public String details(){
-        return "ID: "+id+" UserName: "+userName;
+        return ""+id+"\t"+userName;
     }
     
     

@@ -31,7 +31,8 @@ public class cardGame extends handleInputs {
     private double counter;
    
     private String userName1;
-    private String score = "0";
+    private int realScore = 0;
+    private String score = realScore+"";
     user newUser = new user();
     
     
@@ -101,7 +102,7 @@ public class cardGame extends handleInputs {
             os = new ObjectInputStream(fs);
              userList = (ArrayList<user>)os.readObject();
              
-             
+            // undevelopment.IntegrationsUI.displayScoreArea.append("ID: \t Name: \t Score: \n");
             for(int i =0; i<userList.size(); i++)
              {
                  user load = userList.get(i);
@@ -133,7 +134,7 @@ public class cardGame extends handleInputs {
       
       public void test()
       {
-          test.card1();
+          
           test.choices1();
           test.choices1a();
           test.choices1b();
