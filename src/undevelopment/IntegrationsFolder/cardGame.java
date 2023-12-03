@@ -51,31 +51,13 @@ public class cardGame extends handleInputs {
     
     choiceCardHolder test = new choiceCardHolder();
    
-    public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
+
   //  public static String url1 = "jdbc:mysql://localhost:3306/giftDB","root","1234";
+
+   // public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
     public static Connection Myconn;
     
-    public void ScriptRunner() 
-    {
-        try
-        {
-             DriverManager.registerDriver(new org.sqlite.JDBC());
-           // Myconn = DriverManager.getConnection(url);
-           Myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234");
-          ScriptRunner runner = new ScriptRunner(Myconn,false,false);
-          Reader reader = new BufferedReader(new FileReader("src/integrationsFolder/score.sql"));
-          runner.runScript(reader);
-          JOptionPane.showMessageDialog(null, "database and tables added");
-        }
-        catch(SQLException ex)
-        {
-            System.out.println("error db is not connected"+ex);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(cardGame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(cardGame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
     
     
     public void addUser()
@@ -148,7 +130,7 @@ public class cardGame extends handleInputs {
                  
              } 
            
-           
+            displayDB();
              
              
              os.close();
@@ -180,7 +162,11 @@ public class cardGame extends handleInputs {
                     String name = rs.getString("userName");
                     String score1 = rs.getString("score");
                     
+<<<<<<< HEAD
                     undevelopment.IntegrationsUI.displayScoreArea.append(id1+"/t"+name+"/t"+score1);
+=======
+                    undevelopment.IntegrationsUI.displayScoreArea.append(id+"\t"+name+"\t"+score+"\n");
+>>>>>>> daveBranch2
                 }
                 
           }
