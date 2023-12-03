@@ -17,11 +17,9 @@ public class UNDevelopmentMainApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    /*    
-       cardGame test = new cardGame();    
-       
-       test.test(); */
-        
+        UNDevelopmentMainMenuGUI mainApp = new UNDevelopmentMainMenuGUI();
+        mainApp.setVisible(true);
+            
         
     }
     

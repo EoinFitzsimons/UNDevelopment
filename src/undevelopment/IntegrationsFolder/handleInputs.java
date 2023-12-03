@@ -10,6 +10,7 @@ package undevelopment.IntegrationsFolder;
  */
 public class handleInputs {
     
+    protected int id;
     protected double choice;
     protected double lives;
     protected String userName;
@@ -17,6 +18,24 @@ public class handleInputs {
     public handleInputs() {
     }
 
+    public handleInputs(int id, String userName) {
+        this.id = id;
+        this.userName = userName;
+    }
+
+    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
+    
+    
     public double getChoice() {
         return choice;
     }
@@ -41,12 +60,6 @@ public class handleInputs {
         this.userName = userName;
     }
     
-    public void enterName()
-    {//open enter name
-        undevelopment.IntegrationsUI tets = new undevelopment.IntegrationsUI();
-        
-       userName =  undevelopment.IntegrationsUI.nameField.getText();
-        
-    }//close enter name
+    
     
 }
