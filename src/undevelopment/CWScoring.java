@@ -50,7 +50,7 @@ public class CWScoring implements Serializable{
     
     @Override
     public String toString() {
-        return "Hello " + user + ", your score is " + score + ", you took " + time + "seconds.";
+        return "Hello " + user + ", your score is " + score + ", you took " + time + " seconds.";
     }
     
 }
