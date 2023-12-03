@@ -1,8 +1,8 @@
 drop database if exists scoreDB;
 create database scoreDB;
+use scoreDB;
 
-drop table if exists integrationsScore;
-create table IF NOT EXISTS integrationsScore(
+create table integrationsScore(
 	ID int,
     userName varchar(20),
     score int

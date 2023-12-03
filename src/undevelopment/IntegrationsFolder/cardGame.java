@@ -28,7 +28,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import com.ibatis.common.jdbc.ScriptRunner;
 import java.io.FileNotFoundException;
-import java.sql.*;
+//import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,28 +52,24 @@ public class cardGame extends handleInputs {
     choiceCardHolder test = new choiceCardHolder();
    
     public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
+  //  public static String url1 = "jdbc:mysql://localhost:3306/giftDB","root","1234";
     public static Connection Myconn;
     
     public void ScriptRunner() 
     {
-   
-        new File("c:/myDB/").mkdir();
-        
-        
-        
-        
         try
         {
              DriverManager.registerDriver(new org.sqlite.JDBC());
-            Myconn = DriverManager.getConnection(url);
+           // Myconn = DriverManager.getConnection(url);
+           Myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234");
           ScriptRunner runner = new ScriptRunner(Myconn,false,false);
           Reader reader = new BufferedReader(new FileReader("src/integrationsFolder/score.sql"));
           runner.runScript(reader);
           JOptionPane.showMessageDialog(null, "database and tables added");
         }
-        catch(SQLException e)
+        catch(SQLException ex)
         {
-            System.out.println(e);
+            System.out.println("error db is not connected"+ex);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(cardGame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -173,23 +169,23 @@ public class cardGame extends handleInputs {
     
     public void displayDB()
     {
-         try(Connection conn = DriverManager.getConnection(url))
+         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"))
           {
                Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM integrationsScore");
                 
                 while(rs.next())
                 {
-                    String id = rs.getString("ID");
+                    String id1 = rs.getString("ID");
                     String name = rs.getString("userName");
-                    String score = rs.getString("score");
+                    String score1 = rs.getString("score");
                     
-                    undevelopment.IntegrationsUI.displayScoreArea.append(id+"/t"+name+"/t"+score);
+                    undevelopment.IntegrationsUI.displayScoreArea.append(id1+"/t"+name+"/t"+score1);
                 }
                 
           }
-          catch(Exception e){
-              System.out.println("this is an error"+e);
+          catch(SQLException ex){
+              System.out.println("this is an error"+ex);
           
           }
     }
