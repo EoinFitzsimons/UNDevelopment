@@ -70,11 +70,11 @@ public class cardGame extends handleInputs {
       
         
         int randomID = (int)(Math.random()*1000+1);
-        
+        String random = randomID+"";
        
        String name = undevelopment.IntegrationsUI.nameField.getText();
         
-        newUser.setId(randomID);
+        newUser.setId(random);
         newUser.setUserName(undevelopment.IntegrationsUI.nameField.getText());
         newUser.setScore(score);
         System.out.println(name);
@@ -258,7 +258,7 @@ public class cardGame extends handleInputs {
               for(int i=0; i<userList.size(); i++)
               {
                  user  e = userList.get(i);
-                  if(e.getUserName().equalsIgnoreCase(selected))
+                  if(e.getId().equalsIgnoreCase(selected))
                   {
                      undevelopment.IntegrationsUI.displayScoreArea.append(e.details());
                   }

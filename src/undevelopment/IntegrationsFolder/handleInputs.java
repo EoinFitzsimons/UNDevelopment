@@ -12,12 +12,12 @@ import java.io.Serializable;
  */
 public class handleInputs implements Serializable {
     
-    protected int id;
+    protected String id;
     protected double choice;
     protected double lives;
     protected String userName;
 
-    public handleInputs(int id, String userName) {
+    public handleInputs(String id, String userName) {
         this.id = id;
         this.userName = userName;
     }
@@ -25,11 +25,11 @@ public class handleInputs implements Serializable {
     public handleInputs() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     

@@ -15,7 +15,7 @@ public class user extends handleInputs implements Serializable {
     
     private String score;
 
-    public user(String score, int id, String userName) {
+    public user(String score, String id, String userName) {
         super(id, userName);
         this.score = score;
     }
@@ -29,12 +29,12 @@ public class user extends handleInputs implements Serializable {
     }
 
     @Override
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     @Override
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
