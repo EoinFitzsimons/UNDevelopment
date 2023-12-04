@@ -200,6 +200,12 @@ public class IntegrationsUI extends javax.swing.JFrame {
             }
         });
 
+        choiceTwoBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                choiceTwoBTNActionPerformed(evt);
+            }
+        });
+
         scoreLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         scoreLabel.setText("Score:");
 
@@ -353,6 +359,16 @@ public class IntegrationsUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_searchBTNActionPerformed
+
+    private void choiceTwoBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceTwoBTNActionPerformed
+        // TODO add your handling code here:
+      
+            scoreCounter.setText("1");
+           
+       
+        
+        
+    }//GEN-LAST:event_choiceTwoBTNActionPerformed
 
     /**
      * @param args the command line arguments

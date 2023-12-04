@@ -398,6 +398,9 @@
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JButton" name="choiceTwoBTN">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="choiceTwoBTNActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                   </AuxValues>

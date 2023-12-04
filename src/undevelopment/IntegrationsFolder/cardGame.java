@@ -43,7 +43,7 @@ public class cardGame extends handleInputs {
     private int realScore = 0;
     private String score = realScore+"";
     user newUser = new user();
-    
+    handleInputs tes = new handleInputs();
     
     choiceCardHolder test = new choiceCardHolder();
    
@@ -111,8 +111,11 @@ public class cardGame extends handleInputs {
             System.out.println("Error writing to file: "+e);
         }//end catch
         
+         
+        
         
     }
+    
     
     public void display()
     {
@@ -191,6 +194,7 @@ public class cardGame extends handleInputs {
           test.choices1a();
           test.choices1b();
           
+          undevelopment.IntegrationsUI.livesCounter.setText("5");
           
           
           if(undevelopment.IntegrationsUI.choiceOneBTN.isSelected())
