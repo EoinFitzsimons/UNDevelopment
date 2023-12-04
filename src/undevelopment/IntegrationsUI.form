@@ -78,6 +78,7 @@
                           <Component id="addBTN" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
                           <Component id="searchBTN" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
                           <Component id="deleteBTN" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
+                          <Component id="startBTN" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -88,7 +89,7 @@
                               <Component id="displayBTN" min="-2" pref="201" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -121,9 +122,11 @@
                               <Component id="searchBTN" min="-2" pref="70" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Component id="deleteBTN" min="-2" pref="70" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="startBTN" min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -182,6 +185,9 @@
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value="Enter ID to search"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="addBTN">
               <Properties>
@@ -203,6 +209,9 @@
                 <Property name="text" type="java.lang.String" value="Search"/>
                 <Property name="toolTipText" type="java.lang.String" value="Enter ID to search for user!"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchBTNActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="refereshBTN">
               <Properties>
@@ -219,9 +228,18 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displayBTNActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="startBTN">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Start Game"/>
+                <Property name="toolTipText" type="java.lang.String" value="ID must be entered in the search to delete user"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startBTNActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JLayeredPane" name="jLayeredPane1">
+        <Container class="javax.swing.JLayeredPane" name="backgroundGame">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="cc" red="cc" type="rgb"/>

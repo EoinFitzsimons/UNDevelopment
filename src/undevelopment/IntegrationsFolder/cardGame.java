@@ -22,15 +22,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.io.FileReader;
-import java.io.Reader;
-import java.io.BufferedReader;
+
 import java.io.File;
-import com.ibatis.common.jdbc.ScriptRunner;
-import java.io.FileNotFoundException;
-//import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import java.sql.*;
+
 
 
 public class cardGame extends handleInputs {
@@ -217,7 +213,59 @@ public class cardGame extends handleInputs {
           
           
       }
+      
+      
+      public void searchBTN()
+      {
+          try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"))
+          {
+              String grabInfo = undevelopment.IntegrationsUI.searchField.getText();
+             PreparedStatement pst = conn.prepareStatement("select * From integrationsScore Where ID = ?");
+              
+              pst.setString(1,grabInfo);
+              ResultSet rs = pst.executeQuery();
+              if(rs.next())
+              {
+                  undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(1)+"\t");
+                   undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(2)+"\t");
+                    undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(3));
+              } else {
+                  JOptionPane.showMessageDialog(null, "Error not in database but is possibly in array!");
+                  searchArray();
+              }
+              
+            
+              
+              
+          }
+          catch(SQLException ex)
+          {
+              System.out.println("There is an error :"+ex);
+          }
+      }
+      
     
+      public void searchArray()
+      {
+          String selected = undevelopment.IntegrationsUI.searchField.getText();
+          
+          if(userList.isEmpty())
+          {
+              JOptionPane.showMessageDialog(null, "There is no user to search");
+          }//end if
+          else
+          {
+              for(int i=0; i<userList.size(); i++)
+              {
+                 user  e = userList.get(i);
+                  if(e.getUserName().equalsIgnoreCase(selected))
+                  {
+                     undevelopment.IntegrationsUI.displayScoreArea.append(e.details());
+                  }
+              }
+          }
+          
+      }
     
     
 }

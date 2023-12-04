@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package undevelopment;
+import javax.swing.JOptionPane;
 import undevelopment.IntegrationsFolder.cardGame;
 import undevelopment.IntegrationsFolder.choiceCardHolder;
 /**
@@ -16,6 +17,8 @@ public class IntegrationsUI extends javax.swing.JFrame {
      */
     public IntegrationsUI() {
         initComponents();
+       gamePane.setVisible(false);
+       startBTN.setVisible(false);
     }
 
     /**
@@ -40,7 +43,8 @@ public class IntegrationsUI extends javax.swing.JFrame {
         searchBTN = new javax.swing.JButton();
         refereshBTN = new javax.swing.JButton();
         displayBTN = new javax.swing.JButton();
-        jLayeredPane1 = new javax.swing.JLayeredPane();
+        startBTN = new javax.swing.JButton();
+        backgroundGame = new javax.swing.JLayeredPane();
         gamePane = new javax.swing.JPanel();
         cardHolderImg = new javax.swing.JLabel();
         livesLabel = new javax.swing.JLabel();
@@ -91,6 +95,11 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
         searchBTN.setText("Search");
         searchBTN.setToolTipText("Enter ID to search for user!");
+        searchBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBTNActionPerformed(evt);
+            }
+        });
 
         refereshBTN.setText("Referesh");
         refereshBTN.setToolTipText("Press me to see your results");
@@ -100,6 +109,14 @@ public class IntegrationsUI extends javax.swing.JFrame {
         displayBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayBTNActionPerformed(evt);
+            }
+        });
+
+        startBTN.setText("Start Game");
+        startBTN.setToolTipText("ID must be entered in the search to delete user");
+        startBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBTNActionPerformed(evt);
             }
         });
 
@@ -120,7 +137,8 @@ public class IntegrationsUI extends javax.swing.JFrame {
                             .addComponent(searchField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
                     .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(startBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +146,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
                         .addComponent(refereshBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         scorePanelLayout.setVerticalGroup(
             scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,13 +172,15 @@ public class IntegrationsUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                        .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(startBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         integrateTabbedPane.addTab("Check Score", scorePanel);
 
-        jLayeredPane1.setBackground(new java.awt.Color(204, 204, 0));
+        backgroundGame.setBackground(new java.awt.Color(204, 204, 0));
 
         gamePane.setBackground(new java.awt.Color(102, 204, 0));
         gamePane.setMaximumSize(new java.awt.Dimension(800, 600));
@@ -241,26 +261,26 @@ public class IntegrationsUI extends javax.swing.JFrame {
                 .addGap(70, 70, 70))
         );
 
-        jLayeredPane1.setLayer(gamePane, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        backgroundGame.setLayer(gamePane, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
-        jLayeredPane1.setLayout(jLayeredPane1Layout);
-        jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout backgroundGameLayout = new javax.swing.GroupLayout(backgroundGame);
+        backgroundGame.setLayout(backgroundGameLayout);
+        backgroundGameLayout.setHorizontalGroup(
+            backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 809, Short.MAX_VALUE)
-            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+            .addGroup(backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundGameLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(gamePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
-        jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        backgroundGameLayout.setVerticalGroup(
+            backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(gamePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        integrateTabbedPane.addTab("Card Game", jLayeredPane1);
+        integrateTabbedPane.addTab("Card Game", backgroundGame);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,25 +310,49 @@ public class IntegrationsUI extends javax.swing.JFrame {
     }//GEN-LAST:event_choiceOneBTNActionPerformed
 
     private void integrateTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_integrateTabbedPaneMouseClicked
-       cardGame test = new cardGame();    
        
-         test.test();
     }//GEN-LAST:event_integrateTabbedPaneMouseClicked
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
-       
-       cardGame test = new cardGame();
+       if(nameField.getText().isEmpty()){
+           JOptionPane.showMessageDialog(null, "You must fill this field before adding");
+       } else {
+           cardGame test = new cardGame();
        test.addUser();
-        
-        
+        startBTN.setVisible(true);
+       }
     }//GEN-LAST:event_addBTNActionPerformed
 
     private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
         // TODO add your handling code here:
         cardGame test = new cardGame();
-        test.display();
+        
+        displayScoreArea.setText("");
+            displayScoreArea.setText("ID: \t Name: \t Score: \n");
+            test.display();
     }//GEN-LAST:event_displayBTNActionPerformed
+
+    private void startBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBTNActionPerformed
+        // TODO add your handling code here:
+        gamePane.setVisible(true);
+        cardGame game = new cardGame();
+        game.test();
+    }//GEN-LAST:event_startBTNActionPerformed
+
+    private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
+        // TODO add your handling code here:
+       cardGame load = new cardGame();
+        if(searchField.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "You must fill this field before search");
+        } else {
+            displayScoreArea.setText("");
+            displayScoreArea.setText("ID: \t Name: \t Score: \n");
+            load.searchBTN();
+        }
+        
+    }//GEN-LAST:event_searchBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,6 +396,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
+    private javax.swing.JLayeredPane backgroundGame;
     public static javax.swing.JLabel cardHolderImg;
     public static javax.swing.JButton choiceOneBTN;
     public static javax.swing.JButton choiceThreeBTN;
@@ -361,7 +406,6 @@ public class IntegrationsUI extends javax.swing.JFrame {
     public static javax.swing.JTextArea displayScoreArea;
     private javax.swing.JPanel gamePane;
     private javax.swing.JTabbedPane integrateTabbedPane;
-    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JLabel livesCounter;
     private javax.swing.JLabel livesLabel;
@@ -372,7 +416,8 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private javax.swing.JLabel scoreLabel;
     private javax.swing.JPanel scorePanel;
     private javax.swing.JButton searchBTN;
-    private javax.swing.JTextField searchField;
+    public static javax.swing.JTextField searchField;
     private javax.swing.JLabel searchLabel;
+    private javax.swing.JButton startBTN;
     // End of variables declaration//GEN-END:variables
 }
