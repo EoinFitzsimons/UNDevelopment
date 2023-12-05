@@ -151,7 +151,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
                         .addComponent(refereshBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         scorePanelLayout.setVerticalGroup(
             scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,85 +190,53 @@ public class IntegrationsUI extends javax.swing.JFrame {
         gamePane.setBackground(new java.awt.Color(102, 204, 0));
         gamePane.setMaximumSize(new java.awt.Dimension(800, 600));
         gamePane.setMinimumSize(new java.awt.Dimension(800, 600));
+        gamePane.setLayout(null);
+        gamePane.add(cardHolderImg);
+        cardHolderImg.setBounds(40, 70, 670, 370);
 
         livesLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         livesLabel.setText("Lives:");
+        gamePane.add(livesLabel);
+        livesLabel.setBounds(551, 6, 101, 77);
 
         livesCounter.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         livesCounter.setText("0");
+        gamePane.add(livesCounter);
+        livesCounter.setBounds(670, 6, 90, 77);
 
         choiceOneBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 choiceOneBTNActionPerformed(evt);
             }
         });
+        gamePane.add(choiceOneBTN);
+        choiceOneBTN.setBounds(30, 470, 220, 65);
 
         choiceTwoBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 choiceTwoBTNActionPerformed(evt);
             }
         });
+        gamePane.add(choiceTwoBTN);
+        choiceTwoBTN.setBounds(260, 470, 228, 65);
+
+        choiceThreeBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                choiceThreeBTNActionPerformed(evt);
+            }
+        });
+        gamePane.add(choiceThreeBTN);
+        choiceThreeBTN.setBounds(500, 470, 225, 65);
 
         scoreLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         scoreLabel.setText("Score:");
+        gamePane.add(scoreLabel);
+        scoreLabel.setBounds(30, 6, 103, 77);
 
         scoreCounter.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         scoreCounter.setText("0");
-
-        javax.swing.GroupLayout gamePaneLayout = new javax.swing.GroupLayout(gamePane);
-        gamePane.setLayout(gamePaneLayout);
-        gamePaneLayout.setHorizontalGroup(
-            gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePaneLayout.createSequentialGroup()
-                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(gamePaneLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(scoreCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(gamePaneLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(choiceOneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(6, 6, 6)
-                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(choiceTwoBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                    .addComponent(cardHolderImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(gamePaneLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(livesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(livesCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))
-                    .addGroup(gamePaneLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(choiceThreeBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        gamePaneLayout.setVerticalGroup(
-            gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gamePaneLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(cardHolderImg, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(livesCounter, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                    .addComponent(livesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scoreCounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(gamePaneLayout.createSequentialGroup()
-                        .addGap(382, 382, 382)
-                        .addComponent(choiceOneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(gamePaneLayout.createSequentialGroup()
-                        .addGap(378, 378, 378)
-                        .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(choiceTwoBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(choiceThreeBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(70, 70, 70))
-        );
+        gamePane.add(scoreCounter);
+        scoreCounter.setBounds(151, 6, 104, 77);
 
         backgroundGame.setLayer(gamePane, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -276,17 +244,17 @@ public class IntegrationsUI extends javax.swing.JFrame {
         backgroundGame.setLayout(backgroundGameLayout);
         backgroundGameLayout.setHorizontalGroup(
             backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
             .addGroup(backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundGameLayout.createSequentialGroup()
-                    .addGap(0, 22, Short.MAX_VALUE)
-                    .addComponent(gamePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(gamePane, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE))
         );
         backgroundGameLayout.setVerticalGroup(
             backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 571, Short.MAX_VALUE)
             .addGroup(backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(gamePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(backgroundGameLayout.createSequentialGroup()
+                    .addComponent(gamePane, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 2, Short.MAX_VALUE)))
         );
 
         integrateTabbedPane.addTab("Card Game", backgroundGame);
@@ -296,7 +264,6 @@ public class IntegrationsUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(integrateTabbedPane)
                 .addContainerGap())
         );
@@ -311,7 +278,8 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private void choiceOneBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceOneBTNActionPerformed
         // TODO add your handling code here:
         
-      
+      choiceCardHolder load = new  choiceCardHolder();
+      load.btn1();
         
           
        
@@ -364,12 +332,9 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void choiceTwoBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceTwoBTNActionPerformed
         // TODO add your handling code here:
-            int realScore =0;
-           realScore++;
-            String displayScore = realScore+"";
-          
-            scoreCounter.setText(displayScore);
-           
+            
+            choiceCardHolder load = new  choiceCardHolder();
+      load.btn2();
        
         
         
@@ -380,6 +345,14 @@ public class IntegrationsUI extends javax.swing.JFrame {
         cardGame load = new cardGame();
         load.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
+
+    private void choiceThreeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceThreeBTNActionPerformed
+        // TODO add your handling code here:
+        
+         choiceCardHolder load = new  choiceCardHolder();
+            load.btn3();
+       
+    }//GEN-LAST:event_choiceThreeBTNActionPerformed
 
     /**
      * @param args the command line arguments

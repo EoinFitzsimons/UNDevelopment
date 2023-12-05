@@ -68,8 +68,8 @@ public class cardGame extends handleInputs {
     
      public void gameTest()
      {
-         test.cardHolder();
-         test.updateGame();
+         test.trial();
+         
      }
       
      
