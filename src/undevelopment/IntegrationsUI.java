@@ -92,6 +92,11 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
         deleteBTN.setText("Delete");
         deleteBTN.setToolTipText("ID must be entered in the search to delete user");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTNActionPerformed(evt);
+            }
+        });
 
         searchBTN.setText("Search");
         searchBTN.setToolTipText("Enter ID to search for user!");
@@ -186,8 +191,6 @@ public class IntegrationsUI extends javax.swing.JFrame {
         gamePane.setMaximumSize(new java.awt.Dimension(800, 600));
         gamePane.setMinimumSize(new java.awt.Dimension(800, 600));
 
-        cardHolderImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/spades.png"))); // NOI18N
-
         livesLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         livesLabel.setText("Lives:");
 
@@ -227,12 +230,12 @@ public class IntegrationsUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(choiceOneBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(6, 6, 6)
-                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(choiceTwoBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cardHolderImg))
+                .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(choiceTwoBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                    .addComponent(cardHolderImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(gamePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gamePaneLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(livesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(livesCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -276,7 +279,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
             .addGap(0, 809, Short.MAX_VALUE)
             .addGroup(backgroundGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundGameLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 22, Short.MAX_VALUE)
                     .addComponent(gamePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         backgroundGameLayout.setVerticalGroup(
@@ -307,12 +310,11 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void choiceOneBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceOneBTNActionPerformed
         // TODO add your handling code here:
-        choiceCardHolder load = new choiceCardHolder();
-        load.choices1();
         
-         cardGame test = new cardGame();    
+      
+        
+          
        
-         test.test();
     }//GEN-LAST:event_choiceOneBTNActionPerformed
 
     private void integrateTabbedPaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_integrateTabbedPaneMouseClicked
@@ -343,7 +345,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         gamePane.setVisible(true);
         cardGame game = new cardGame();
-        game.test();
+        game.gameTest();
     }//GEN-LAST:event_startBTNActionPerformed
 
     private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
@@ -362,13 +364,22 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void choiceTwoBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceTwoBTNActionPerformed
         // TODO add your handling code here:
-      
-            scoreCounter.setText("1");
+            int realScore =0;
+           realScore++;
+            String displayScore = realScore+"";
+          
+            scoreCounter.setText(displayScore);
            
        
         
         
     }//GEN-LAST:event_choiceTwoBTNActionPerformed
+
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        // TODO add your handling code here:
+        cardGame load = new cardGame();
+        load.delete();
+    }//GEN-LAST:event_deleteBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -397,9 +408,9 @@ public class IntegrationsUI extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        cardGame test = new cardGame();    
+         
        
-         test.test();
+        
         
         
         /* Create and display the form */

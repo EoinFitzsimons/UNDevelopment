@@ -24,8 +24,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import java.io.File;
+import java.io.FileWriter;
 
 import java.sql.*;
+
 
 
 
@@ -36,8 +38,7 @@ public class cardGame extends handleInputs {
     
     ArrayList <user> userList = new ArrayList<>();
     
-    private double cardNum;
-    private double counter;
+  
    
     private String userName1;
     private int realScore = 0;
@@ -46,6 +47,8 @@ public class cardGame extends handleInputs {
     handleInputs tes = new handleInputs();
     
     choiceCardHolder test = new choiceCardHolder();
+    
+    
    
 
   //  public static String url1 = "jdbc:mysql://localhost:3306/giftDB","root","1234";
@@ -63,6 +66,14 @@ public class cardGame extends handleInputs {
         }
     }
     
+     public void gameTest()
+     {
+         test.cardHolder();
+         test.updateGame();
+     }
+      
+     
+     
     
     
     public void addUser()
@@ -173,7 +184,7 @@ public class cardGame extends handleInputs {
 
                     undevelopment.IntegrationsUI.displayScoreArea.append(id1+"\t"+name+"\t"+score1+"\n");
 
-                   // undevelopment.IntegrationsUI.displayScoreArea.append(id+"\t"+name+"\t"+score+"\n");
+                   
 
                 }
                 
@@ -185,50 +196,18 @@ public class cardGame extends handleInputs {
     }
     
     
-     
-      
-      public void test()
-      {
-          
-          test.choices1();
-          test.choices1a();
-          test.choices1b();
-          
-          undevelopment.IntegrationsUI.livesCounter.setText("5");
-          
-          
-          if(undevelopment.IntegrationsUI.choiceOneBTN.isSelected())
-          {//open if
-              JOptionPane.showMessageDialog(null, "You got it right!");
-             // score ++;
-              undevelopment.IntegrationsUI.scoreCounter.setText("1");
-          } else if (undevelopment.IntegrationsUI.choiceTwoBTN.isSelected())
-          {//open else
-              JOptionPane.showMessageDialog(null, "You got it wrong!");
-             // score --;
-              undevelopment.IntegrationsUI.scoreCounter.setText("0");
-          }//close else
-          else if (undevelopment.IntegrationsUI.choiceTwoBTN.isSelected())
-          {
-              JOptionPane.showMessageDialog(null, "You got it wrong!");
-           //   score --;
-              undevelopment.IntegrationsUI.scoreCounter.setText("0");
-          }
-          
-          
-      }
       
       
       public void searchBTN()
-      {
-          try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"))
+      {//open search button
+          try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234")) //establishing connection with db
           {
-              String grabInfo = undevelopment.IntegrationsUI.searchField.getText();
-             PreparedStatement pst = conn.prepareStatement("select * From integrationsScore Where ID = ?");
+              String grabInfo = undevelopment.IntegrationsUI.searchField.getText(); //grabs the string from the field
+             PreparedStatement pst = conn.prepareStatement("select * From integrationsScore Where ID = ?"); //searchs for IDs within the db file
               
-              pst.setString(1,grabInfo);
+              pst.setString(1,grabInfo); //using the ids to search as the parameters
               ResultSet rs = pst.executeQuery();
-              if(rs.next())
+              if(rs.next()) //loops through different parts of the db and displays it in the text area
               {
                   undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(1)+"\t");
                    undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(2)+"\t");
@@ -237,10 +216,7 @@ public class cardGame extends handleInputs {
                   JOptionPane.showMessageDialog(null, "Error not in database but is possibly in array!");
                   searchArray();
               }
-              
-            
-              
-              
+               
           }
           catch(SQLException ex)
           {
@@ -270,6 +246,28 @@ public class cardGame extends handleInputs {
           }
           
       }
+      
+      private void deleteFileContents(String fileName) {
+        FileWriter f; //declarations
+
+        try {
+            f = new FileWriter(fileName, false); // a secret append option is now set to false
+            f.write(""); // Overwrite the file with an empty string
+            f.close();
+        } catch (IOException e) {
+            // Handle the exception if the file cannot be cleared
+            System.out.println("There is an error "+e);
+        }
+    }
+     
+     public void delete()
+     {
+      
+        String fileName = "user2.dat"; // Replace with your file name
+        deleteFileContents(fileName);
+     }
+      
+      
     
     
 }

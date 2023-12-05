@@ -10,25 +10,22 @@ package undevelopment.IntegrationsFolder;
  */
 public class choiceCardHolder {
     
+   private String[][] cardSet1 = new String[16][6];
     
+   public void cardHolder()
+   {
+       cardSet1[0][0] = "______ climate change measures into national policies, strategies, and planning";
+       cardSet1[0][1] ="Embrace"; cardSet1[0][2] ="Implement";  cardSet1[0][3] ="Embed";
+       cardSet1[0][4] = "2";
+   }
     
-    public void choices1()
-    {
-         undevelopment.IntegrationsUI.choiceOneBTN.setText("I'm the right answer!");
-    }
-    
-    public void choices1a ()
-    {
-        undevelopment.IntegrationsUI.choiceTwoBTN.setText("I'm the wrong answer!");
-    }
-    
-    public void choices1b()
-    {
-        undevelopment.IntegrationsUI.choiceThreeBTN.setText("I'm the wrong answer!");
-    }
-    
-    
-    
+   public void updateGame()
+   {
+       undevelopment.IntegrationsUI.cardHolderImg.setText(cardSet1[0][0]);
+       undevelopment.IntegrationsUI.choiceOneBTN.setText(cardSet1[0][1]);
+       undevelopment.IntegrationsUI.choiceTwoBTN.setText(cardSet1[0][2]);
+       undevelopment.IntegrationsUI.choiceThreeBTN.setText(cardSet1[0][3]);
+   }
     
     
 }
