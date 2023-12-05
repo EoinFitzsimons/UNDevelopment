@@ -170,19 +170,19 @@ public class cardGame extends handleInputs {
     
     public void displayDB()
     {
-         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"))
+         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234")) // estabishes connection to the db
           {
-               Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM integrationsScore");
+               Statement stmt = conn.createStatement(); //used to create sql commands 
+                ResultSet rs = stmt.executeQuery("SELECT * FROM integrationsScore"); //pulls from the the table to be displayed
                 
-                while(rs.next())
+                while(rs.next()) // loops through the database for the following details
                 {
-                    String id1 = rs.getString("ID");
-                    String name = rs.getString("userName");
-                    String score1 = rs.getString("score");
+                    String id1 = rs.getString("ID"); //grabs id
+                    String name = rs.getString("userName"); //grabs the user name
+                    String score1 = rs.getString("score"); //grabs the score the user has 
                     
 
-                    undevelopment.IntegrationsUI.displayScoreArea.append(id1+"\t"+name+"\t"+score1+"\n");
+                    undevelopment.IntegrationsUI.displayScoreArea.append(id1+"\t"+name+"\t"+score1+"\n"); //displays all the users and their details
 
                    
 
@@ -198,7 +198,7 @@ public class cardGame extends handleInputs {
     
       
       
-      public void searchBTN()
+      public void searchBTN() //searches through the database 
       {//open search button
           try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234")) //establishing connection with db
           {
@@ -209,11 +209,13 @@ public class cardGame extends handleInputs {
               ResultSet rs = pst.executeQuery();
               if(rs.next()) //loops through different parts of the db and displays it in the text area
               {
-                  undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(1)+"\t");
-                   undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(2)+"\t");
-                    undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(3));
-              } else {
-                  JOptionPane.showMessageDialog(null, "Error not in database but is possibly in array!");
+                  undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(1)+"\t"); //grabbing the field based of its index in the db
+                   undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(2)+"\t"); //grabbing the field based of its index in the db
+                    undevelopment.IntegrationsUI.displayScoreArea.append(rs.getString(3)); //grabbing the field based of its index in the db
+              } 
+              else // in the event the user they are searching for is not in the data base, it will search through the array 
+              { 
+                  JOptionPane.showMessageDialog(null, "Error not in database but is possibly in array!"); 
                   searchArray();
               }
                
@@ -225,22 +227,22 @@ public class cardGame extends handleInputs {
       }
       
     
-      public void searchArray()
+      public void searchArray() //allows the user to search through the array
       {
-          String selected = undevelopment.IntegrationsUI.searchField.getText();
+          String selected = undevelopment.IntegrationsUI.searchField.getText(); //grabs the text from the field 
           
-          if(userList.isEmpty())
+          if(userList.isEmpty()) // checks to see if the array is empty
           {
-              JOptionPane.showMessageDialog(null, "There is no user to search");
+              JOptionPane.showMessageDialog(null, "There is no user to search"); //lets the user know their is no one in the array
           }//end if
           else
           {
-              for(int i=0; i<userList.size(); i++)
+              for(int i=0; i<userList.size(); i++) //loops through the array 
               {
-                 user  e = userList.get(i);
-                  if(e.getId().equalsIgnoreCase(selected))
+                 user  e = userList.get(i); //will get user based on index
+                  if(e.getId().equalsIgnoreCase(selected)) //ignores cases
                   {
-                     undevelopment.IntegrationsUI.displayScoreArea.append(e.details());
+                     undevelopment.IntegrationsUI.displayScoreArea.append(e.details()); //displays the users details in the text area
                   }
               }
           }
