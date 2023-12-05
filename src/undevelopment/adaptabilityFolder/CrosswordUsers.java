@@ -6,7 +6,7 @@ package undevelopment.adaptabilityFolder;
 
 /**
  *
- * @author dmoc2
+ * @author eoin
  */
 import java.io.File;
 import java.io.FileInputStream;
