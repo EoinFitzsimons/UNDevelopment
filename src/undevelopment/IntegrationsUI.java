@@ -334,7 +334,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         // TODO add your handling code here:
             
             choiceCardHolder load = new  choiceCardHolder();
-      load.btn2();
+             load.btn2();
        
         
         
