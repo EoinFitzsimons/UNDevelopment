@@ -60,6 +60,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         cwsTA = new javax.swing.JTextArea();
         deleteBTN = new javax.swing.JButton();
+        searchBTN = new javax.swing.JButton();
         promoteMechPane = new javax.swing.JLayeredPane();
         PromotingMechBackground = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -246,6 +247,13 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
             }
         });
 
+        searchBTN.setText("Search Scores");
+        searchBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout adaptabilityBackgroundLayout = new javax.swing.GroupLayout(adaptabilityBackground);
         adaptabilityBackground.setLayout(adaptabilityBackgroundLayout);
         adaptabilityBackgroundLayout.setHorizontalGroup(
@@ -262,14 +270,16 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
                         .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                             .addComponent(jScrollPane2))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
-                        .addGap(282, 282, 282)
-                        .addComponent(updateBTN)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteBTN)
-                        .addGap(282, 282, 282)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(updateBTN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deleteBTN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(searchBTN)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         adaptabilityBackgroundLayout.setVerticalGroup(
             adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,7 +297,8 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(updateBTN)
-                    .addComponent(deleteBTN))
+                    .addComponent(deleteBTN)
+                    .addComponent(searchBTN))
                 .addGap(80, 80, 80)
                 .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -482,6 +493,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         AwarenessGUI load = new AwarenessGUI();
         load.setVisible(true);
+        this.dispose();
 
     }//GEN-LAST:event_awarenessLoadActionPerformed
 
@@ -496,6 +508,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         IntegrationsUI load = new IntegrationsUI();
         load.setVisible(true);
+        this.dispose();
 
        // cardGame load1 = new cardGame();
        // load1.ScriptRunner();
@@ -509,6 +522,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         AdaptabilityGUI load = new AdaptabilityGUI();
         load.setVisible(true);
+        this.dispose();
 
 
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
@@ -523,6 +537,12 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         CrosswordUsers delete = new CrosswordUsers();
         delete.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
+
+    private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
+        // TODO add your handling code here:
+        CrosswordUsers search = new CrosswordUsers();
+        search.search();
+    }//GEN-LAST:event_searchBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -597,6 +617,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JButton loadIntegrationApp;
     private javax.swing.JButton promoteAppBTN;
     private javax.swing.JLayeredPane promoteMechPane;
+    private javax.swing.JButton searchBTN;
     private javax.swing.JButton updateBTN;
     // End of variables declaration//GEN-END:variables
 }
