@@ -491,6 +491,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         AwarenessGUI load = new AwarenessGUI();
         load.setVisible(true);
+        this.dispose();
 
     }//GEN-LAST:event_awarenessLoadActionPerformed
 
@@ -505,6 +506,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         IntegrationsUI load = new IntegrationsUI();
         load.setVisible(true);
+        this.dispose();
 
     }//GEN-LAST:event_loadIntegrationAppActionPerformed
 
@@ -514,6 +516,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         AdaptabilityGUI load = new AdaptabilityGUI();
         load.setVisible(true);
+        this.dispose();
 
 
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed

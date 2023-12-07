@@ -167,6 +167,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         guessBTN = new javax.swing.JButton();
         timeTF = new javax.swing.JTextField();
         stopBTN = new javax.swing.JButton();
+        backBTN1 = new javax.swing.JButton();
         solutionPanel = new javax.swing.JPanel();
         clueLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -719,7 +720,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         timeTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         timeTF.setText("Time Elapsed: 0");
         crosswordPanel.add(timeTF);
-        timeTF.setBounds(670, 100, 120, 22);
+        timeTF.setBounds(660, 100, 120, 22);
 
         stopBTN.setText("Stop");
         stopBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -729,6 +730,15 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         });
         crosswordPanel.add(stopBTN);
         stopBTN.setBounds(540, 100, 60, 23);
+
+        backBTN1.setText("Back");
+        backBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBTN1ActionPerformed(evt);
+            }
+        });
+        crosswordPanel.add(backBTN1);
+        backBTN1.setBounds(700, 130, 80, 20);
 
         adaptabilityTab.addTab("Game", crosswordPanel);
 
@@ -1465,6 +1475,13 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_stopBTNActionPerformed
 
+    private void backBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTN1ActionPerformed
+        // TODO add your handling code here:
+        UNDevelopmentMainMenuGUI load = new UNDevelopmentMainMenuGUI();
+        load.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backBTN1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1546,6 +1563,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
     private javax.swing.JTextField b8TF;
     private javax.swing.JTextField b8TF1;
     private javax.swing.JButton backBTN;
+    private javax.swing.JButton backBTN1;
     private javax.swing.JTextField c1TF;
     private javax.swing.JTextField c1TF1;
     private javax.swing.JTextField c2TF;
