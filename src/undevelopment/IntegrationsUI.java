@@ -313,6 +313,8 @@ public class IntegrationsUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         gamePane.setVisible(true);
         cardGame game = new cardGame();
+        choiceCardHolder test = new   choiceCardHolder();
+        test.askID();
         game.gameTest();
     }//GEN-LAST:event_startBTNActionPerformed
 

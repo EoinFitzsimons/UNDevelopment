@@ -15,3 +15,6 @@ insert into integrationsScore values(19,"Rachel", 1);
 insert into integrationsScore values(11,"Ricky", 2);
 insert into integrationsScore values(18,"Trevor", 9);
 insert into integrationsScore values(14,"Corey", 3);
+
+
+
