@@ -385,11 +385,11 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private void refereshBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refereshBTNActionPerformed
         // TODO add your handling code here:
         
-         CardGame test = new CardGame();
+       //  CardGame test = new CardGame();
         
-        displayScoreArea.setText("");
-            displayScoreArea.setText("ID: \t Name: \t Score: \n");
-            test.display();
+        //displayScoreArea.setText("");
+        //    displayScoreArea.setText("ID: \t Name: \t Score: \n");
+        //    test.display();
         
     }//GEN-LAST:event_refereshBTNActionPerformed
 

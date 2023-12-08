@@ -27,7 +27,7 @@ public class ChoiceCardHolder {
    private static int score=0; //keeps track of the users score 
    private static int Cardnum=0; //helps to let the program to load the next card in the array and saves adding 16 if functions
    private static int lives=5; //lets the user know the amount of attempts they have
-  public static int  id;
+  public  int  id;
    
    
   
@@ -163,7 +163,7 @@ this will be loaded when the user runs out of lives!
        }
    }
     
-    public static void updateUserScore() {
+    public  void updateUserScore() {
        
         
         

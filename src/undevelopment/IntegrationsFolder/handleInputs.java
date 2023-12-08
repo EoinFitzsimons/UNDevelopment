@@ -13,8 +13,7 @@ import java.io.Serializable;
 public class HandleInputs implements Serializable {
     
     protected String id;
-    protected double choice;
-    protected double lives;
+   
     protected String userName;
 
     public HandleInputs(String id, String userName) {
@@ -31,25 +30,6 @@ public class HandleInputs implements Serializable {
 
     public void setId(String id) {
         this.id = id;
-    }
-    
-
-    
-
-    public double getChoice() {
-        return choice;
-    }
-
-    public void setChoice(double choice) {
-        this.choice = choice;
-    }
-
-    public double getLives() {
-        return lives;
-    }
-
-    public void setLives(double lives) {
-        this.lives = lives;
     }
 
     public String getUserName() {

@@ -302,8 +302,39 @@ public class CardGame extends HandleInputs {
       
         String fileName = "user2.dat"; // Replace with your file name
         deleteFileContents(fileName);
+        deleteFromDB();
      }
       
+     
+     private void  deleteFromDB()
+     {
+         //user will be able to delete details from the db
+         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"))
+         {
+            
+             String query = "Delete From integrationsScore Where ID = ?";
+             PreparedStatement pst = conn.prepareStatement(query);
+             String grabInfo = undevelopment.IntegrationsUI.searchField.getText();
+             int tempID = Integer.parseInt(grabInfo);
+             pst.setInt(1, tempID);
+             if(test.userExist(tempID) == true)
+             {
+                 pst.executeUpdate();
+                 System.out.println("Deleted from db successfully");
+                 
+             } else if(test.userExist(tempID) == false)
+             {
+                 System.out.println("Unable to delete from db because user does not exist!");
+             } else {
+                 System.out.println("User cannot be deleted because you entered user name or the field is empty");
+             }
+             
+         }
+         catch(SQLException ex)
+         {
+             JOptionPane.showMessageDialog(null, ex);
+         }
+     }
       
     
     
