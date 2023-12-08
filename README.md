@@ -6,22 +6,22 @@ Our task is to build a prototype of an application which would support the achie
 
 Project Proposal
 
-The idea is to have an app that spreads information on climate action which is goal thirteen. We will be going about this in a fun way, using quizzes, hangman, and other word games.
+The idea is to have an app that spreads information on climate action which is goal thirteen. We will be going about this in a fun way, using quizzes, crossword, and other word games.
 
-Section Zero - Eoin, David, Conor - Application / Links to individual applications
+Section Zero - Eoin, David, Conor - Application / Links to individual applications.
 
-Section One - Eoin Fitzsimons - Crossword
+Section One - Eoin Fitzsimons - Crossword on adapting to natural disasters.
 
-Section Two - David O Connor -
+Section Two - David O Connor - Card Quiz on how dations are integrating changes to combat climate change.
 
-Section Three - Conor Judge -
+Section Three - Conor Judge - 
 
-Section Four - Aaron Eppelbaum
+Section Four - Aaron Eppelbaum - 
 
 
 
 Style Choices
 
-Colours: Red (#dc143c)  and Blue (#caf2fb) and Green (#98c12a)
+Colours:Blue (#caf2fb)
 Fonts: Lobster and Sarabun
 Aspect Ratio: Default
