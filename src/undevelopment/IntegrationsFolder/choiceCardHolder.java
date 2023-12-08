@@ -5,6 +5,14 @@
 package undevelopment.IntegrationsFolder;
 
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.*;
 
 
 
@@ -19,7 +27,7 @@ public class choiceCardHolder {
    private static int score=0; //keeps track of the users score 
    private static int Cardnum=0; //helps to let the program to load the next card in the array and saves adding 16 if functions
    private static int lives=5; //lets the user know the amount of attempts they have
-  
+  public static int  id;
    
    
   
@@ -30,7 +38,7 @@ public class choiceCardHolder {
     }
    
    
-   
+   private String lol = "______ climate change measures into national \n policies, strategies, and planning";
     
    public void cardHolder()
    {
@@ -88,6 +96,7 @@ public class choiceCardHolder {
         if(cardSet1[Cardnum][4] == "1") // if the button matches the answer to question it will give the user +1 to their score
        {
            score++;
+            updateUserScore();
              
        } else {
             lives--; //will remove a live from a user if the answer they given is wrong
@@ -95,16 +104,17 @@ public class choiceCardHolder {
         }
         Cardnum++; // this will let the program to know to move onto the next card whether the answer is right or not
         updateGame(); // this will let the program know to change the text in the button and card img holder according to what card it is on in the array
-        
-        
+     
    }//close button 1
   
    //these buttons serve as the functionailty of the program, without making these buttons in this class would make it awkward trying to transfer scoring and lives
+   
    public void btn2()
    {
         if(cardSet1[Cardnum][4] == "2") // if the button matches the answer to question it will give the user +1 to their score
        {
            score++;
+           updateUserScore();
              
        } else {
             lives--; //will remove a live from a user if the answer they given is wrong
@@ -118,12 +128,13 @@ public class choiceCardHolder {
    
    
   //these buttons serve as the functionailty of the program, without making these buttons in this class would make it awkward trying to transfer scoring and lives
+   
    public void btn3()
    {
         if(cardSet1[Cardnum][4]== "3") // if the button matches the answer to question it will give the user +1 to their score
        {
            score++;
-          
+           updateUserScore();
            
        }else {
             lives--; //will remove a live from a user if the answer they given is wrong
@@ -151,11 +162,38 @@ this will be loaded when the user runs out of lives!
             
        }
    }
+    
+    public static void updateUserScore() {
+       
+        
+        
+        
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB", "root", "1234")) 
+    {//open try 
+        String query = "UPDATE integrationsScore SET score = ? WHERE ID = ?" ;
+        PreparedStatement pst = conn.prepareStatement(query);
+        pst.setInt(1, score);
+        pst.setInt(2, id);
+        pst.executeUpdate();
+    }//close try
+    catch (SQLException ex) 
+    {
+        JOptionPane.showMessageDialog(null, ex.getMessage());
+    }
+}
+
+    
+    
+   public void askID()
+   {
+      id = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter Your User ID! Please check the display!"));
+   }
    
    
    
    public void trial() //this method is passed into the constructor in order to have the game functionailty to be working
    {
+       
        cardHolder();
        updateGame();
       

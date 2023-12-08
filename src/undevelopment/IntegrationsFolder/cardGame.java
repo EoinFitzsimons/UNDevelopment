@@ -43,6 +43,8 @@ public class cardGame extends handleInputs {
     private String userName1;
     private int realScore = 0;
     private String score = realScore+"";
+    public  int randomID = (int)(Math.random()*1000+1);
+   
     user newUser = new user();
     handleInputs tes = new handleInputs();
     
@@ -80,7 +82,7 @@ public class cardGame extends handleInputs {
     {
       
         
-        int randomID = (int)(Math.random()*1000+1);
+       
         String random = randomID+"";
        
        String name = undevelopment.IntegrationsUI.nameField.getText();
@@ -91,7 +93,7 @@ public class cardGame extends handleInputs {
         System.out.println(name);
         userList.add(newUser);
         
-       
+       addUserToDB();
        
         // TODO add your handling code here:
         //file
@@ -125,7 +127,39 @@ public class cardGame extends handleInputs {
          
         
         
-    }
+    }//end add user 
+    
+    
+    public void addUserToDB()
+    {
+         String name = undevelopment.IntegrationsUI.nameField.getText();
+       
+         try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"))
+         {
+             String query = "insert into integrationsScore (ID, userName, score) values(?,?,?) ";
+             PreparedStatement pst = conn.prepareStatement(query);
+             pst.setString(1, Integer.toString(randomID));
+             pst.setString(2,name );
+             pst.setString(3, Integer.toString(realScore));
+             pst.executeUpdate();
+             
+             System.out.println("user is added to database!");
+             
+             
+         }
+         catch(SQLException ex)
+         {
+             JOptionPane.showMessageDialog(null, (ex.getMessage()));
+         }
+         
+         
+         
+    }//end add user to db
+    
+    
+    
+    
+    
     
     
     public void display()
@@ -141,11 +175,11 @@ public class cardGame extends handleInputs {
             os = new ObjectInputStream(fs);
              userList = (ArrayList<user>)os.readObject();
              
-            // undevelopment.IntegrationsUI.displayScoreArea.append("ID: \t Name: \t Score: \n");
+            
             for(int i =0; i<userList.size(); i++)
              {
-                 user load = userList.get(i);
-                undevelopment.IntegrationsUI.displayScoreArea.append(load.details()+"\n");
+                // user load = userList.get(i);
+              //  undevelopment.IntegrationsUI.displayScoreArea.append(load.details()+"\n");
                  
              } 
            
