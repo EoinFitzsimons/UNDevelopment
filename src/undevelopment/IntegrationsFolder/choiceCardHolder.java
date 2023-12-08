@@ -20,7 +20,7 @@ import java.sql.*;
  *
  * @author dmoc2
  */
-public class choiceCardHolder {
+public class ChoiceCardHolder {
     
    private static String[][] cardSet1 = new String[16][5]; // this stores all 16 cards and their choices along with the answers!
    
@@ -33,7 +33,7 @@ public class choiceCardHolder {
   
    
 
-    public choiceCardHolder() { //the game does not work without this constructor
+    public ChoiceCardHolder() { //the game does not work without this constructor
         trial();
     }
    
@@ -212,10 +212,13 @@ this will be loaded when the user runs out of lives!
       if(userExist(id) == true)
       {
           JOptionPane.showMessageDialog(null, "User Exists! Please Enjoy the Game!");
+          undevelopment.IntegrationsUI.gamePane.setVisible(true);
       } else if(userExist(id) == false) {
           JOptionPane.showMessageDialog(null,"user does not exist! Please Try Again!");
+          undevelopment.IntegrationsUI.gamePane.setVisible(false);
       } else {
           JOptionPane.showMessageDialog(null, "Only Numbers, No letters!");
+          undevelopment.IntegrationsUI.gamePane.setVisible(false);
       }
       
       

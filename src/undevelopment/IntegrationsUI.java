@@ -4,8 +4,8 @@
  */
 package undevelopment;
 import javax.swing.JOptionPane;
-import undevelopment.IntegrationsFolder.cardGame;
-import undevelopment.IntegrationsFolder.choiceCardHolder;
+import undevelopment.IntegrationsFolder.CardGame;
+import undevelopment.IntegrationsFolder.ChoiceCardHolder;
 /**
  *
  * @author dmoc2
@@ -66,7 +66,8 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scorePanel.setBackground(new java.awt.Color(204, 204, 0));
         scorePanel.setLayout(null);
 
-        nameLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        nameLabel.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        nameLabel.setForeground(new java.awt.Color(255, 255, 255));
         nameLabel.setText("Name:");
         scorePanel.add(nameLabel);
         nameLabel.setBounds(30, 60, 98, 49);
@@ -91,7 +92,8 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scorePanel.add(jScrollPane1);
         jScrollPane1.setBounds(364, 57, 418, 361);
 
-        searchLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        searchLabel.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        searchLabel.setForeground(new java.awt.Color(255, 255, 255));
         searchLabel.setText("Search:");
         scorePanel.add(searchLabel);
         searchLabel.setBounds(30, 130, 98, 50);
@@ -142,8 +144,13 @@ public class IntegrationsUI extends javax.swing.JFrame {
         searchBTN.setBounds(6, 302, 199, 70);
 
         refereshBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        refereshBTN.setText("Referesh");
+        refereshBTN.setText("Refresh");
         refereshBTN.setToolTipText("Press me to see your results");
+        refereshBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refereshBTNActionPerformed(evt);
+            }
+        });
         scorePanel.add(refereshBTN);
         refereshBTN.setBounds(364, 436, 199, 70);
 
@@ -176,9 +183,9 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
         integrateTabbedPane.addTab("Check Score", scorePanel);
 
-        backgroundGame.setBackground(new java.awt.Color(204, 204, 0));
+        backgroundGame.setBackground(new java.awt.Color(255, 255, 255));
 
-        gamePane.setBackground(new java.awt.Color(102, 204, 0));
+        gamePane.setBackground(new java.awt.Color(255, 255, 255));
         gamePane.setMaximumSize(new java.awt.Dimension(800, 600));
         gamePane.setMinimumSize(new java.awt.Dimension(800, 600));
         gamePane.setLayout(null);
@@ -265,7 +272,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private void choiceOneBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceOneBTNActionPerformed
         // TODO add your handling code here:
         
-      choiceCardHolder load = new  choiceCardHolder();
+      ChoiceCardHolder load = new  ChoiceCardHolder();
       load.btn1();
         
           
@@ -281,7 +288,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
        if(nameField.getText().isEmpty()){
            JOptionPane.showMessageDialog(null, "You must fill this field before adding");
        } else {
-           cardGame test = new cardGame();
+           CardGame test = new CardGame();
        test.addUser();
         startBTN.setVisible(true);
        }
@@ -289,7 +296,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
         // TODO add your handling code here:
-        cardGame test = new cardGame();
+        CardGame test = new CardGame();
         
         displayScoreArea.setText("");
             displayScoreArea.setText("ID: \t Name: \t Score: \n");
@@ -298,16 +305,15 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void startBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBTNActionPerformed
         // TODO add your handling code here:
-        gamePane.setVisible(true);
-        cardGame game = new cardGame();
-        choiceCardHolder test = new   choiceCardHolder();
-        test.askID();
+        
+        CardGame game = new CardGame();
+        
         game.gameTest();
     }//GEN-LAST:event_startBTNActionPerformed
 
     private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
         // TODO add your handling code here:
-       cardGame load = new cardGame();
+       CardGame load = new CardGame();
         if(searchField.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(null, "You must fill this field before search");
@@ -322,7 +328,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private void choiceTwoBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceTwoBTNActionPerformed
         // TODO add your handling code here:
             
-            choiceCardHolder load = new  choiceCardHolder();
+            ChoiceCardHolder load = new  ChoiceCardHolder();
              load.btn2();
        
         
@@ -331,14 +337,14 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
-        cardGame load = new cardGame();
+        CardGame load = new CardGame();
         load.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
 
     private void choiceThreeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceThreeBTNActionPerformed
         // TODO add your handling code here:
         
-         choiceCardHolder load = new  choiceCardHolder();
+         ChoiceCardHolder load = new  ChoiceCardHolder();
             load.btn3();
        
     }//GEN-LAST:event_choiceThreeBTNActionPerformed
@@ -375,6 +381,17 @@ public class IntegrationsUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_searchFieldKeyTyped
+
+    private void refereshBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refereshBTNActionPerformed
+        // TODO add your handling code here:
+        
+         CardGame test = new CardGame();
+        
+        displayScoreArea.setText("");
+            displayScoreArea.setText("ID: \t Name: \t Score: \n");
+            test.display();
+        
+    }//GEN-LAST:event_refereshBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -426,7 +443,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private javax.swing.JButton deleteBTN;
     private javax.swing.JButton displayBTN;
     public static javax.swing.JTextArea displayScoreArea;
-    private javax.swing.JPanel gamePane;
+    public static javax.swing.JPanel gamePane;
     private javax.swing.JTabbedPane integrateTabbedPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

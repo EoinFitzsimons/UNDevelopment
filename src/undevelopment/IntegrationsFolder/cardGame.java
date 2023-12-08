@@ -31,12 +31,12 @@ import java.sql.*;
 
 
 
-public class cardGame extends handleInputs {
+public class CardGame extends HandleInputs {
 
-    public cardGame() {
+    public CardGame() {
     }
     
-    ArrayList <user> userList = new ArrayList<>();
+    ArrayList <User> userList = new ArrayList<>();
     
   
    
@@ -45,10 +45,10 @@ public class cardGame extends handleInputs {
     private String score = realScore+"";
     public  int randomID = (int)(Math.random()*1000+1);
    
-    user newUser = new user();
-    handleInputs tes = new handleInputs();
+    User newUser = new User();
+    HandleInputs tes = new HandleInputs();
     
-    choiceCardHolder test = new choiceCardHolder();
+    ChoiceCardHolder test = new ChoiceCardHolder();
     
     
    
@@ -70,6 +70,7 @@ public class cardGame extends handleInputs {
     
      public void gameTest()
      {
+         test.askID();
          test.trial();
          
      }
@@ -173,7 +174,7 @@ public class cardGame extends handleInputs {
              f = new File("user2.dat");
             fs = new FileInputStream(f);
             os = new ObjectInputStream(fs);
-             userList = (ArrayList<user>)os.readObject();
+             userList = (ArrayList<User>)os.readObject();
              
             
             for(int i =0; i<userList.size(); i++)
@@ -273,7 +274,7 @@ public class cardGame extends handleInputs {
           {
               for(int i=0; i<userList.size(); i++) //loops through the array 
               {
-                 user  e = userList.get(i); //will get user based on index
+                 User  e = userList.get(i); //will get user based on index
                   if(e.getId().equalsIgnoreCase(selected)) //ignores cases
                   {
                      undevelopment.IntegrationsUI.displayScoreArea.append(e.details()); //displays the users details in the text area

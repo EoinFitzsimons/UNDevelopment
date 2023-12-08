@@ -10,12 +10,12 @@ import java.io.Serializable;
  *
  * @author dmoc2
  */
-public class user extends handleInputs implements Serializable {
+public class User extends HandleInputs implements Serializable {
 
     
     private String score;
 
-    public user(String score, String id, String userName) {
+    public User(String score, String id, String userName) {
         super(id, userName);
         this.score = score;
     }
@@ -38,7 +38,7 @@ public class user extends handleInputs implements Serializable {
         this.id = id;
     }
 
-    public user() {
+    public User() {
     }
 
     @Override
