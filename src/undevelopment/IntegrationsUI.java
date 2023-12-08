@@ -44,16 +44,16 @@ public class IntegrationsUI extends javax.swing.JFrame {
         refereshBTN = new javax.swing.JButton();
         displayBTN = new javax.swing.JButton();
         startBTN = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         backgroundGame = new javax.swing.JLayeredPane();
         gamePane = new javax.swing.JPanel();
         cardHolderImg = new javax.swing.JLabel();
-        livesLabel = new javax.swing.JLabel();
         livesCounter = new javax.swing.JLabel();
         choiceOneBTN = new javax.swing.JButton();
         choiceTwoBTN = new javax.swing.JButton();
         choiceThreeBTN = new javax.swing.JButton();
-        scoreLabel = new javax.swing.JLabel();
         scoreCounter = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,12 +64,23 @@ public class IntegrationsUI extends javax.swing.JFrame {
         });
 
         scorePanel.setBackground(new java.awt.Color(204, 204, 0));
+        scorePanel.setLayout(null);
 
         nameLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         nameLabel.setText("Name:");
+        scorePanel.add(nameLabel);
+        nameLabel.setBounds(30, 60, 98, 49);
 
         nameField.setToolTipText("Please enter a name ");
+        nameField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nameFieldKeyTyped(evt);
+            }
+        });
+        scorePanel.add(nameField);
+        nameField.setBounds(146, 57, 200, 49);
 
+        displayScoreArea.setEditable(false);
         displayScoreArea.setColumns(20);
         displayScoreArea.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         displayScoreArea.setRows(5);
@@ -77,11 +88,27 @@ public class IntegrationsUI extends javax.swing.JFrame {
         displayScoreArea.setToolTipText("I display users and their scores ");
         jScrollPane1.setViewportView(displayScoreArea);
 
+        scorePanel.add(jScrollPane1);
+        jScrollPane1.setBounds(364, 57, 418, 361);
+
         searchLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         searchLabel.setText("Search:");
+        scorePanel.add(searchLabel);
+        searchLabel.setBounds(30, 130, 98, 50);
 
         searchField.setToolTipText("Enter ID to search");
+        searchField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchFieldKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                searchFieldKeyTyped(evt);
+            }
+        });
+        scorePanel.add(searchField);
+        searchField.setBounds(146, 124, 200, 50);
 
+        addBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         addBTN.setText("ADD");
         addBTN.setToolTipText("Must Enter name to add user");
         addBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +116,10 @@ public class IntegrationsUI extends javax.swing.JFrame {
                 addBTNActionPerformed(evt);
             }
         });
+        scorePanel.add(addBTN);
+        addBTN.setBounds(6, 214, 199, 70);
 
+        deleteBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         deleteBTN.setText("Delete");
         deleteBTN.setToolTipText("ID must be entered in the search to delete user");
         deleteBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +127,10 @@ public class IntegrationsUI extends javax.swing.JFrame {
                 deleteBTNActionPerformed(evt);
             }
         });
+        scorePanel.add(deleteBTN);
+        deleteBTN.setBounds(6, 405, 199, 70);
 
+        searchBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         searchBTN.setText("Search");
         searchBTN.setToolTipText("Enter ID to search for user!");
         searchBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -105,10 +138,16 @@ public class IntegrationsUI extends javax.swing.JFrame {
                 searchBTNActionPerformed(evt);
             }
         });
+        scorePanel.add(searchBTN);
+        searchBTN.setBounds(6, 302, 199, 70);
 
+        refereshBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         refereshBTN.setText("Referesh");
         refereshBTN.setToolTipText("Press me to see your results");
+        scorePanel.add(refereshBTN);
+        refereshBTN.setBounds(364, 436, 199, 70);
 
+        displayBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         displayBTN.setText("Display");
         displayBTN.setToolTipText("Press me to show all users");
         displayBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +155,10 @@ public class IntegrationsUI extends javax.swing.JFrame {
                 displayBTNActionPerformed(evt);
             }
         });
+        scorePanel.add(displayBTN);
+        displayBTN.setBounds(581, 436, 201, 70);
 
+        startBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         startBTN.setText("Start Game");
         startBTN.setToolTipText("ID must be entered in the search to delete user");
         startBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -124,64 +166,13 @@ public class IntegrationsUI extends javax.swing.JFrame {
                 startBTNActionPerformed(evt);
             }
         });
+        scorePanel.add(startBTN);
+        startBTN.setBounds(6, 487, 199, 70);
 
-        javax.swing.GroupLayout scorePanelLayout = new javax.swing.GroupLayout(scorePanel);
-        scorePanel.setLayout(scorePanelLayout);
-        scorePanelLayout.setHorizontalGroup(
-            scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(scorePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(scorePanelLayout.createSequentialGroup()
-                        .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(searchLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                            .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(42, 42, 42)
-                        .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nameField)
-                            .addComponent(searchField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
-                    .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(startBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(scorePanelLayout.createSequentialGroup()
-                        .addComponent(refereshBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(displayBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        scorePanelLayout.setVerticalGroup(
-            scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(scorePanelLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(scorePanelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(refereshBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                            .addComponent(displayBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(scorePanelLayout.createSequentialGroup()
-                        .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(nameField, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(scorePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(searchLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(searchField, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
-                        .addGap(40, 40, 40)
-                        .addComponent(addBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(searchBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(deleteBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(startBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/background.jpg"))); // NOI18N
+        scorePanel.add(jLabel1);
+        jLabel1.setBounds(2, -126, 810, 700);
 
         integrateTabbedPane.addTab("Check Score", scorePanel);
 
@@ -191,18 +182,16 @@ public class IntegrationsUI extends javax.swing.JFrame {
         gamePane.setMaximumSize(new java.awt.Dimension(800, 600));
         gamePane.setMinimumSize(new java.awt.Dimension(800, 600));
         gamePane.setLayout(null);
-        gamePane.add(cardHolderImg);
-        cardHolderImg.setBounds(40, 70, 670, 370);
 
-        livesLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        livesLabel.setText("Lives:");
-        gamePane.add(livesLabel);
-        livesLabel.setBounds(551, 6, 101, 77);
+        cardHolderImg.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        gamePane.add(cardHolderImg);
+        cardHolderImg.setBounds(120, 160, 550, 240);
 
         livesCounter.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
+        livesCounter.setForeground(new java.awt.Color(0, 0, 0));
         livesCounter.setText("0");
         gamePane.add(livesCounter);
-        livesCounter.setBounds(670, 6, 90, 77);
+        livesCounter.setBounds(780, -20, 90, 70);
 
         choiceOneBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,15 +217,15 @@ public class IntegrationsUI extends javax.swing.JFrame {
         gamePane.add(choiceThreeBTN);
         choiceThreeBTN.setBounds(500, 470, 225, 65);
 
-        scoreLabel.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        scoreLabel.setText("Score:");
-        gamePane.add(scoreLabel);
-        scoreLabel.setBounds(30, 6, 103, 77);
-
         scoreCounter.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
+        scoreCounter.setForeground(new java.awt.Color(0, 0, 0));
         scoreCounter.setText("0");
         gamePane.add(scoreCounter);
-        scoreCounter.setBounds(151, 6, 104, 77);
+        scoreCounter.setBounds(90, -20, 104, 70);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/BackgroundForIntegrations.png"))); // NOI18N
+        gamePane.add(jLabel2);
+        jLabel2.setBounds(0, 0, 800, 600);
 
         backgroundGame.setLayer(gamePane, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -263,9 +252,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(integrateTabbedPane)
-                .addContainerGap())
+            .addComponent(integrateTabbedPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,6 +343,39 @@ public class IntegrationsUI extends javax.swing.JFrame {
        
     }//GEN-LAST:event_choiceThreeBTNActionPerformed
 
+    private void searchFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyPressed
+        // TODO add your handling code here:
+        
+        
+        
+     
+    }//GEN-LAST:event_searchFieldKeyPressed
+
+    private void nameFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameFieldKeyTyped
+        // TODO add your handling code here:
+        
+        char c = evt.getKeyChar();
+
+        if(!Character.isLetter(c)){
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Letters Only!");
+            nameField.setText("");
+        }
+        
+    }//GEN-LAST:event_nameFieldKeyTyped
+
+    private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
+        // TODO add your handling code here:
+           char c = evt.getKeyChar();
+        
+        if(!Character.isDigit(c)){
+           evt.consume();
+           JOptionPane.showMessageDialog(null, "Numbers Only!");
+           searchField.setText("");
+        }
+        
+    }//GEN-LAST:event_searchFieldKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -408,14 +428,14 @@ public class IntegrationsUI extends javax.swing.JFrame {
     public static javax.swing.JTextArea displayScoreArea;
     private javax.swing.JPanel gamePane;
     private javax.swing.JTabbedPane integrateTabbedPane;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JLabel livesCounter;
-    private javax.swing.JLabel livesLabel;
     public static javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JButton refereshBTN;
     public static javax.swing.JLabel scoreCounter;
-    private javax.swing.JLabel scoreLabel;
     private javax.swing.JPanel scorePanel;
     private javax.swing.JButton searchBTN;
     public static javax.swing.JTextField searchField;

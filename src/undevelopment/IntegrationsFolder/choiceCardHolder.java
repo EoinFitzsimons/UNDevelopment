@@ -182,11 +182,43 @@ this will be loaded when the user runs out of lives!
     }
 }
 
-    
+   public boolean userExist(int id)
+   {
+       try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB", "root", "1234"))
+       {
+           String query = "SELECT COUNT(*) FROM integrationsScore WHERE ID = ?";
+           PreparedStatement pst = conn.prepareStatement(query);
+           pst.setInt(1, id);
+           
+           ResultSet rs = pst.executeQuery();
+           
+           if(rs.next())
+           {
+               int count = rs.getInt(1);
+               return count > 0;
+           }
+           
+       }
+       catch(SQLException ex)
+       {
+           System.out.println("You have error "+ex);
+       }
+       return false;
+   }
     
    public void askID()
    {
       id = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter Your User ID! Please check the display!"));
+      if(userExist(id) == true)
+      {
+          JOptionPane.showMessageDialog(null, "User Exists! Please Enjoy the Game!");
+      } else if(userExist(id) == false) {
+          JOptionPane.showMessageDialog(null,"user does not exist! Please Try Again!");
+      } else {
+          JOptionPane.showMessageDialog(null, "Only Numbers, No letters!");
+      }
+      
+      
    }
    
    
