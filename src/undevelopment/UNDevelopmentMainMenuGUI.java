@@ -574,7 +574,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     public static javax.swing.JTextArea cwsTA;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
-    private javax.swing.JTextArea displayText;
+    public static javax.swing.JTextArea displayText;
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
     private javax.swing.JLabel jLabel1;
