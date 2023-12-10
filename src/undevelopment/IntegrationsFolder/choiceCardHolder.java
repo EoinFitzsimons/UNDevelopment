@@ -26,7 +26,7 @@ public class ChoiceCardHolder {
    
    private static int score=0; //keeps track of the users score 
    private static int Cardnum=0; //helps to let the program to load the next card in the array and saves adding 16 if functions
-   private static int maxCards = 16;
+   
    private static int lives=5; //lets the user know the amount of attempts they have
   public static int  id;
    
@@ -40,7 +40,7 @@ public class ChoiceCardHolder {
    
    
   private String card1 = "______ climate change measures into national policies, strategies, and planning";
-  private String card2 = "______ sustainable practices to address climate change  in national policies, strategies, and planning";
+  private String card2 = "______ sustainable practices to address climate change in national policies, strategies, and planning";
   private String card3 = "Goal 13 of the UN Sustainable Development Goals focuses on _____ to combat climate change and its impacts.";
   private String card4 = "Nationally Determined Contributions (NDCs) are pledges made by countries to _____ emissions and adapt to climate change.";
   private String card5 = "The secretariat of the United Nations Framework Convention on Climate Change (UNFCCC) coordinates and tracks countries' commitments to climate action, including their _____ .";
@@ -90,7 +90,7 @@ public class ChoiceCardHolder {
            cardSet1[4][0] = card5; //the fill in the blank question
        cardSet1[4][1] =" Economic growth plans"; // one of the choices you are given to use!
        cardSet1[4][2] ="National security strategies";  // one of the choices you are given to use!
-       cardSet1[4][3]="Nationally determined contributions (NDCs)"; // one of the choices you are given to use!
+       cardSet1[4][3]="Nationally determined contributions"; // one of the choices you are given to use!
        cardSet1[4][4] = "3"; // this gives the program the answer to the question based on the postion of the answer in the array!
        
            cardSet1[5][0] = card6; //the fill in the blank question
@@ -150,7 +150,7 @@ public class ChoiceCardHolder {
            cardSet1[15][0] = card15; //the fill in the blank question
        cardSet1[15][1] ="Urgent"; // one of the choices you are given to use!
        cardSet1[15][2] ="Gradual";  // one of the choices you are given to use!
-       cardSet1[15][3]="wrong"; // one of the choices you are given to use!
+       cardSet1[15][3]="Delayed"; // one of the choices you are given to use!
        cardSet1[15][4] = "1"; // this gives the program the answer to the question based on the postion of the answer in the array!
        
        
@@ -164,18 +164,25 @@ public class ChoiceCardHolder {
        undevelopment.IntegrationsUI.choiceThreeBTN.setText(cardSet1[Cardnum][3]); //will load one of the three choices for fill in the blank card game
        undevelopment.IntegrationsUI.scoreCounter.setText(""+score); //adjusts the score due to the users performance in the game
        undevelopment.IntegrationsUI.livesCounter.setText(""+lives); //adjusts the lives of the user due to performance of the user!
+       
+       
+       
    }//end update game
    
-   public void endGame()
+   public static void endGame()
    {
-       if(Cardnum == maxCards)
-       {
+       
+           
+       
+       
+       
            JOptionPane.showMessageDialog(null, "Thank you for playing the game!");
             undevelopment.IntegrationsUI.cardHolderImg.setText("Game Over Please return to the check score menu!");
             undevelopment.IntegrationsUI.choiceOneBTN.setText("End Game");
             undevelopment.IntegrationsUI.choiceTwoBTN.setText("End Game");
             undevelopment.IntegrationsUI.choiceThreeBTN.setText("End Game");
-       }
+       
+      
    }
    
    
@@ -193,8 +200,14 @@ public class ChoiceCardHolder {
              noLives(); //will load when the user runs out of lives, to end the game
         }
         Cardnum++; // this will let the program to know to move onto the next card whether the answer is right or not
+        
+        if(Cardnum < cardSet1.length)
+        {
+        
         updateGame(); // this will let the program know to change the text in the button and card img holder according to what card it is on in the array
-        endGame();
+        } else {
+            endGame();
+        }
    }//close button 1
   
    //these buttons serve as the functionailty of the program, without making these buttons in this class would make it awkward trying to transfer scoring and lives
@@ -212,8 +225,14 @@ public class ChoiceCardHolder {
         }
         
         Cardnum++; // this will let the program to know to move onto the next card whether the answer is right or not
+       if(Cardnum < cardSet1.length)
+        {
+        
         updateGame(); // this will let the program know to change the text in the button and card img holder according to what card it is on in the array
-        endGame();
+        } else {
+            endGame();
+        }
+        
    }//close btn2
    
    
@@ -231,8 +250,14 @@ public class ChoiceCardHolder {
             noLives(); //will load when the user runs out of lives, to end the game
         }
          Cardnum++; // this will let the program to know to move onto the next card whether the answer is right or not
+        if(Cardnum < cardSet1.length)
+        {
+        
         updateGame(); // this will let the program know to change the text in the button and card img holder according to what card it is on in the array
-        endGame();
+        } else {
+            endGame();
+        }
+      
         
    }//close button3
    

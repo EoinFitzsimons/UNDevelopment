@@ -70,13 +70,12 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         integrationPane = new javax.swing.JLayeredPane();
         backgroundIntegration = new javax.swing.JPanel();
-        loadInfoIntegration = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         loadIntegrationApp = new javax.swing.JButton();
         loadBrief = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jLabel11 = new javax.swing.JLabel();
+        displayText = new javax.swing.JTextArea();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -262,24 +261,23 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
             .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2))
+                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2))
+                            .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
+                                .addComponent(updateBTN)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(deleteBTN)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(searchBTN)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(updateBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deleteBTN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(searchBTN)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         adaptabilityBackgroundLayout.setVerticalGroup(
             adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -389,68 +387,51 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Promoting Mechanism", promoteMechPane);
 
-        loadInfoIntegration.setText("Information About Integration");
+        backgroundIntegration.setBackground(new java.awt.Color(100, 150, 200));
+        backgroundIntegration.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Brief Information On Integration ");
+        backgroundIntegration.add(jLabel3);
+        jLabel3.setBounds(0, 6, 788, 50);
 
+        loadIntegrationApp.setBackground(new java.awt.Color(229, 225, 205));
+        loadIntegrationApp.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        loadIntegrationApp.setForeground(new java.awt.Color(0, 0, 0));
         loadIntegrationApp.setText("Load Integration App");
         loadIntegrationApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loadIntegrationAppActionPerformed(evt);
             }
         });
+        backgroundIntegration.add(loadIntegrationApp);
+        loadIntegrationApp.setBounds(350, 500, 432, 57);
 
+        loadBrief.setBackground(new java.awt.Color(229, 225, 205));
+        loadBrief.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        loadBrief.setForeground(new java.awt.Color(0, 0, 0));
         loadBrief.setText("Brief About Game");
+        backgroundIntegration.add(loadBrief);
+        loadBrief.setBounds(350, 410, 432, 57);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane6.setViewportView(jTextArea4);
+        displayText.setEditable(false);
+        displayText.setBackground(new java.awt.Color(229, 225, 205));
+        displayText.setColumns(20);
+        displayText.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        displayText.setForeground(new java.awt.Color(0, 0, 0));
+        displayText.setLineWrap(true);
+        displayText.setRows(5);
+        displayText.setText("Intregration for climate change is the number of countres that nationally determined contributions to national adaptation plans, long term strategies and adaptation communications. Intregrated land use planning is part of this to help improve our atmosphere. The integrated land strategy is to allocate land for different purposes, to balance social,\\n enviormental economic values at a national or sub-national levels. This is the process of supporting decision makers and land users in selectomg the best combination of land uses to ultimately meet multiple needs for people, while safeguardomg natural resources and ecosystem services");
+        displayText.setWrapStyleWord(true);
+        jScrollPane6.setViewportView(displayText);
 
-        jLabel11.setText("jLabel11");
+        backgroundIntegration.add(jScrollPane6);
+        jScrollPane6.setBounds(0, 90, 326, 460);
 
-        javax.swing.GroupLayout backgroundIntegrationLayout = new javax.swing.GroupLayout(backgroundIntegration);
-        backgroundIntegration.setLayout(backgroundIntegrationLayout);
-        backgroundIntegrationLayout.setHorizontalGroup(
-            backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundIntegrationLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loadIntegrationApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(loadInfoIntegration, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(backgroundIntegrationLayout.createSequentialGroup()
-                    .addGap(350, 350, 350)
-                    .addComponent(loadBrief, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(10, Short.MAX_VALUE)))
-        );
-        backgroundIntegrationLayout.setVerticalGroup(
-            backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundIntegrationLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundIntegrationLayout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                        .addComponent(loadInfoIntegration, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(loadIntegrationApp, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane6))
-                .addContainerGap())
-            .addGroup(backgroundIntegrationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundIntegrationLayout.createSequentialGroup()
-                    .addContainerGap(343, Short.MAX_VALUE)
-                    .addComponent(loadBrief, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(170, 170, 170)))
-        );
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/intregation.png"))); // NOI18N
+        backgroundIntegration.add(jLabel8);
+        jLabel8.setBounds(350, 97, 432, 260);
 
         integrationPane.setLayer(backgroundIntegration, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -593,27 +574,26 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     public static javax.swing.JTextArea cwsTA;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
+    private javax.swing.JTextArea displayText;
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JButton loadBrief;
-    private javax.swing.JButton loadInfoIntegration;
     private javax.swing.JButton loadIntegrationApp;
     private javax.swing.JButton promoteAppBTN;
     private javax.swing.JLayeredPane promoteMechPane;

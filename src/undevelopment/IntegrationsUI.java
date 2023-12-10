@@ -47,7 +47,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         backgroundGame = new javax.swing.JLayeredPane();
         gamePane = new javax.swing.JPanel();
-        cardHolderImg = new javax.swing.JLabel();
+        cardHolderImg = new javax.swing.JTextArea();
         livesCounter = new javax.swing.JLabel();
         choiceOneBTN = new javax.swing.JButton();
         choiceTwoBTN = new javax.swing.JButton();
@@ -190,9 +190,15 @@ public class IntegrationsUI extends javax.swing.JFrame {
         gamePane.setMinimumSize(new java.awt.Dimension(800, 600));
         gamePane.setLayout(null);
 
+        cardHolderImg.setEditable(false);
+        cardHolderImg.setBackground(new java.awt.Color(255, 255, 255));
+        cardHolderImg.setColumns(20);
         cardHolderImg.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        cardHolderImg.setForeground(new java.awt.Color(0, 0, 0));
+        cardHolderImg.setLineWrap(true);
+        cardHolderImg.setRows(5);
         gamePane.add(cardHolderImg);
-        cardHolderImg.setBounds(30, 160, 700, 240);
+        cardHolderImg.setBounds(160, 140, 450, 290);
 
         livesCounter.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         livesCounter.setForeground(new java.awt.Color(0, 0, 0));
@@ -436,7 +442,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
     private javax.swing.JLayeredPane backgroundGame;
-    public static javax.swing.JLabel cardHolderImg;
+    public static javax.swing.JTextArea cardHolderImg;
     public static javax.swing.JButton choiceOneBTN;
     public static javax.swing.JButton choiceThreeBTN;
     public static javax.swing.JButton choiceTwoBTN;
