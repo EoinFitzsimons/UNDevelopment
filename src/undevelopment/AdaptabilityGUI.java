@@ -51,28 +51,6 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
                 timeTF.setText("Time Elapsed: " + elapsedSeconds);
             }
         });
-        String[] crosswordSquares = {
-            "a1TF,", "a2TF", "a3TF", "a4TF", "a5TF", "a6TF", "a7TF", "a8TF",
-            "b1TF,", "b2TF", "b3TF", "b4TF", "b5TF", "b6TF", "b7TF", "b8TF",
-            "c1TF,", "c2TF", "c3TF", "c4TF", "c5TF", "c6TF", "c7TF", "c8TF",
-            "d1TF,", "d2TF", "d3TF", "d4TF", "d5TF", "d6TF", "d7TF", "d8TF",
-            "e1TF,", "e2TF", "e3TF", "e4TF", "e5TF", "e6TF", "e7TF", "e8TF",
-            "f1TF,", "f2TF", "f3TF", "f4TF", "f5TF", "f6TF", "f7TF", "f8TF",
-            "g1TF,", "g2TF", "g3TF", "g4TF", "g5TF", "g6TF", "g7TF", "g8TF",
-            "h1TF,", "h2TF", "h3TF", "h4TF", "h5TF", "h6TF", "h7TF", "h8TF"
-        };
-
-        String[] crosswordSolution = {
-            "E", "A", "R", "T", "H", null, null, null,
-            "A", null, null, null, "E", "N", "D", null,
-            "M", "O", "I", "S", "T", "U", "R", "E",
-            "U", null, "N", null, null, null, "A", null,
-            "F", null, "D", null, null, null, "I", null,
-            "F", "I", "S", "H", null, "O", "N", "E",
-            "S", null, null, null, null, null, null, null};
-
-        String[] acrossWords = {"EARTH", "END", "MOISTURE", "FISH", "ONE"};
-        String[] downWords = {"EARMUFFS", "HEAT", "WINDS", "RAIN"};
     }
 
     /**
