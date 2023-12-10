@@ -210,7 +210,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="20" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Refresh"/>
+                <Property name="text" type="java.lang.String" value="Save To File"/>
                 <Property name="toolTipText" type="java.lang.String" value="Press me to see your results"/>
               </Properties>
               <Events>
@@ -340,7 +340,7 @@
                   </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="120" y="160" width="550" height="240"/>
+                      <AbsoluteConstraints x="30" y="160" width="700" height="240"/>
                     </Constraint>
                   </Constraints>
                 </Component>

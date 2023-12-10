@@ -39,7 +39,7 @@ public class CardGame extends HandleInputs {
     ArrayList <User> userList = new ArrayList<>();
     
   
-   
+   private int [] scoreArray = new int [1];
     private String userName1;
     private int realScore = 0;
     private String score = realScore+"";
@@ -86,15 +86,16 @@ public class CardGame extends HandleInputs {
        
         String random = randomID+"";
        
-       String name = undevelopment.IntegrationsUI.nameField.getText();
+        String name = undevelopment.IntegrationsUI.nameField.getText();
         
         newUser.setId(random);
         newUser.setUserName(undevelopment.IntegrationsUI.nameField.getText());
         newUser.setScore(score);
+        
         System.out.println(name);
         userList.add(newUser);
         
-       addUserToDB();
+         addUserToDB();
        
         // TODO add your handling code here:
         //file
@@ -179,8 +180,8 @@ public class CardGame extends HandleInputs {
             
             for(int i =0; i<userList.size(); i++)
              {
-                // user load = userList.get(i);
-              //  undevelopment.IntegrationsUI.displayScoreArea.append(load.details()+"\n");
+                User load = userList.get(i);
+               undevelopment.IntegrationsUI.displayScoreArea.append(load.details()+"\n");
                  
              } 
            

@@ -144,7 +144,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         searchBTN.setBounds(6, 302, 199, 70);
 
         refereshBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        refereshBTN.setText("Refresh");
+        refereshBTN.setText("Save To File");
         refereshBTN.setToolTipText("Press me to see your results");
         refereshBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +192,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
         cardHolderImg.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         gamePane.add(cardHolderImg);
-        cardHolderImg.setBounds(120, 160, 550, 240);
+        cardHolderImg.setBounds(30, 160, 700, 240);
 
         livesCounter.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         livesCounter.setForeground(new java.awt.Color(0, 0, 0));
