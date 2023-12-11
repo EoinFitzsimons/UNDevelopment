@@ -20,7 +20,7 @@ import java.sql.*;
  *
  * @author dmoc2
  */
-public class ChoiceCardHolder {
+public class choiceCardHolder {
     
    private static String[][] cardSet1 = new String[16][5]; // this stores all 16 cards and their choices along with the answers!
    
@@ -34,7 +34,7 @@ public class ChoiceCardHolder {
   
    
 
-    public ChoiceCardHolder() { //the game does not work without this constructor
+    public choiceCardHolder() { //the game does not work without this constructor
         trial();
     }
    

@@ -31,9 +31,9 @@ import java.sql.*;
 
 
 
-public class CardGame extends HandleInputs {
+public class cardGame extends HandleInputs {
 
-    public CardGame() {
+    public cardGame() {
     }
     
     ArrayList <User> userList = new ArrayList<>();
@@ -48,7 +48,7 @@ public class CardGame extends HandleInputs {
     User newUser = new User();
     HandleInputs tes = new HandleInputs();
     
-    ChoiceCardHolder test = new ChoiceCardHolder();
+    choiceCardHolder test = new choiceCardHolder();
     
     
    
