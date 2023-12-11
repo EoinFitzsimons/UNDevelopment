@@ -612,9 +612,13 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static javax.swing.JTextArea displayText;
 =======
 >>>>>>> parent of 51e7b99 (more changes)
+=======
+    private javax.swing.JTextArea displayText;
+>>>>>>> parent of 15364d1 (f)
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
     private javax.swing.JLabel jLabel1;
