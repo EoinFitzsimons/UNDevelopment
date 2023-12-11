@@ -58,7 +58,7 @@ public class CardGame extends HandleInputs {
    // public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
     public static Connection Myconn;
     
-     private void scriptRunner(){
+     public void scriptRunner(){
         //establish connection with the database
         try{
             Myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"); // .getConnection("link to db","username","password")

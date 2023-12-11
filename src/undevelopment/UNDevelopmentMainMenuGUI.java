@@ -14,20 +14,23 @@ import undevelopment.adaptabilityFolder.CrosswordUsers;
 
 /**
  *
- * @author dmoc2
+ * @author everyone
  */
 public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
-   // ArrayList<CWScoring> cwlist;
 
     /**
      * Creates new form UNDevelopmentMainMenuGUI
      */
     public UNDevelopmentMainMenuGUI() {
         initComponents();
-       // cwlist = new ArrayList<>();
 
     }
+<<<<<<< Updated upstream
+=======
+
+    
+>>>>>>> Stashed changes
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -491,8 +494,8 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         load.setVisible(true);
         this.dispose();
 
-       // cardGame load1 = new cardGame();
-       // load1.ScriptRunner();
+        CardGame load1 = new CardGame();
+        load1.scriptRunner();
         
 
     }//GEN-LAST:event_loadIntegrationAppActionPerformed
