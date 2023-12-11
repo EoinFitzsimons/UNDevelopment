@@ -266,16 +266,15 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                .addComponent(jScrollPane2))
+                        .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                                 .addComponent(updateBTN)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(deleteBTN)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(searchBTN)))
+                                .addComponent(searchBTN))
+                            .addComponent(jScrollPane2)
+                            .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -398,7 +397,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         loadIntegrationApp.setBackground(new java.awt.Color(229, 225, 205));
         loadIntegrationApp.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        loadIntegrationApp.setForeground(new java.awt.Color(0, 0, 0));
         loadIntegrationApp.setText("Load Integration App");
         loadIntegrationApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -410,7 +408,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         loadBrief.setBackground(new java.awt.Color(229, 225, 205));
         loadBrief.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        loadBrief.setForeground(new java.awt.Color(0, 0, 0));
         loadBrief.setText("Brief About Game");
         backgroundIntegration.add(loadBrief);
         loadBrief.setBounds(350, 410, 432, 57);
@@ -419,7 +416,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         displayText.setBackground(new java.awt.Color(229, 225, 205));
         displayText.setColumns(20);
         displayText.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        displayText.setForeground(new java.awt.Color(0, 0, 0));
         displayText.setLineWrap(true);
         displayText.setRows(5);
         displayText.setText("Intregration for climate change is the number of countres that nationally determined contributions to national adaptation plans, long term strategies and adaptation communications. Intregrated land use planning is part of this to help improve our atmosphere. The integrated land strategy is to allocate land for different purposes, to balance social,\\n enviormental economic values at a national or sub-national levels. This is the process of supporting decision makers and land users in selectomg the best combination of land uses to ultimately meet multiple needs for people, while safeguardomg natural resources and ecosystem services");
