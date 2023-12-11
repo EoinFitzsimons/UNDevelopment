@@ -412,6 +412,11 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         loadBrief.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         loadBrief.setForeground(new java.awt.Color(0, 0, 0));
         loadBrief.setText("Brief About Game");
+        loadBrief.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadBriefActionPerformed(evt);
+            }
+        });
         backgroundIntegration.add(loadBrief);
         loadBrief.setBounds(350, 410, 432, 57);
 
@@ -524,6 +529,14 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         CrosswordUsers search = new CrosswordUsers();
         search.search();
     }//GEN-LAST:event_searchBTNActionPerformed
+
+    private void loadBriefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBriefActionPerformed
+        // TODO add your handling code here:
+        BriefAboutGame load = new BriefAboutGame();
+        load.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_loadBriefActionPerformed
 
     /**
      * @param args the command line arguments

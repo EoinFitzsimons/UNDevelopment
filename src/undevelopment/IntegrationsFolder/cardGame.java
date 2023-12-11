@@ -39,14 +39,14 @@ public class cardGame extends HandleInputs {
     ArrayList <User> userList = new ArrayList<>();
     
   
-   private int [] scoreArray = new int [1];
-    private String userName1;
+   
+   
     private int realScore = 0;
     private String score = realScore+"";
     public  int randomID = (int)(Math.random()*1000+1);
    
     User newUser = new User();
-    HandleInputs tes = new HandleInputs();
+   
     
     choiceCardHolder test = new choiceCardHolder();
     
