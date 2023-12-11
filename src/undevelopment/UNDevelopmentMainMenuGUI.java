@@ -283,13 +283,13 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(updateBTN)
                     .addComponent(deleteBTN)
                     .addComponent(searchBTN))
-                .addGap(80, 80, 80)
+                .addGap(18, 18, 18)
                 .addComponent(AdaptabilityAppBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -485,7 +485,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel backgroundIMG;
     private javax.swing.JPanel backgroundIntegration;
     private javax.swing.JPanel backgroundPane;
-    private javax.swing.JTextArea cwsTA;
+    public static javax.swing.JTextArea cwsTA;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
     private javax.swing.JTextArea displayText;
