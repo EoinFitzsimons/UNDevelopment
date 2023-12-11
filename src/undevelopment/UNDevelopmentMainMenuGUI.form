@@ -668,6 +668,9 @@
                         <Property name="text" type="java.lang.String" value="&#xa;"/>
                         <Property name="wrapStyleWord" type="boolean" value="true"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
