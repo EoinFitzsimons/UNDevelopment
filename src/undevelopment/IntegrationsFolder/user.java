@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class User extends HandleInputs implements Serializable {
 
     
-    private String score;
+    private String score; //intialize of score
 
     public User(String score, String id, String userName) {
         super(id, userName);
@@ -39,7 +39,7 @@ public class User extends HandleInputs implements Serializable {
     }
 
     public User() {
-    }
+    } //takes input
 
     @Override
     public String getUserName() {
@@ -52,7 +52,7 @@ public class User extends HandleInputs implements Serializable {
     }
 
     @Override
-    public String details() {
+    public String details() { //displays the users details 
         return super.details() + "\t  "+score;
     }
     

@@ -25,46 +25,45 @@ public class BriefAboutGame extends javax.swing.JFrame {
     
     ArrayList<String>example;
    
-    private void loseLives()
+    private void loseLives() //gives the user a feel for how the actual lives system works
     {
-        
-        if(lives ==0)
+        if(lives == 0)
         {
             JOptionPane.showMessageDialog(null,"Game Over!");
-            scoreBTN.setVisible(false);
+            scoreBTN.setVisible(false); 
             livesBTN.setVisible(false);
         }
     }
     
     
-    private void addScore()
+    private void addScore() //this method I thought would be good way of interacting with the user to make the app more fun
     {
           if(score == 10)
         {
-            lives++;
+            lives++; //just adds lives for each score the user gets
             JOptionPane.showMessageDialog(null, "You are getting good at this");
         }
         else if (score == 20)
         {
-            lives =+5;
+            lives =+5; //just adds lives for each score the user gets
             JOptionPane.showMessageDialog(null, "You are good at this");
         }
         else if(score == 30)
         {
-            lives = 10;
+            lives = 10; //just adds lives for each score the user gets
              JOptionPane.showMessageDialog(null, "You are great at this");
         }
         else if(score == 40)
         {
-            lives = 15;
+            lives = 15; //just adds lives for each score the user gets
             JOptionPane.showMessageDialog(null, "You are a little too good at this maybe you should play the game...");
         }
-        else if(score == 50)
+        else if(score == 50) //I set the limit to 50 so the user doesn't keep pressing the score button for the day
         {
-            lives = 100;
+            lives = 100; //just adds lives for each score the user gets
             JOptionPane.showMessageDialog(null, "Go play the game now, test your knowledge!");
-            scoreBTN.setVisible(false);
-            livesBTN.setVisible(false);
+            scoreBTN.setVisible(false); //turns off the button
+            livesBTN.setVisible(false);//turns off the button
         }
     }
     
@@ -73,9 +72,9 @@ public class BriefAboutGame extends javax.swing.JFrame {
      */
     public BriefAboutGame() {
         initComponents();
-        example = new ArrayList <>();
-        livesCounter.setText(""+lives);
-        scoreCounter.setText(""+score);
+        example = new ArrayList <>(); // intialize the array to the gui
+        livesCounter.setText(""+lives); //intialize the lives to the gui
+        scoreCounter.setText(""+score);//intialize the score to the gui
         
       
     }
@@ -116,9 +115,7 @@ public class BriefAboutGame extends javax.swing.JFrame {
         livesBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         howToStartTab.setBackground(new java.awt.Color(100, 150, 200));
 
@@ -148,6 +145,11 @@ public class BriefAboutGame extends javax.swing.JFrame {
         fnField.setBackground(new java.awt.Color(229, 225, 205));
         fnField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         fnField.setForeground(new java.awt.Color(0, 0, 0));
+        fnField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                fnFieldKeyTyped(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel2.setText("First name: ");
@@ -158,6 +160,11 @@ public class BriefAboutGame extends javax.swing.JFrame {
         lnField.setBackground(new java.awt.Color(229, 225, 205));
         lnField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         lnField.setForeground(new java.awt.Color(0, 0, 0));
+        lnField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lnFieldKeyTyped(evt);
+            }
+        });
 
         addBTNEX.setBackground(new java.awt.Color(229, 225, 205));
         addBTNEX.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -375,23 +382,23 @@ public class BriefAboutGame extends javax.swing.JFrame {
     private void addBTNEXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNEXActionPerformed
         // TODO add your handling code here:
         
-        fn = fnField.getText();
-        ln = lnField.getText();
-        example.add(fn);
-        example.add(ln);
+        fn = fnField.getText(); //grabs the info from the field and will be added to the array
+        ln = lnField.getText(); //grabs the info from the field and will be added to the array
+        example.add(fn); //adds to the array
+        example.add(ln); //adds to the array
         try{
-        BufferedWriter bw = new BufferedWriter(new FileWriter("example.txt", false));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("example.txt", false)); //writes to a text file 
         for(int i=0; i<example.size(); i++)
-        {
-            bw.write(example.toString());
-            bw.newLine();
-        }
-        bw.flush();
-        System.out.println("Example save sucessfully!");
+        {//open for 
+            bw.write(example.toString()); //will write the array as a string to the file
+            bw.newLine();//creates a new line for each data set added 
+        }//close for
+        bw.flush(); // same as os close, just ends the write process 
+        System.out.println("Example save sucessfully!"); //lets the user know in the terminal that the person has been added 
         }
         catch(IOException e)
         {
-            System.out.println("error "+e);
+            System.out.println("error "+e); //will print out the errors that the program may have
         }
         
     }//GEN-LAST:event_addBTNEXActionPerformed
@@ -401,8 +408,8 @@ public class BriefAboutGame extends javax.swing.JFrame {
         
         try
         {
-            String content = new String(Files.readAllBytes(Paths.get("example.txt")));
-            displayExample.append(content);
+            String content = new String(Files.readAllBytes(Paths.get("example.txt"))); //will read from the text file
+            displayExample.append(content); //displays the text file 
             
         }
         catch(Exception e)
@@ -434,6 +441,30 @@ public class BriefAboutGame extends javax.swing.JFrame {
         load.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menuBTNActionPerformed
+
+    private void lnFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lnFieldKeyTyped
+        // TODO add your handling code here:
+         char c = evt.getKeyChar(); //creating a character event
+
+        if(!Character.isLetter(c))//tracks of the users key typing
+        { 
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Letters Only!"); //tells the user only letters are only accepted
+            lnField.setText(""); //prevents numbers from being entered
+        }
+    }//GEN-LAST:event_lnFieldKeyTyped
+
+    private void fnFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fnFieldKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar(); //creating a character event
+
+        if(!Character.isLetter(c)) //tracks of the users key typing
+        {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Letters Only!"); //tells the user only letters are only accepted
+            fnField.setText(""); //prevents numbers from being entered
+        }
+    }//GEN-LAST:event_fnFieldKeyTyped
 
     /**
      * @param args the command line arguments
