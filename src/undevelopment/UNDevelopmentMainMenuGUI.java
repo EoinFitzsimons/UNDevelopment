@@ -586,14 +586,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     public static javax.swing.JTextArea cwsTA;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    private javax.swing.JTextArea displayText;
-=======
->>>>>>> Stashed changes
-=======
-    public static javax.swing.JTextArea displayText;
->>>>>>> daveBranch2
     private javax.swing.JLayeredPane homePane;
     public static javax.swing.JTextArea integrationMenuText;
     private javax.swing.JLayeredPane integrationPane;

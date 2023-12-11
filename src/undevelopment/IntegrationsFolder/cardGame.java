@@ -340,22 +340,7 @@ public class CardGame extends HandleInputs {
      }
       
      
-     public void displayMenuText()
-     {
-        try(BufferedReader br = new BufferedReader(new FileReader("smallBrief.txt")))
-        {
-            String line;
-            while((line = br.readLine()) != null)
-            {
-                undevelopment.UNDevelopmentMainMenuGUI.integrationMenuText.append(line);
-            }
-        }
-        catch(IOException e)
-        {
-            System.out.println("error is "+e);
-        }
-         
-     }
+    
     
     
 }
