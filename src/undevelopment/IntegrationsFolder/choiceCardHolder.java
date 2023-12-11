@@ -28,12 +28,20 @@ public class ChoiceCardHolder {
    private static int Cardnum=0; //helps to let the program to load the next card in the array and saves adding 16 if functions
    
    private static int lives=5; //lets the user know the amount of attempts they have
-  public static int  id;
-   
-   public int scoreGrab = score;
-  
-   
 
+    /**
+     *
+     */
+    public static int  id;
+   
+    /**
+     *
+     */
+    public int scoreGrab = score;
+  
+    /**
+     *
+     */
     public ChoiceCardHolder() { //the game does not work without this constructor
         trial();
     }
@@ -55,9 +63,10 @@ public class ChoiceCardHolder {
   private String card14 = "Monitoring and reporting on total greenhouse gas emissions help identify trends and evaluate the effectiveness of climate _____ .";
   private String card15= "The overarching goal of UN Sustainable Development Goal 13 is to take _____ action to combat climate change.";
   
-  
-    
-   public void cardHolder()
+    /**
+     *
+     */
+    public void cardHolder()
    {
        cardSet1[0][0] = card1; //the fill in the blank question
        cardSet1[0][1] ="Embrace"; // one of the choices you are given to use!
@@ -156,7 +165,10 @@ public class ChoiceCardHolder {
        
    }//end card holder
     
-   public static void updateGame()
+    /**
+     *
+     */
+    public static void updateGame()
    {//open uodate game
        undevelopment.IntegrationsUI.cardHolderImg.setText(cardSet1[Cardnum][0]); //sets the main text area as the question
        undevelopment.IntegrationsUI.choiceOneBTN.setText(cardSet1[Cardnum][1]); // will load one of the three choices for fill in the blank card game
@@ -169,7 +181,10 @@ public class ChoiceCardHolder {
        
    }//end update game
    
-   public static void endGame()
+    /**
+     *
+     */
+    public static void endGame()
    {
        
            
@@ -187,6 +202,10 @@ public class ChoiceCardHolder {
    
    
    //these buttons serve as the functionailty of the program, without making these buttons in this class would make it awkward trying to transfer scoring and lives 
+
+    /**
+     *
+     */
    public void btn1()
    {
        
@@ -211,6 +230,10 @@ public class ChoiceCardHolder {
    }//close button 1
   
    //these buttons serve as the functionailty of the program, without making these buttons in this class would make it awkward trying to transfer scoring and lives
+
+    /**
+     *
+     */
    
    public void btn2()
    {
@@ -237,6 +260,10 @@ public class ChoiceCardHolder {
    
    
   //these buttons serve as the functionailty of the program, without making these buttons in this class would make it awkward trying to transfer scoring and lives
+
+    /**
+     *
+     */
    
    public void btn3()
    {
@@ -278,6 +305,9 @@ this will be loaded when the user runs out of lives!
        }
    }
     
+    /**
+     *
+     */
     public static void updateUserScore() {
        
         
@@ -297,7 +327,12 @@ this will be loaded when the user runs out of lives!
     }
 }
 
-   public boolean userExist(int id)
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public boolean userExist(int id)
    {
        try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB", "root", "1234"))
        {
@@ -321,7 +356,10 @@ this will be loaded when the user runs out of lives!
        return false;
    }
     
-   public void askID()
+    /**
+     *
+     */
+    public void askID()
    {
       id = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter Your User ID! Please check the display!"));
       if(userExist(id) == true)
@@ -339,9 +377,10 @@ this will be loaded when the user runs out of lives!
       
    }
    
-   
-   
-   public void trial() //this method is passed into the constructor in order to have the game functionailty to be working
+    /**
+     *
+     */
+    public void trial() //this method is passed into the constructor in order to have the game functionailty to be working
    {
        
        cardHolder();

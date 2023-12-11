@@ -4,8 +4,9 @@
  */
 package undevelopment;
 import javax.swing.JOptionPane;
-import undevelopment.IntegrationsFolder.CardGame;
+
 import undevelopment.IntegrationsFolder.ChoiceCardHolder;
+import undevelopment.IntegrationsFolder.cardGame;
 /**
  *
  * @author dmoc2
@@ -294,7 +295,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
        if(nameField.getText().isEmpty()){
            JOptionPane.showMessageDialog(null, "You must fill this field before adding");
        } else {
-           CardGame test = new CardGame();
+           cardGame test = new cardGame();
        test.addUser();
         startBTN.setVisible(true);
        }
@@ -302,7 +303,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
         // TODO add your handling code here:
-        CardGame test = new CardGame();
+        cardGame test = new cardGame();
         
         displayScoreArea.setText("");
             displayScoreArea.setText("ID: \t Name: \t Score: \n");
@@ -312,14 +313,14 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private void startBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBTNActionPerformed
         // TODO add your handling code here:
         
-        CardGame game = new CardGame();
+        cardGame game = new cardGame();
         
         game.gameTest();
     }//GEN-LAST:event_startBTNActionPerformed
 
     private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
         // TODO add your handling code here:
-       CardGame load = new CardGame();
+       cardGame load = new cardGame();
         if(searchField.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(null, "You must fill this field before search");
@@ -343,7 +344,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
-        CardGame load = new CardGame();
+        cardGame load = new cardGame();
         load.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
 

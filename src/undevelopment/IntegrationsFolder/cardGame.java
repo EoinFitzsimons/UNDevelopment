@@ -30,12 +30,16 @@ import java.io.FileWriter;
 
 import java.sql.*;
 
+/**
+ *
+ * @author dmoc2
+ */
+public class cardGame extends HandleInputs {
 
-
-
-public class CardGame extends HandleInputs {
-
-    public CardGame() {
+    /**
+     *
+     */
+    public cardGame() {
     }
     
     ArrayList <User> userList = new ArrayList<>();
@@ -45,6 +49,10 @@ public class CardGame extends HandleInputs {
     private String userName1;
     private int realScore = 0;
     private String score = realScore+"";
+
+    /**
+     *
+     */
     public  int randomID = (int)(Math.random()*1000+1);
    
     User newUser = new User();
@@ -58,6 +66,10 @@ public class CardGame extends HandleInputs {
   //  public static String url1 = "jdbc:mysql://localhost:3306/giftDB","root","1234";
 
    // public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
+
+    /**
+     *
+     */
     public static Connection Myconn;
     
      private void scriptRunner(){
@@ -70,17 +82,19 @@ public class CardGame extends HandleInputs {
         }
     }
     
-     public void gameTest()
+    /**
+     *
+     */
+    public void gameTest()
      {
          test.askID();
          test.trial();
          
      }
       
-     
-     
-    
-    
+    /**
+     *
+     */
     public void addUser()
     {
       
@@ -133,7 +147,9 @@ public class CardGame extends HandleInputs {
         
     }//end add user 
     
-    
+    /**
+     *
+     */
     public void addUserToDB()
     {
          String name = undevelopment.IntegrationsUI.nameField.getText();
@@ -160,12 +176,9 @@ public class CardGame extends HandleInputs {
          
     }//end add user to db
     
-    
-    
-    
-    
-    
-    
+    /**
+     *
+     */
     public void display()
     {
         
@@ -205,7 +218,9 @@ public class CardGame extends HandleInputs {
              
     }
     
-    
+    /**
+     *
+     */
     public void displayDB()
     {
          try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234")) // estabishes connection to the db
@@ -233,10 +248,10 @@ public class CardGame extends HandleInputs {
           }
     }
     
-    
-      
-      
-      public void searchBTN() //searches through the database 
+    /**
+     *
+     */
+    public void searchBTN() //searches through the database 
       {//open search button
           try(Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234")) //establishing connection with db
           {
@@ -264,8 +279,10 @@ public class CardGame extends HandleInputs {
           }
       }
       
-    
-      public void searchArray() //allows the user to search through the array
+    /**
+     *
+     */
+    public void searchArray() //allows the user to search through the array
       {
           String selected = undevelopment.IntegrationsUI.searchField.getText(); //grabs the text from the field 
           
@@ -300,7 +317,10 @@ public class CardGame extends HandleInputs {
         }
     }
      
-     public void delete()
+    /**
+     *
+     */
+    public void delete()
      {
       
         String fileName = "user2.dat"; // Replace with your file name

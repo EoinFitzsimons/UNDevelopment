@@ -9,7 +9,7 @@ package undevelopment;
 
 
 import undevelopment.adaptabilityFolder.CrosswordUsers;
-import undevelopment.IntegrationsFolder.CardGame;
+import undevelopment.IntegrationsFolder.cardGame;
 
 
 /**
@@ -28,7 +28,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
        // cwlist = new ArrayList<>();
 
     }
-    public static CardGame load = new CardGame();
+    public static cardGame load = new cardGame();
     
 
     /**
