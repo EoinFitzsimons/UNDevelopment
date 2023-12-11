@@ -9,6 +9,7 @@ package undevelopment.IntegrationsFolder;
  * @author dmoc2
  */
 
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -24,6 +25,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 
 import java.sql.*;
@@ -358,5 +360,17 @@ public class cardGame extends HandleInputs {
      }
       
     
-    
+    public void displayBrief()
+    {
+        try (BufferedReader br = new BufferedReader(new FileReader("example.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+          undevelopment.UNDevelopmentMainMenuGUI.displayText.append(line);
+            }
+        } catch (IOException e) {
+            // handle exception...
+        }
+    }
+     
+     
 }

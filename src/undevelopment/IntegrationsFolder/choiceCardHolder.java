@@ -158,7 +158,7 @@ public class ChoiceCardHolder {
     
    public static void updateGame()
    {//open uodate game
-       undevelopment.IntegrationsUI.cardHolderImg.setText(cardSet1[Cardnum][0]); //sets the main text area as the question
+       undevelopment.IntegrationsUI.displayQ.append(cardSet1[Cardnum][0]); //sets the main text area as the question
        undevelopment.IntegrationsUI.choiceOneBTN.setText(cardSet1[Cardnum][1]); // will load one of the three choices for fill in the blank card game
        undevelopment.IntegrationsUI.choiceTwoBTN.setText(cardSet1[Cardnum][2]);//will load one of the three choices for fill in the blank card game
        undevelopment.IntegrationsUI.choiceThreeBTN.setText(cardSet1[Cardnum][3]); //will load one of the three choices for fill in the blank card game
@@ -177,7 +177,7 @@ public class ChoiceCardHolder {
        
        
            JOptionPane.showMessageDialog(null, "Thank you for playing the game!");
-            undevelopment.IntegrationsUI.cardHolderImg.setText("Game Over Please return to the check score menu!");
+            undevelopment.IntegrationsUI.displayQ.setText("Game Over Please return to the check score menu!");
             undevelopment.IntegrationsUI.choiceOneBTN.setText("End Game");
             undevelopment.IntegrationsUI.choiceTwoBTN.setText("End Game");
             undevelopment.IntegrationsUI.choiceThreeBTN.setText("End Game");
@@ -270,7 +270,7 @@ this will be loaded when the user runs out of lives!
        if(lives == 0)
        {
            JOptionPane.showMessageDialog(null, "You have ran out of lives!");
-           undevelopment.IntegrationsUI.cardHolderImg.setText("Game Over! Please return the check score tab to check your score!");
+           undevelopment.IntegrationsUI.displayQ.setText("Game Over! Please return the check score tab to check your score!");
             undevelopment.IntegrationsUI.choiceOneBTN.setText("");
             undevelopment.IntegrationsUI.choiceTwoBTN.setText("");
             undevelopment.IntegrationsUI.choiceThreeBTN.setText("");

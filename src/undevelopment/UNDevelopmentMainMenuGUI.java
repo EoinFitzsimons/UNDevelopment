@@ -8,6 +8,7 @@ package undevelopment;
 
 
 
+import undevelopment.IntegrationsFolder.cardGame;
 import undevelopment.adaptabilityFolder.CrosswordUsers;
 
 
@@ -422,7 +423,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         displayText.setForeground(new java.awt.Color(0, 0, 0));
         displayText.setLineWrap(true);
         displayText.setRows(5);
-        displayText.setText("Intregration for climate change is the number of countres that nationally determined contributions to national adaptation plans, long term strategies and adaptation communications. Intregrated land use planning is part of this to help improve our atmosphere. The integrated land strategy is to allocate land for different purposes, to balance social,\\n enviormental economic values at a national or sub-national levels. This is the process of supporting decision makers and land users in selectomg the best combination of land uses to ultimately meet multiple needs for people, while safeguardomg natural resources and ecosystem services");
+        displayText.setText("\n");
         displayText.setWrapStyleWord(true);
         jScrollPane6.setViewportView(displayText);
 
@@ -530,7 +531,11 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        
+        cardGame load = new cardGame();
+       // load.displayBrief();
+        
+       //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */

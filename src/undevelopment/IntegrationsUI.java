@@ -4,7 +4,7 @@
  */
 package undevelopment;
 import javax.swing.JOptionPane;
-import undevelopment.IntegrationsFolder.CardGame;
+import undevelopment.IntegrationsFolder.cardGame;
 import undevelopment.IntegrationsFolder.ChoiceCardHolder;
 /**
  *
@@ -47,8 +47,9 @@ public class IntegrationsUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         backgroundGame = new javax.swing.JLayeredPane();
         gamePane = new javax.swing.JPanel();
-        cardHolderImg = new javax.swing.JTextArea();
         livesCounter = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        displayQ = new javax.swing.JTextArea();
         choiceOneBTN = new javax.swing.JButton();
         choiceTwoBTN = new javax.swing.JButton();
         choiceThreeBTN = new javax.swing.JButton();
@@ -190,21 +191,20 @@ public class IntegrationsUI extends javax.swing.JFrame {
         gamePane.setMinimumSize(new java.awt.Dimension(800, 600));
         gamePane.setLayout(null);
 
-        cardHolderImg.setEditable(false);
-        cardHolderImg.setBackground(new java.awt.Color(255, 255, 255));
-        cardHolderImg.setColumns(20);
-        cardHolderImg.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        cardHolderImg.setForeground(new java.awt.Color(0, 0, 0));
-        cardHolderImg.setLineWrap(true);
-        cardHolderImg.setRows(5);
-        gamePane.add(cardHolderImg);
-        cardHolderImg.setBounds(160, 140, 450, 290);
-
         livesCounter.setFont(new java.awt.Font("Arial Black", 0, 20)); // NOI18N
         livesCounter.setForeground(new java.awt.Color(0, 0, 0));
         livesCounter.setText("0");
         gamePane.add(livesCounter);
         livesCounter.setBounds(780, -20, 90, 70);
+
+        displayQ.setEditable(false);
+        displayQ.setColumns(20);
+        displayQ.setRows(5);
+        displayQ.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(displayQ);
+
+        gamePane.add(jScrollPane2);
+        jScrollPane2.setBounds(240, 230, 238, 98);
 
         choiceOneBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -294,7 +294,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
        if(nameField.getText().isEmpty()){
            JOptionPane.showMessageDialog(null, "You must fill this field before adding");
        } else {
-           CardGame test = new CardGame();
+           cardGame test = new cardGame();
        test.addUser();
         startBTN.setVisible(true);
        }
@@ -302,7 +302,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void displayBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayBTNActionPerformed
         // TODO add your handling code here:
-        CardGame test = new CardGame();
+        cardGame test = new cardGame();
         
         displayScoreArea.setText("");
             displayScoreArea.setText("ID: \t Name: \t Score: \n");
@@ -312,14 +312,14 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private void startBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBTNActionPerformed
         // TODO add your handling code here:
         
-        CardGame game = new CardGame();
+        cardGame game = new cardGame();
         
         game.gameTest();
     }//GEN-LAST:event_startBTNActionPerformed
 
     private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
         // TODO add your handling code here:
-       CardGame load = new CardGame();
+       cardGame load = new cardGame();
         if(searchField.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(null, "You must fill this field before search");
@@ -343,7 +343,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
-        CardGame load = new CardGame();
+        cardGame load = new cardGame();
         load.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
 
@@ -442,18 +442,19 @@ public class IntegrationsUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
     private javax.swing.JLayeredPane backgroundGame;
-    public static javax.swing.JTextArea cardHolderImg;
     public static javax.swing.JButton choiceOneBTN;
     public static javax.swing.JButton choiceThreeBTN;
     public static javax.swing.JButton choiceTwoBTN;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JButton displayBTN;
+    public static javax.swing.JTextArea displayQ;
     public static javax.swing.JTextArea displayScoreArea;
     public static javax.swing.JPanel gamePane;
     private javax.swing.JTabbedPane integrateTabbedPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JLabel livesCounter;
     public static javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
