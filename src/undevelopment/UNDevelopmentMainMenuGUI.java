@@ -9,7 +9,7 @@ package undevelopment;
 
 
 import undevelopment.adaptabilityFolder.CrosswordUsers;
-
+import undevelopment.IntegrationsFolder.CardGame;
 
 
 /**
@@ -28,6 +28,8 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
        // cwlist = new ArrayList<>();
 
     }
+    public static CardGame load = new CardGame();
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,7 +76,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         loadIntegrationApp = new javax.swing.JButton();
         loadBrief = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
-        displayText = new javax.swing.JTextArea();
+        integrationMenuText = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -388,6 +390,11 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         jTabbedPane1.addTab("Promoting Mechanism", promoteMechPane);
 
         backgroundIntegration.setBackground(new java.awt.Color(100, 150, 200));
+        backgroundIntegration.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                backgroundIntegrationKeyPressed(evt);
+            }
+        });
         backgroundIntegration.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
@@ -415,16 +422,16 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         backgroundIntegration.add(loadBrief);
         loadBrief.setBounds(350, 410, 432, 57);
 
-        displayText.setEditable(false);
-        displayText.setBackground(new java.awt.Color(229, 225, 205));
-        displayText.setColumns(20);
-        displayText.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        displayText.setForeground(new java.awt.Color(0, 0, 0));
-        displayText.setLineWrap(true);
-        displayText.setRows(5);
-        displayText.setText("Intregration for climate change is the number of countres that nationally determined contributions to national adaptation plans, long term strategies and adaptation communications. Intregrated land use planning is part of this to help improve our atmosphere. The integrated land strategy is to allocate land for different purposes, to balance social,\\n enviormental economic values at a national or sub-national levels. This is the process of supporting decision makers and land users in selectomg the best combination of land uses to ultimately meet multiple needs for people, while safeguardomg natural resources and ecosystem services");
-        displayText.setWrapStyleWord(true);
-        jScrollPane6.setViewportView(displayText);
+        integrationMenuText.setEditable(false);
+        integrationMenuText.setBackground(new java.awt.Color(229, 225, 205));
+        integrationMenuText.setColumns(20);
+        integrationMenuText.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        integrationMenuText.setForeground(new java.awt.Color(0, 0, 0));
+        integrationMenuText.setLineWrap(true);
+        integrationMenuText.setRows(5);
+        integrationMenuText.setText("\n");
+        integrationMenuText.setWrapStyleWord(true);
+        jScrollPane6.setViewportView(integrationMenuText);
 
         backgroundIntegration.add(jScrollPane6);
         jScrollPane6.setBounds(0, 90, 326, 460);
@@ -525,6 +532,11 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         search.search();
     }//GEN-LAST:event_searchBTNActionPerformed
 
+    private void backgroundIntegrationKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_backgroundIntegrationKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_backgroundIntegrationKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -551,7 +563,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(UNDevelopmentMainMenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+           
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -574,8 +586,12 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     public static javax.swing.JTextArea cwsTA;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
+<<<<<<< Updated upstream
     private javax.swing.JTextArea displayText;
+=======
+>>>>>>> Stashed changes
     private javax.swing.JLayeredPane homePane;
+    public static javax.swing.JTextArea integrationMenuText;
     private javax.swing.JLayeredPane integrationPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
