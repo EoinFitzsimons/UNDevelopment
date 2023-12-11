@@ -15,7 +15,7 @@ import undevelopment.IntegrationsFolder.cardGame;
 
 /**
  *
- * @author everyone
+ * @author everyone, david came up with the tab idea, eoin closed the menu and fixed menu bugs.
  */
 public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
@@ -403,6 +403,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
     private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
         // TODO add your handling code here:
+        //calls eoin's search method from his leaderboard fuction class called crossword users, repeated below for others
         CrosswordUsers search = new CrosswordUsers();
         search.search();
     }//GEN-LAST:event_searchBTNActionPerformed
@@ -420,6 +421,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
     private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
         // TODO add your handling code here:
+        //loads eoin's crossword and closes main menu
 
         AdaptabilityGUI load = new AdaptabilityGUI();
         load.setVisible(true);
