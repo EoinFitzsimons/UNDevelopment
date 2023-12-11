@@ -8,6 +8,7 @@ package undevelopment;
 
 
 
+
 import undevelopment.adaptabilityFolder.CrosswordUsers;
 import undevelopment.IntegrationsFolder.cardGame;
 
@@ -26,9 +27,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         initComponents();
 
     }
-
-
-    
 
 
     /**
