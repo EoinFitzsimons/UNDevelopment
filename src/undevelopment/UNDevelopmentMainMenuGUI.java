@@ -61,13 +61,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         cwsTA = new javax.swing.JTextArea();
         deleteBTN = new javax.swing.JButton();
         searchBTN = new javax.swing.JButton();
-        promoteMechPane = new javax.swing.JLayeredPane();
-        PromotingMechBackground = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        promoteAppBTN = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         integrationPane = new javax.swing.JLayeredPane();
         backgroundIntegration = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -322,70 +315,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Adaptability", adaptabilityPane);
 
-        jScrollPane3.setViewportView(jTextPane2);
-
-        promoteAppBTN.setText("Promoting Mechanism App");
-        promoteAppBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                promoteAppBTNActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Promoting Mechanism Menu");
-
-        javax.swing.GroupLayout PromotingMechBackgroundLayout = new javax.swing.GroupLayout(PromotingMechBackground);
-        PromotingMechBackground.setLayout(PromotingMechBackgroundLayout);
-        PromotingMechBackgroundLayout.setHorizontalGroup(
-            PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PromotingMechBackgroundLayout.createSequentialGroup()
-                .addGroup(PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PromotingMechBackgroundLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3)
-                            .addComponent(promoteAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        PromotingMechBackgroundLayout.setVerticalGroup(
-            PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PromotingMechBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
-                .addGroup(PromotingMechBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PromotingMechBackgroundLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(promoteAppBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-
-        promoteMechPane.setLayer(PromotingMechBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout promoteMechPaneLayout = new javax.swing.GroupLayout(promoteMechPane);
-        promoteMechPane.setLayout(promoteMechPaneLayout);
-        promoteMechPaneLayout.setHorizontalGroup(
-            promoteMechPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(promoteMechPaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PromotingMechBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        promoteMechPaneLayout.setVerticalGroup(
-            promoteMechPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, promoteMechPaneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PromotingMechBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Promoting Mechanism", promoteMechPane);
-
         backgroundIntegration.setBackground(new java.awt.Color(100, 150, 200));
         backgroundIntegration.setLayout(null);
 
@@ -461,26 +390,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void awarenessLoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_awarenessLoadMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_awarenessLoadMouseClicked
-
-    private void awarenessLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_awarenessLoadActionPerformed
-        // TODO add your handling code here:
-
-        AwarenessGUI load = new AwarenessGUI();
-        load.setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_awarenessLoadActionPerformed
-
-    private void promoteAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promoteAppBTNActionPerformed
-        // TODO add your handling code here:
-        ImpactGUI load = new ImpactGUI();
-        load.setVisible(true);
-
-    }//GEN-LAST:event_promoteAppBTNActionPerformed
-
     private void loadIntegrationAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadIntegrationAppActionPerformed
         // TODO add your handling code here:
         IntegrationsUI load = new IntegrationsUI();
@@ -489,31 +398,8 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         cardGame load1 = new cardGame();
         load1.scriptRunner();
-        
 
     }//GEN-LAST:event_loadIntegrationAppActionPerformed
-
-    
-    private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
-        // TODO add your handling code here:
-
-        AdaptabilityGUI load = new AdaptabilityGUI();
-        load.setVisible(true);
-        this.dispose();
-
-
-    }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
-
-    private void updateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBTNActionPerformed
-     CrosswordUsers update = new CrosswordUsers();
-     update.update();
-    }//GEN-LAST:event_updateBTNActionPerformed
-   
-    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
-        // TODO add your handling code here:
-        CrosswordUsers delete = new CrosswordUsers();
-        delete.delete();
-    }//GEN-LAST:event_deleteBTNActionPerformed
 
     private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
         // TODO add your handling code here:
@@ -521,6 +407,39 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         search.search();
     }//GEN-LAST:event_searchBTNActionPerformed
 
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        // TODO add your handling code here:
+        CrosswordUsers delete = new CrosswordUsers();
+        delete.delete();
+    }//GEN-LAST:event_deleteBTNActionPerformed
+
+    private void updateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBTNActionPerformed
+        CrosswordUsers update = new CrosswordUsers();
+        update.update();
+    }//GEN-LAST:event_updateBTNActionPerformed
+
+    private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
+        // TODO add your handling code here:
+
+        AdaptabilityGUI load = new AdaptabilityGUI();
+        load.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
+
+    private void awarenessLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_awarenessLoadActionPerformed
+        // TODO add your handling code here:
+
+        AwarenessGUI load = new AwarenessGUI();
+        load.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_awarenessLoadActionPerformed
+
+    private void awarenessLoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_awarenessLoadMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_awarenessLoadMouseClicked
+
+       
     /**
      * @param args the command line arguments
      */
@@ -558,7 +477,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdaptabilityAppBTN;
-    private javax.swing.JPanel PromotingMechBackground;
     private javax.swing.JPanel adaptabilityBackground;
     private javax.swing.JLayeredPane adaptabilityPane;
     private javax.swing.JPanel awarenessBackground;
@@ -567,7 +485,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel backgroundIMG;
     private javax.swing.JPanel backgroundIntegration;
     private javax.swing.JPanel backgroundPane;
-    public static javax.swing.JTextArea cwsTA;
+    private javax.swing.JTextArea cwsTA;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
     private javax.swing.JTextArea displayText;
@@ -577,22 +495,16 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextPane jTextPane2;
     private javax.swing.JButton loadBrief;
     private javax.swing.JButton loadIntegrationApp;
-    private javax.swing.JButton promoteAppBTN;
-    private javax.swing.JLayeredPane promoteMechPane;
     private javax.swing.JButton searchBTN;
     private javax.swing.JButton updateBTN;
     // End of variables declaration//GEN-END:variables
