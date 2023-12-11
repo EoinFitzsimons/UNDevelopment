@@ -405,7 +405,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         loadIntegrationApp.setBackground(new java.awt.Color(229, 225, 205));
         loadIntegrationApp.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        loadIntegrationApp.setForeground(new java.awt.Color(0, 0, 0));
         loadIntegrationApp.setText("Load Integration App");
         loadIntegrationApp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -417,7 +416,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         loadBrief.setBackground(new java.awt.Color(229, 225, 205));
         loadBrief.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        loadBrief.setForeground(new java.awt.Color(0, 0, 0));
         loadBrief.setText("Brief About Game");
         backgroundIntegration.add(loadBrief);
         loadBrief.setBounds(350, 410, 432, 57);
@@ -426,7 +424,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         integrationMenuText.setBackground(new java.awt.Color(229, 225, 205));
         integrationMenuText.setColumns(20);
         integrationMenuText.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        integrationMenuText.setForeground(new java.awt.Color(0, 0, 0));
         integrationMenuText.setLineWrap(true);
         integrationMenuText.setRows(5);
         integrationMenuText.setText("\n");
@@ -586,14 +583,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     public static javax.swing.JTextArea cwsTA;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    private javax.swing.JTextArea displayText;
-=======
->>>>>>> Stashed changes
-=======
-    public static javax.swing.JTextArea displayText;
->>>>>>> daveBranch2
     private javax.swing.JLayeredPane homePane;
     public static javax.swing.JTextArea integrationMenuText;
     private javax.swing.JLayeredPane integrationPane;
