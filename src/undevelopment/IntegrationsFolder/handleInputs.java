@@ -12,9 +12,9 @@ import java.io.Serializable;
  */
 public class HandleInputs implements Serializable {
     
-    protected String id;
+    protected String id; //intialize id
    
-    protected String userName;
+    protected String userName; //intialize userName
 
     public HandleInputs(String id, String userName) {
         this.id = id;
@@ -40,7 +40,7 @@ public class HandleInputs implements Serializable {
         this.userName = userName;
     }
 
-    public String details(){
+    public String details(){ //will help display the details of the user
         return ""+id+"\t"+userName;
     }
     
