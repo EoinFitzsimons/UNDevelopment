@@ -424,7 +424,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         update.update();
     }//GEN-LAST:event_updateBTNActionPerformed
 
-<<<<<<< HEAD
+
     private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
         // TODO add your handling code here:
         //loads eoin's crossword and closes main menu
@@ -448,7 +448,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_awarenessLoadMouseClicked
 
        
-=======
+
     private void loadBriefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBriefActionPerformed
         // TODO add your handling code here:
         BriefAboutGame load = new BriefAboutGame();
@@ -457,7 +457,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_loadBriefActionPerformed
 
->>>>>>> daveBranch4
+
     /**
      * @param args the command line arguments
      */
