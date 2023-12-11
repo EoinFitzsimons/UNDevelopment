@@ -564,7 +564,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         
-        cardGame load = new cardGame();
+       // cardGame load = new cardGame();
        // load.displayBrief();
         
        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
