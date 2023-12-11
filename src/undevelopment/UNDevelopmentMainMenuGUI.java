@@ -8,6 +8,7 @@ package undevelopment;
 
 
 
+import undevelopment.IntegrationsFolder.CardGame;
 import undevelopment.adaptabilityFolder.CrosswordUsers;
 
 
@@ -26,11 +27,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         initComponents();
 
     }
-<<<<<<< Updated upstream
-=======
 
-    
->>>>>>> Stashed changes
 
     /**
      * This method is called from within the constructor to initialize the form.
