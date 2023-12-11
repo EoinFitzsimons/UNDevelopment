@@ -33,9 +33,9 @@ import java.sql.*;
 
 
 
-public class CardGame extends HandleInputs {
+public class cardGame extends HandleInputs {
 
-    public CardGame() {
+    public cardGame() {
     }
     
     ArrayList <User> userList = new ArrayList<>();
@@ -50,7 +50,7 @@ public class CardGame extends HandleInputs {
     User newUser = new User();
     HandleInputs tes = new HandleInputs();
     
-    ChoiceCardHolder test = new ChoiceCardHolder();
+    choiceCardHolder test = new choiceCardHolder();
     
     
    
@@ -60,7 +60,7 @@ public class CardGame extends HandleInputs {
    // public static String url = "jdbc:sqlite:C:/myDB/scoreDB.db";
     public static Connection Myconn;
     
-     private void scriptRunner(){
+     public void scriptRunner(){
         //establish connection with the database
         try{
             Myconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB","root","1234"); // .getConnection("link to db","username","password")

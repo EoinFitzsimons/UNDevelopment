@@ -47,10 +47,20 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 long now = System.currentTimeMillis();
-                long elapsedSeconds = (now - startTime) / 1000;
+                long elapsedSeconds = (now - startTime) / 1000; //miliseconds to seconds
                 timeTF.setText("Time Elapsed: " + elapsedSeconds);
             }
         });
+        String[] crosswordSquares = { //For myself to remember
+            "a1TF,", "a2TF", "a3TF", "a4TF", "a5TF", "a6TF", "a7TF", "a8TF",
+            "b1TF,", "b2TF", "b3TF", "b4TF", "b5TF", "b6TF", "b7TF", "b8TF",
+            "c1TF,", "c2TF", "c3TF", "c4TF", "c5TF", "c6TF", "c7TF", "c8TF",
+            "d1TF,", "d2TF", "d3TF", "d4TF", "d5TF", "d6TF", "d7TF", "d8TF",
+            "e1TF,", "e2TF", "e3TF", "e4TF", "e5TF", "e6TF", "e7TF", "e8TF",
+            "f1TF,", "f2TF", "f3TF", "f4TF", "f5TF", "f6TF", "f7TF", "f8TF",
+            "g1TF,", "g2TF", "g3TF", "g4TF", "g5TF", "g6TF", "g7TF", "g8TF",
+            "h1TF,", "h2TF", "h3TF", "h4TF", "h5TF", "h6TF", "h7TF", "h8TF"
+        };
     }
 
     /**
@@ -1384,7 +1394,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_guessBTNActionPerformed
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
-        // TODO add your handling code here:
+        // opens main menu and closes this
         UNDevelopmentMainMenuGUI load = new UNDevelopmentMainMenuGUI();
         load.setVisible(true);
         this.dispose();
@@ -1400,13 +1410,11 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
             long now = System.currentTimeMillis();
             elapsedSeconds = (now - startTime) / 1000;
 
-            // You might want to do something with 'elapsedSeconds' here
-            // For instance, you can display it, save it, or use it in your CWScoring class
-            // Hide the text field or do any other necessary UI updates
+            // Hide the time
             timeTF.setVisible(false);
         }
         
-        File f; //file
+        File f; //file manipulation things
         FileInputStream fis;
         ObjectInputStream ois;
         
@@ -1416,7 +1424,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
             ois = new ObjectInputStream(fis);
 
             try {
-                cwlist = (ArrayList<CWScoring>) ois.readObject();
+                cwlist = (ArrayList<CWScoring>) ois.readObject(); // looks at the array list
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(AdaptabilityGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1429,10 +1437,10 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
         
         CWScoring tempCWS = new CWScoring();
         String user = JOptionPane.showInputDialog(this, "Enter your name:");
-        tempCWS.setUser(user);
+        tempCWS.setUser(user); //makes a temp object to store latest attempt 
         tempCWS.setScore(progress);
         tempCWS.setTime(elapsedSeconds);
-        cwlist.add(tempCWS);
+        cwlist.add(tempCWS); //adds the temp
 
         
         FileOutputStream fos;
@@ -1443,7 +1451,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
             fos = new FileOutputStream(f);
             oos = new ObjectOutputStream(fos);
 
-            oos.writeObject(cwlist);
+            oos.writeObject(cwlist); //writes the object
             oos.close();
 
             //close
@@ -1455,6 +1463,7 @@ public class AdaptabilityGUI extends javax.swing.JFrame {
 
     private void backBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTN1ActionPerformed
         // TODO add your handling code here:
+        //same close as before just on another page
         UNDevelopmentMainMenuGUI load = new UNDevelopmentMainMenuGUI();
         load.setVisible(true);
         this.dispose();
