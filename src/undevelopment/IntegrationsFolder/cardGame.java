@@ -37,7 +37,7 @@ public class cardGame extends HandleInputs
     public cardGame() { //constructor for input 
     }
     
-    ArrayList <User> userList = new ArrayList<>(); //creates an object array list to store user data
+    ArrayList <user> userList = new ArrayList<>(); //creates an object array list to store user data
     
   
    
@@ -46,7 +46,7 @@ public class cardGame extends HandleInputs
     private String score = realScore+""; //used to store the score into the users account
     public  int randomID = (int)(Math.random()*1000+1); //generates the user id 
    
-    User newUser = new User(); // creates an instance of the user object
+    user newUser = new user(); // creates an instance of the user object
    
     
     choiceCardHolder test = new choiceCardHolder(); //create instance of game
@@ -170,12 +170,12 @@ public class cardGame extends HandleInputs
              f = new File("user2.dat"); //will read from thsi file 
             fs = new FileInputStream(f);
             os = new ObjectInputStream(fs);
-             userList = (ArrayList<User>)os.readObject(); //reading from the arraylist that is in the file 
+             userList = (ArrayList<user>)os.readObject(); //reading from the arraylist that is in the file 
              
             
             for(int i =0; i<userList.size(); i++) //loops through the arraylist to grab all users from it 
              {
-                User load = userList.get(i); 
+                user load = userList.get(i); 
                undevelopment.IntegrationsUI.displayScoreArea.append(load.details()+"\n");//displays the user details 
                  
              } 
@@ -269,7 +269,7 @@ public class cardGame extends HandleInputs
           { //close if 
               for(int i=0; i<userList.size(); i++) //loops through the array 
               {//open for
-                 User  e = userList.get(i); //will get user based on index
+                 user  e = userList.get(i); //will get user based on index
                   if(e.getId().equalsIgnoreCase(selected)) //ignores cases
                   {//open if
                      undevelopment.IntegrationsUI.displayScoreArea.append(e.details()); //displays the users details in the text area

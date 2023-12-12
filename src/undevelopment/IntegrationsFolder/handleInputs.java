@@ -10,18 +10,18 @@ import java.io.Serializable;
  *
  * @author dmoc2
  */
-public class HandleInputs implements Serializable {
+public class handleInputs implements Serializable {
     
     protected String id; //intialize id
    
     protected String userName; //intialize userName
 
-    public HandleInputs(String id, String userName) {
+    public handleInputs(String id, String userName) {
         this.id = id;
         this.userName = userName;
     }
 
-    public HandleInputs() {
+    public handleInputs() {
     }
 
     public String getId() {
