@@ -42,10 +42,10 @@ public class IntegrationsUI extends javax.swing.JFrame {
         addBTN = new javax.swing.JButton();
         deleteBTN = new javax.swing.JButton();
         searchBTN = new javax.swing.JButton();
-        menuBTN = new javax.swing.JButton();
+        refereshBTN = new javax.swing.JButton();
         displayBTN = new javax.swing.JButton();
         startBTN = new javax.swing.JButton();
-        backgroundImage = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         backgroundGame = new javax.swing.JLayeredPane();
         gamePane = new javax.swing.JPanel();
         cardHolderImg = new javax.swing.JTextArea();
@@ -54,7 +54,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         choiceTwoBTN = new javax.swing.JButton();
         choiceThreeBTN = new javax.swing.JButton();
         scoreCounter = new javax.swing.JLabel();
-        background_IMG2 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,9 +111,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scorePanel.add(searchField);
         searchField.setBounds(146, 124, 200, 50);
 
-        addBTN.setBackground(new java.awt.Color(255, 255, 255));
         addBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        addBTN.setForeground(new java.awt.Color(0, 0, 0));
         addBTN.setText("ADD");
         addBTN.setToolTipText("Must Enter name to add user");
         addBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -124,9 +122,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scorePanel.add(addBTN);
         addBTN.setBounds(6, 214, 199, 70);
 
-        deleteBTN.setBackground(new java.awt.Color(255, 255, 255));
         deleteBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        deleteBTN.setForeground(new java.awt.Color(0, 0, 0));
         deleteBTN.setText("Delete");
         deleteBTN.setToolTipText("ID must be entered in the search to delete user");
         deleteBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -137,9 +133,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scorePanel.add(deleteBTN);
         deleteBTN.setBounds(6, 405, 199, 70);
 
-        searchBTN.setBackground(new java.awt.Color(255, 255, 255));
         searchBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        searchBTN.setForeground(new java.awt.Color(0, 0, 0));
         searchBTN.setText("Search");
         searchBTN.setToolTipText("Enter ID to search for user!");
         searchBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -150,22 +144,18 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scorePanel.add(searchBTN);
         searchBTN.setBounds(6, 302, 199, 70);
 
-        menuBTN.setBackground(new java.awt.Color(255, 255, 255));
-        menuBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        menuBTN.setForeground(new java.awt.Color(0, 0, 0));
-        menuBTN.setText("Return to Menu");
-        menuBTN.setToolTipText("Press me to see your results");
-        menuBTN.addActionListener(new java.awt.event.ActionListener() {
+        refereshBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        refereshBTN.setText("Save To File");
+        refereshBTN.setToolTipText("Press me to see your results");
+        refereshBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuBTNActionPerformed(evt);
+                refereshBTNActionPerformed(evt);
             }
         });
-        scorePanel.add(menuBTN);
-        menuBTN.setBounds(364, 436, 199, 70);
+        scorePanel.add(refereshBTN);
+        refereshBTN.setBounds(364, 436, 199, 70);
 
-        displayBTN.setBackground(new java.awt.Color(255, 255, 255));
         displayBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        displayBTN.setForeground(new java.awt.Color(0, 0, 0));
         displayBTN.setText("Display");
         displayBTN.setToolTipText("Press me to show all users");
         displayBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -176,9 +166,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scorePanel.add(displayBTN);
         displayBTN.setBounds(581, 436, 201, 70);
 
-        startBTN.setBackground(new java.awt.Color(255, 255, 255));
         startBTN.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        startBTN.setForeground(new java.awt.Color(0, 0, 0));
         startBTN.setText("Start Game");
         startBTN.setToolTipText("ID must be entered in the search to delete user");
         startBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -189,10 +177,10 @@ public class IntegrationsUI extends javax.swing.JFrame {
         scorePanel.add(startBTN);
         startBTN.setBounds(6, 487, 199, 70);
 
-        backgroundImage.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/background.jpg"))); // NOI18N
-        scorePanel.add(backgroundImage);
-        backgroundImage.setBounds(2, -126, 810, 700);
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/background.jpg"))); // NOI18N
+        scorePanel.add(jLabel1);
+        jLabel1.setBounds(2, -126, 810, 700);
 
         integrateTabbedPane.addTab("Check Score", scorePanel);
 
@@ -246,9 +234,9 @@ public class IntegrationsUI extends javax.swing.JFrame {
         gamePane.add(scoreCounter);
         scoreCounter.setBounds(90, -20, 104, 70);
 
-        background_IMG2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/BackgroundForIntegrations.png"))); // NOI18N
-        gamePane.add(background_IMG2);
-        background_IMG2.setBounds(0, 0, 800, 600);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sampleoflayout/img/BackgroundForIntegrations.png"))); // NOI18N
+        gamePane.add(jLabel2);
+        jLabel2.setBounds(0, 0, 800, 600);
 
         backgroundGame.setLayer(gamePane, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -289,7 +277,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         
       choiceCardHolder load = new  choiceCardHolder();
-      load.btn1(); //loads btn
+      load.btn1();
         
           
        
@@ -301,12 +289,9 @@ public class IntegrationsUI extends javax.swing.JFrame {
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
         // TODO add your handling code here:
-       if(nameField.getText().isEmpty())
-       { //error trapping 
+       if(nameField.getText().isEmpty()){
            JOptionPane.showMessageDialog(null, "You must fill this field before adding");
-       } 
-       else 
-       {
+       } else {
            cardGame test = new cardGame();
        test.addUser();
         startBTN.setVisible(true);
@@ -327,13 +312,13 @@ public class IntegrationsUI extends javax.swing.JFrame {
         
         cardGame game = new cardGame();
         
-        game.game();
+        game.gameTest();
     }//GEN-LAST:event_startBTNActionPerformed
 
     private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
         // TODO add your handling code here:
        cardGame load = new cardGame();
-        if(searchField.getText().isEmpty())//error trapping 
+        if(searchField.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(null, "You must fill this field before search");
         } else {
@@ -348,7 +333,7 @@ public class IntegrationsUI extends javax.swing.JFrame {
         // TODO add your handling code here:
             
              choiceCardHolder load = new  choiceCardHolder();
-             load.btn2(); //loads btn
+             load.btn2();
        
         
         
@@ -357,14 +342,14 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
         // TODO add your handling code here:
         cardGame load = new cardGame();
-        load.delete(); //loads delete
+        load.delete();
     }//GEN-LAST:event_deleteBTNActionPerformed
 
     private void choiceThreeBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choiceThreeBTNActionPerformed
         // TODO add your handling code here:
         
          choiceCardHolder load = new  choiceCardHolder();
-            load.btn3(); //loads btn
+            load.btn3();
        
     }//GEN-LAST:event_choiceThreeBTNActionPerformed
 
@@ -379,39 +364,38 @@ public class IntegrationsUI extends javax.swing.JFrame {
     private void nameFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameFieldKeyTyped
         // TODO add your handling code here:
         
-        char c = evt.getKeyChar(); //creating a character event
+        char c = evt.getKeyChar();
 
-        if(!Character.isLetter(c)){ //tracks of the users key typing
+        if(!Character.isLetter(c)){
             evt.consume();
-            JOptionPane.showMessageDialog(null, "Letters Only!"); //tells the user only letters are only accepted
-            nameField.setText(""); //prevents numbers from being entered
+            JOptionPane.showMessageDialog(null, "Letters Only!");
+            nameField.setText("");
         }
         
     }//GEN-LAST:event_nameFieldKeyTyped
 
     private void searchFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchFieldKeyTyped
         // TODO add your handling code here:
-           char c = evt.getKeyChar();//creating a character event
+           char c = evt.getKeyChar();
         
-        if(!Character.isDigit(c)){ //tracks of the users key typing
+        if(!Character.isDigit(c)){
            evt.consume();
-           JOptionPane.showMessageDialog(null, "Numbers Only!"); //tells the user only numbers are only accepted
-
-           searchField.setText(""); //prevents letters from being entered
+           JOptionPane.showMessageDialog(null, "Numbers Only!");
+           searchField.setText("");
         }
         
     }//GEN-LAST:event_searchFieldKeyTyped
 
-    private void menuBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBTNActionPerformed
+    private void refereshBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refereshBTNActionPerformed
         // TODO add your handling code here:
         
-         UNDevelopmentMainMenuGUI load = new UNDevelopmentMainMenuGUI();
-         load.setVisible(true); //loads main menu
-         this.dispose(); //closes current menu
+         
         
+        displayScoreArea.setText("");
+            displayScoreArea.setText("ID: \t Name: \t Score: \n");
+         //   test.display();
         
-        
-    }//GEN-LAST:event_menuBTNActionPerformed
+    }//GEN-LAST:event_refereshBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -456,8 +440,6 @@ public class IntegrationsUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBTN;
     private javax.swing.JLayeredPane backgroundGame;
-    private javax.swing.JLabel backgroundImage;
-    private javax.swing.JLabel background_IMG2;
     public static javax.swing.JTextArea cardHolderImg;
     public static javax.swing.JButton choiceOneBTN;
     public static javax.swing.JButton choiceThreeBTN;
@@ -467,11 +449,13 @@ public class IntegrationsUI extends javax.swing.JFrame {
     public static javax.swing.JTextArea displayScoreArea;
     public static javax.swing.JPanel gamePane;
     private javax.swing.JTabbedPane integrateTabbedPane;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JLabel livesCounter;
-    private javax.swing.JButton menuBTN;
     public static javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;
+    private javax.swing.JButton refereshBTN;
     public static javax.swing.JLabel scoreCounter;
     private javax.swing.JPanel scorePanel;
     private javax.swing.JButton searchBTN;

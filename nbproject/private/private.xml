@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/adaptabilityFolder/CrosswordUsers.java</file>
+<<<<<<< HEAD
             <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/CWScoring.java</file>
             <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/IntegrationsFolder/handleInputs.java</file>
             <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/IntegrationsFolder/cardGame.java</file>
@@ -11,6 +12,10 @@
             <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/IntegrationsFolder/choiceCardHolder.java</file>
             <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/AdaptabilityGUI.java</file>
             <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/IntegrationsFolder/user.java</file>
+=======
+            <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/UNDevelopmentMainMenuGUI.java</file>
+            <file>file:/C:/Users/eoin0/OneDrive/NCI/OOP/_Project/UNDevelopment/src/undevelopment/AdaptabilityGUI.java</file>
+>>>>>>> parent of f4cf5bb (Please work)
         </group>
     </open-files>
 </project-private>

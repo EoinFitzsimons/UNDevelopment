@@ -10,18 +10,18 @@ import java.io.Serializable;
  *
  * @author dmoc2
  */
-public class handleInputs implements Serializable {
+public class HandleInputs implements Serializable {
     
-    protected String id; //intialize id
+    protected String id;
    
-    protected String userName; //intialize userName
+    protected String userName;
 
-    public handleInputs(String id, String userName) {
+    public HandleInputs(String id, String userName) {
         this.id = id;
         this.userName = userName;
     }
 
-    public handleInputs() {
+    public HandleInputs() {
     }
 
     public String getId() {
@@ -40,7 +40,7 @@ public class handleInputs implements Serializable {
         this.userName = userName;
     }
 
-    public String details(){ //will help display the details of the user
+    public String details(){
         return ""+id+"\t"+userName;
     }
     

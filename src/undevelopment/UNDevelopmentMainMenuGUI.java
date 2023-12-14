@@ -52,10 +52,10 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         adaptabilityPane = new javax.swing.JLayeredPane();
         adaptabilityBackground = new javax.swing.JPanel();
         AdaptabilityAppBTN = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        cwtLBL = new javax.swing.JLabel();
+        cweLBL1 = new javax.swing.JLabel();
+        cweLBL2 = new javax.swing.JLabel();
+        cweLBL3 = new javax.swing.JLabel();
         updateBTN = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         cwsTA = new javax.swing.JTextArea();
@@ -201,25 +201,25 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Adaptability Menu");
+        cwtLBL.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        cwtLBL.setForeground(new java.awt.Color(255, 255, 255));
+        cwtLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cwtLBL.setText("Adaptability Menu");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("This is a crossword whose hints are information regarding natural disasters.");
+        cweLBL1.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        cweLBL1.setForeground(new java.awt.Color(255, 255, 255));
+        cweLBL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cweLBL1.setText("This is a crossword whose hints are information regarding natural disasters.");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("You should take what you learn from this crossword and be able to apply it in future.");
+        cweLBL2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cweLBL2.setForeground(new java.awt.Color(255, 255, 255));
+        cweLBL2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cweLBL2.setText("You should take what you learn from this crossword and be able to apply it in future.");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("With this knowledege you will be more adaptable in the face of danger.");
+        cweLBL3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cweLBL3.setForeground(new java.awt.Color(255, 255, 255));
+        cweLBL3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cweLBL3.setText("With this knowledege you will be more adaptable in the face of danger.");
 
         updateBTN.setText("Update Scores");
         updateBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -250,13 +250,13 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         adaptabilityBackground.setLayout(adaptabilityBackgroundLayout);
         adaptabilityBackgroundLayout.setHorizontalGroup(
             adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cwtLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
+                    .addComponent(cweLBL2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cweLBL3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cweLBL1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -275,13 +275,13 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
             adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cwtLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(cweLBL1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(cweLBL2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
+                .addComponent(cweLBL3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
@@ -338,11 +338,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         loadBrief.setBackground(new java.awt.Color(229, 225, 205));
         loadBrief.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         loadBrief.setText("Brief About Game");
-        loadBrief.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loadBriefActionPerformed(evt);
-            }
-        });
         backgroundIntegration.add(loadBrief);
         loadBrief.setBounds(350, 410, 432, 57);
 
@@ -424,7 +419,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         update.update();
     }//GEN-LAST:event_updateBTNActionPerformed
 
-
     private void AdaptabilityAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTNActionPerformed
         // TODO add your handling code here:
         //loads eoin's crossword and closes main menu
@@ -448,16 +442,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_awarenessLoadMouseClicked
 
        
-
-    private void loadBriefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBriefActionPerformed
-        // TODO add your handling code here:
-        BriefAboutGame load = new BriefAboutGame();
-        load.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_loadBriefActionPerformed
-
-
     /**
      * @param args the command line arguments
      */
@@ -503,20 +487,20 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel backgroundIMG;
     private javax.swing.JPanel backgroundIntegration;
     private javax.swing.JPanel backgroundPane;
+    private javax.swing.JLabel cweLBL1;
+    private javax.swing.JLabel cweLBL2;
+    private javax.swing.JLabel cweLBL3;
     public static javax.swing.JTextArea cwsTA;
+    private javax.swing.JLabel cwtLBL;
     private javax.swing.JButton deleteBTN;
     private javax.swing.JTextArea displayAwareness;
     private javax.swing.JTextArea displayText;
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane6;

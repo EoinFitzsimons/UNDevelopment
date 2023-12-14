@@ -278,15 +278,18 @@ this will be loaded when the user runs out of lives!
        }
    }
     
-    public static void updateUserScore() 
-    {//open update score
+    public static void updateUserScore() {
+       
+        
+        
+        
     try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scoreDB", "root", "1234")) 
     {//open try 
-        String query = "UPDATE integrationsScore SET score = ? WHERE ID = ?" ; //waiting for input from user to determine location of the items
-        PreparedStatement pst = conn.prepareStatement(query); //loads the query into java
-        pst.setInt(1, score); //enters the score first
-        pst.setInt(2, id); //takes the users id into consideration
-        pst.executeUpdate(); //updates the users score
+        String query = "UPDATE integrationsScore SET score = ? WHERE ID = ?" ;
+        PreparedStatement pst = conn.prepareStatement(query);
+        pst.setInt(1, score);
+        pst.setInt(2, id);
+        pst.executeUpdate();
     }//close try
     catch (SQLException ex) 
     {
