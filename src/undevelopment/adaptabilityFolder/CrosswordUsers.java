@@ -16,7 +16,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import undevelopment.CWScoring;
-//import static undevelopment.UNDevelopmentMainMenuGUI.cwsTA;
+import static undevelopment.UNDevelopmentMainMenuGUI.cwsTA;
 
 public class CrosswordUsers {
 
@@ -38,7 +38,7 @@ public class CrosswordUsers {
 
                 for (int i = 0; i < cwlist.size(); i++) {
                     CWScoring e = cwlist.get(i);
-                   // undevelopment.UNDevelopmentMainMenuGUI.cwsTA.append(e.toString() + "\n");
+                   undevelopment.UNDevelopmentMainMenuGUI.cwsTA.append(e.toString() + "\n");
                 }
             } else {
                 System.out.println("File is empty or does not exist."); // It was not working before this, glad that's fixed it, must have been reading the last entry before it was cleared but I have more tests. Woooohoooo it workssss
@@ -88,13 +88,13 @@ public class CrosswordUsers {
             
             for (CWScoring scoring : cwlist) {
                 if (scoring.getUser().equalsIgnoreCase(searchterm)) {
-                   // undevelopment.UNDevelopmentMainMenuGUI.cwsTA.append(scoring.toString() + "\n");
+                   undevelopment.UNDevelopmentMainMenuGUI.cwsTA.append(scoring.toString() + "\n");
                     found = true;
                 }
             }
             
             if (!found) {
-               // undevelopment.UNDevelopmentMainMenuGUI.cwsTA.append("User not found.\n");
+               undevelopment.UNDevelopmentMainMenuGUI.cwsTA.append("User not found.\n");
             }
         } else {
             System.out.println("File is empty or does not exist.");
