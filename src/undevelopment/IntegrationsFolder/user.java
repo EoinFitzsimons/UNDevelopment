@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author dmoc2
  */
-public class user extends HandleInputs implements Serializable {
+public class user extends handleInputs implements Serializable {
 
     
     private String score; //intialize of score

@@ -33,7 +33,7 @@ import java.sql.*;
 
 
 
-public class cardGame extends HandleInputs
+public class cardGame extends handleInputs
 {//open class
 
     public cardGame() { //constructor for input 
