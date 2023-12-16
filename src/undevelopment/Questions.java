@@ -11,6 +11,12 @@ import java.util.ArrayList;
  * 15/12/23
  * @author Conor Judge
  */
+
+
+//please note that this class is not being utilised as I could not get it to run without errors before the deadline.
+//The funcitonality of this class is being execited in AwarenessGUI
+
+
 public class Questions {
     // ArrayList to store questions
     private ArrayList<String> questions;
