@@ -38,17 +38,28 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        adaptabilityBackground1 = new javax.swing.JPanel();
+        AdaptabilityAppBTN1 = new javax.swing.JButton();
+        cwtLBL1 = new javax.swing.JLabel();
+        cweLBL4 = new javax.swing.JLabel();
+        cweLBL5 = new javax.swing.JLabel();
+        cweLBL6 = new javax.swing.JLabel();
+        updateBTN1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        cwsTA1 = new javax.swing.JTextArea();
+        deleteBTN1 = new javax.swing.JButton();
+        searchBTN1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         homePane = new javax.swing.JLayeredPane();
         backgroundPane = new javax.swing.JPanel();
         backgroundIMG = new javax.swing.JLabel();
         awarenessPane = new javax.swing.JLayeredPane();
         awarenessBackground = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        awarenessLoad = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        displayAwareness = new javax.swing.JTextArea();
+        adaptabilityBackground2 = new javax.swing.JPanel();
+        AwarenessAppBTN = new javax.swing.JButton();
+        awarenessTitleLBL = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        welcomeTXT = new javax.swing.JTextArea();
         adaptabilityPane = new javax.swing.JLayeredPane();
         adaptabilityBackground = new javax.swing.JPanel();
         AdaptabilityAppBTN = new javax.swing.JButton();
@@ -69,6 +80,108 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         displayText = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
+
+        adaptabilityBackground1.setBackground(new java.awt.Color(100, 150, 200));
+
+        AdaptabilityAppBTN1.setText("Load Adaptability App");
+        AdaptabilityAppBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdaptabilityAppBTN1ActionPerformed(evt);
+            }
+        });
+
+        cwtLBL1.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        cwtLBL1.setForeground(new java.awt.Color(255, 255, 255));
+        cwtLBL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cwtLBL1.setText("Adaptability Menu");
+
+        cweLBL4.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        cweLBL4.setForeground(new java.awt.Color(255, 255, 255));
+        cweLBL4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cweLBL4.setText("This is a crossword whose hints are information regarding natural disasters.");
+
+        cweLBL5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cweLBL5.setForeground(new java.awt.Color(255, 255, 255));
+        cweLBL5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cweLBL5.setText("You should take what you learn from this crossword and be able to apply it in future.");
+
+        cweLBL6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cweLBL6.setForeground(new java.awt.Color(255, 255, 255));
+        cweLBL6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cweLBL6.setText("With this knowledege you will be more adaptable in the face of danger.");
+
+        updateBTN1.setText("Update Scores");
+        updateBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBTN1ActionPerformed(evt);
+            }
+        });
+
+        cwsTA1.setColumns(20);
+        cwsTA1.setRows(5);
+        jScrollPane3.setViewportView(cwsTA1);
+
+        deleteBTN1.setText("Delete Scores");
+        deleteBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTN1ActionPerformed(evt);
+            }
+        });
+
+        searchBTN1.setText("Search Scores");
+        searchBTN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBTN1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout adaptabilityBackground1Layout = new javax.swing.GroupLayout(adaptabilityBackground1);
+        adaptabilityBackground1.setLayout(adaptabilityBackground1Layout);
+        adaptabilityBackground1Layout.setHorizontalGroup(
+            adaptabilityBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cwtLBL1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(adaptabilityBackground1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adaptabilityBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cweLBL5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cweLBL6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cweLBL4, javax.swing.GroupLayout.PREFERRED_SIZE, 776, Short.MAX_VALUE)
+                    .addGroup(adaptabilityBackground1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(adaptabilityBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(adaptabilityBackground1Layout.createSequentialGroup()
+                                .addComponent(updateBTN1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(deleteBTN1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(searchBTN1))
+                            .addComponent(jScrollPane3)
+                            .addComponent(AdaptabilityAppBTN1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        adaptabilityBackground1Layout.setVerticalGroup(
+            adaptabilityBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackground1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cwtLBL1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(cweLBL4)
+                .addGap(18, 18, 18)
+                .addComponent(cweLBL5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cweLBL6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(adaptabilityBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateBTN1)
+                    .addComponent(deleteBTN1)
+                    .addComponent(searchBTN1))
+                .addGap(18, 18, 18)
+                .addComponent(AdaptabilityAppBTN1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,63 +225,71 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Home", homePane);
 
-        jLabel6.setText("jLabel6");
+        adaptabilityBackground2.setBackground(new java.awt.Color(100, 150, 200));
 
-        awarenessLoad.setText("load awareness");
-        awarenessLoad.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                awarenessLoadMouseClicked(evt);
-            }
-        });
-        awarenessLoad.addActionListener(new java.awt.event.ActionListener() {
+        AwarenessAppBTN.setText("Load Awareness App");
+        AwarenessAppBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                awarenessLoadActionPerformed(evt);
+                AwarenessAppBTNActionPerformed(evt);
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Awareness Menu");
+        awarenessTitleLBL.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        awarenessTitleLBL.setForeground(new java.awt.Color(255, 255, 255));
+        awarenessTitleLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        awarenessTitleLBL.setText("Awareness Menu");
 
-        displayAwareness.setColumns(20);
-        displayAwareness.setRows(5);
-        jScrollPane1.setViewportView(displayAwareness);
+        welcomeTXT.setBackground(new java.awt.Color(100, 150, 200));
+        welcomeTXT.setColumns(20);
+        welcomeTXT.setForeground(new java.awt.Color(255, 255, 255));
+        welcomeTXT.setRows(5);
+        welcomeTXT.setTabSize(15);
+        welcomeTXT.setText("Welcome to the Climate Change Quiz Game!\n\nIn this quiz, you'll embark on a learning adventure with ten questions\nthat delve into the crucial topic of climate change.\n\nBut first, let's understand why Multiple Choice Questions make for an\nengaging learning experience.\n\nMCQs challenge you to think critically and make informed choices.\nBy presenting various options, they encourage active participation, helping you\ninternalize concepts more effectively. Now, let's link this to the questions ahead,\nwhere your choices will reflect your understanding of pressing environmental issues.\n\nClimate change stems from human activities releasing greenhouse gases, leading\nto a rise in Earth's temperature. From the main greenhouse gas responsible for global\nwarming to the largest emitter of these gases, each question ties directly to the\nreal-world challenges we face. So, get ready to not just answer questions but\nto deepen your awareness of the environmental factors shaping our\nplanet.\n\nWhen the quiz is over we want your feedback. We value your thoughts! Your feedback\nis essential to improving our educational experience. Please take a moment to share\nyour thoughts on the quiz and any suggestions you may have.\n\nGood luck!");
+        welcomeTXT.setToolTipText("");
+        welcomeTXT.setBorder(null);
+        jScrollPane5.setViewportView(welcomeTXT);
+
+        javax.swing.GroupLayout adaptabilityBackground2Layout = new javax.swing.GroupLayout(adaptabilityBackground2);
+        adaptabilityBackground2.setLayout(adaptabilityBackground2Layout);
+        adaptabilityBackground2Layout.setHorizontalGroup(
+            adaptabilityBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adaptabilityBackground2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AwarenessAppBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackground2Layout.createSequentialGroup()
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(awarenessTitleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 787, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(adaptabilityBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(adaptabilityBackground2Layout.createSequentialGroup()
+                    .addGap(108, 108, 108)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(109, Short.MAX_VALUE)))
+        );
+        adaptabilityBackground2Layout.setVerticalGroup(
+            adaptabilityBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adaptabilityBackground2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(awarenessTitleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 441, Short.MAX_VALUE)
+                .addComponent(AwarenessAppBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(adaptabilityBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(adaptabilityBackground2Layout.createSequentialGroup()
+                    .addGap(72, 72, 72)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(72, Short.MAX_VALUE)))
+        );
 
         javax.swing.GroupLayout awarenessBackgroundLayout = new javax.swing.GroupLayout(awarenessBackground);
         awarenessBackground.setLayout(awarenessBackgroundLayout);
         awarenessBackgroundLayout.setHorizontalGroup(
             awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(awarenessBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(awarenessBackgroundLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(awarenessBackgroundLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
-                                .addComponent(awarenessLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(117, 117, 117))
-                            .addGroup(awarenessBackgroundLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+            .addComponent(adaptabilityBackground2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         awarenessBackgroundLayout.setVerticalGroup(
             awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, awarenessBackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(awarenessBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(awarenessBackgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(awarenessBackgroundLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(awarenessLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+            .addComponent(adaptabilityBackground2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         awarenessPane.setLayer(awarenessBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -256,7 +377,7 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
                 .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cweLBL2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cweLBL3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cweLBL1, javax.swing.GroupLayout.DEFAULT_SIZE, 776, Short.MAX_VALUE)
+                    .addComponent(cweLBL1, javax.swing.GroupLayout.PREFERRED_SIZE, 776, Short.MAX_VALUE)
                     .addGroup(adaptabilityBackgroundLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(adaptabilityBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -435,18 +556,6 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_AdaptabilityAppBTNActionPerformed
 
-    private void awarenessLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_awarenessLoadActionPerformed
-        // TODO add your handling code here:
-
-        AwarenessGUI load = new AwarenessGUI();
-        load.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_awarenessLoadActionPerformed
-
-    private void awarenessLoadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_awarenessLoadMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_awarenessLoadMouseClicked
-
        
 
     private void loadBriefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadBriefActionPerformed
@@ -456,6 +565,29 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_loadBriefActionPerformed
+
+    private void AdaptabilityAppBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdaptabilityAppBTN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AdaptabilityAppBTN1ActionPerformed
+
+    private void updateBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBTN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateBTN1ActionPerformed
+
+    private void deleteBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteBTN1ActionPerformed
+
+    private void searchBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchBTN1ActionPerformed
+
+    private void AwarenessAppBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AwarenessAppBTNActionPerformed
+        // TODO add your handling code here:
+        AwarenessGUI load = new AwarenessGUI();
+        load.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AwarenessAppBTNActionPerformed
 
 
     /**
@@ -495,35 +627,46 @@ public class UNDevelopmentMainMenuGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AdaptabilityAppBTN;
+    private javax.swing.JButton AdaptabilityAppBTN1;
+    private javax.swing.JButton AwarenessAppBTN;
     private javax.swing.JPanel adaptabilityBackground;
+    private javax.swing.JPanel adaptabilityBackground1;
+    private javax.swing.JPanel adaptabilityBackground2;
     private javax.swing.JLayeredPane adaptabilityPane;
     private javax.swing.JPanel awarenessBackground;
-    private javax.swing.JButton awarenessLoad;
     private javax.swing.JLayeredPane awarenessPane;
+    private javax.swing.JLabel awarenessTitleLBL;
     private javax.swing.JLabel backgroundIMG;
     private javax.swing.JPanel backgroundIntegration;
     private javax.swing.JPanel backgroundPane;
     private javax.swing.JLabel cweLBL1;
     private javax.swing.JLabel cweLBL2;
     private javax.swing.JLabel cweLBL3;
+    private javax.swing.JLabel cweLBL4;
+    private javax.swing.JLabel cweLBL5;
+    private javax.swing.JLabel cweLBL6;
     public static javax.swing.JTextArea cwsTA;
+    public static javax.swing.JTextArea cwsTA1;
     private javax.swing.JLabel cwtLBL;
+    private javax.swing.JLabel cwtLBL1;
     private javax.swing.JButton deleteBTN;
-    private javax.swing.JTextArea displayAwareness;
+    private javax.swing.JButton deleteBTN1;
     private javax.swing.JTextArea displayText;
     private javax.swing.JLayeredPane homePane;
     private javax.swing.JLayeredPane integrationPane;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loadBrief;
     private javax.swing.JButton loadIntegrationApp;
     private javax.swing.JButton searchBTN;
+    private javax.swing.JButton searchBTN1;
     private javax.swing.JButton updateBTN;
+    private javax.swing.JButton updateBTN1;
+    private javax.swing.JTextArea welcomeTXT;
     // End of variables declaration//GEN-END:variables
 }
